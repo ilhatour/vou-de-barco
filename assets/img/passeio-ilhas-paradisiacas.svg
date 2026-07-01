@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-label="Ilhas Paradisíacas">
+  <defs><radialGradient id="g2" cx="70%" cy="25%" r="90%"><stop offset="0" stop-color="#1F66C4"/><stop offset="1" stop-color="#0a2350"/></radialGradient></defs>
+  <rect width="640" height="480" fill="url(#g2)"/>
+  <g stroke="rgba(255,255,255,.10)" fill="none" stroke-width="1">
+    <path d="M-20 120 C 140 80 320 170 480 110 S 700 140 700 140"/>
+    <path d="M-20 230 C 160 190 340 280 500 220 S 700 250 700 250"/>
+    <path d="M-20 350 C 150 310 330 400 520 330 S 700 370 700 370"/>
+  </g>
+  <path d="M60 380 C 200 300 360 300 540 360" stroke="#FFCA1E" stroke-width="2.5" stroke-dasharray="2 8" fill="none" stroke-linecap="round"/>
+  <circle cx="60" cy="380" r="6" fill="#FFCA1E"/><circle cx="540" cy="360" r="6" fill="#FFCA1E"/>
+  <text x="40" y="70" font-family="'Space Mono', monospace" font-size="15" letter-spacing="2" fill="rgba(255,255,255,.55)">ANGRA</text>
+  <text x="40" y="440" font-family="'Bricolage Grotesque','Arial Narrow',sans-serif" font-size="34" font-weight="800" fill="#FFFFFF">Ilhas Paradisíacas</text>
+  <text x="600" y="440" text-anchor="end" font-family="'Space Mono', monospace" font-size="13" fill="rgba(255,255,255,.4)">FOTO EM BREVE</text>
+</svg>
