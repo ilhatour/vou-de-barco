@@ -28,7 +28,7 @@
   --amarelo-escuro: #E9B400;
   /* Gradientes de marca (cobalto → azul profundo, não abismo puro) */
   --grad-cobalto: linear-gradient(150deg, #2f7ad6 0%, #1F66C4 45%, #0f3f8f 100%);
-  --grad-mar: radial-gradient(130% 110% at 75% 12%, #2f7ad6 0%, #1a5bb4 38%, #0c2f6b 100%);
+  --grad-mar: radial-gradient(135% 120% at 72% 8%, #3a83dd 0%, #2168c6 40%, #11458f 100%);
 
   /* Tipografia — Poppins (display) + DM Sans (texto), igual ilhatour */
   --display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
