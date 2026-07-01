@@ -47,80 +47,40 @@ const I = {
    ============================================================ */
 function chartBg(withRoute = true) {
   const route = withRoute ? `
-    <g class="chart-route" opacity=".9">
-      <path d="M170 452 C 430 392, 640 372, 830 322 S 1180 208, 1300 176"
-        stroke="var(--amarelo)" stroke-width="2" fill="none" stroke-linecap="round"
-        stroke-dasharray="3 10" class="route-line" style="--len:1160"/>
-      <g class="route-dot" fill="none" stroke="var(--amarelo)" stroke-width="2">
-        <circle cx="170" cy="452" r="7" fill="var(--amarelo)"/><circle cx="170" cy="452" r="14"/>
-        <circle cx="830" cy="322" r="4" fill="var(--amarelo)"/>
-        <circle cx="1300" cy="176" r="7" fill="var(--amarelo)"/><circle cx="1300" cy="176" r="14"/>
-      </g>
+    <path class="route-line" style="--len:980" d="M120 470 C 360 360, 560 300, 740 250 S 1120 150, 1300 120"
+      stroke="var(--amarelo)" stroke-width="2.5" stroke-dasharray="980" fill="none" stroke-linecap="round" opacity=".9"/>
+    <g class="route-dot">
+      <circle cx="120" cy="470" r="6" fill="var(--amarelo)"/>
+      <circle cx="1300" cy="120" r="6" fill="var(--amarelo)"/>
     </g>
-    <g class="chart-labels" font-family="'Space Mono', monospace" fill="rgba(255,255,255,.6)" font-size="13" letter-spacing="1.5">
-      <text x="150" y="484">MANGARATIBA</text>
-      <text x="1224" y="160">ABRAÃO</text>
-      <text x="742" y="300" fill="var(--amarelo)" opacity=".85" font-size="12">RUMO 042° · 35 MIN</text>
+    <g class="chart-labels" font-family="'Space Mono', monospace" fill="rgba(255,255,255,.55)" font-size="13" letter-spacing="1">
+      <text x="120" y="500">MANGARATIBA</text>
+      <text x="1230" y="108">ABRAÃO</text>
+      <text x="700" y="300" fill="var(--amarelo)" opacity=".85">35 MIN · FLEX BOAT</text>
     </g>` : "";
   return `<svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g stroke="rgba(255,255,255,.09)" fill="none" stroke-width="1.1">
-      <path d="M-50 100 C 300 46, 700 156, 1100 74 S 1600 108, 1600 108"/>
-      <path d="M-50 190 C 320 138, 760 244, 1140 164 S 1600 198, 1600 198"/>
-      <path d="M-50 300 C 280 256, 720 356, 1180 268 S 1600 306, 1600 306"/>
-      <path d="M-50 408 C 340 366, 780 472, 1220 380 S 1600 420, 1600 420"/>
-      <path d="M-50 500 C 300 470, 780 552, 1240 470 S 1600 500, 1600 500"/>
+    <defs>
+      <radialGradient id="depth" cx="78%" cy="20%" r="90%">
+        <stop offset="0" stop-color="rgba(31,102,196,.30)"/>
+        <stop offset="1" stop-color="rgba(31,102,196,0)"/>
+      </radialGradient>
+    </defs>
+    <rect width="1440" height="560" fill="url(#depth)"/>
+    <g stroke="rgba(220,230,236,.10)" fill="none" stroke-width="1">
+      <path d="M-50 120 C 300 60, 700 180, 1100 90 S 1600 130, 1600 130"/>
+      <path d="M-50 220 C 320 160, 760 280, 1140 190 S 1600 230, 1600 230"/>
+      <path d="M-50 340 C 280 290, 720 400, 1180 300 S 1600 350, 1600 350"/>
+      <path d="M-50 450 C 340 410, 780 520, 1220 420 S 1600 470, 1600 470"/>
     </g>
-    <g stroke="rgba(255,255,255,.045)" stroke-width="1">
-      <path d="M180 0 V560 M480 0 V560 M780 0 V560 M1080 0 V560 M1380 0 V560"/>
-      <path d="M0 130 H1440 M0 280 H1440 M0 430 H1440"/>
+    <g stroke="rgba(220,230,236,.05)" stroke-width="1">
+      <path d="M0 0 V560 M360 0 V560 M720 0 V560 M1080 0 V560 M1440 0 V560"/>
+      <path d="M0 140 H1440 M0 280 H1440 M0 420 H1440"/>
     </g>
-    <g stroke="rgba(255,255,255,.16)" stroke-width="1.5">
-      <path d="M40 30 h14 M47 23 v14"/><path d="M1400 520 h14 M1407 513 v14"/>
-    </g>
-    <g font-family="'Space Mono', monospace" fill="rgba(255,255,255,.18)" font-size="12" letter-spacing="1">
-      <text x="250" y="180">12</text><text x="540" y="360">18</text>
-      <text x="980" y="230">9</text><text x="1180" y="440">22</text><text x="660" y="130">15</text>
-      <text x="380" y="470">23°04'S</text><text x="1120" y="90">44°09'W</text>
+    <g font-family="'Space Mono', monospace" fill="rgba(220,230,236,.16)" font-size="12">
+      <text x="240" y="200">12</text><text x="520" y="380">18</text>
+      <text x="940" y="240">9</text><text x="1180" y="430">22</text><text x="640" y="120">15</text>
     </g>
     ${route}
-  </svg>`;
-}
-
-function compass() {
-  return `<div class="compass" aria-hidden="true"><svg viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
-    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-    <g stroke="rgba(255,255,255,.3)" stroke-width="1"><path d="M50 4 V14 M50 86 V96 M4 50 H14 M86 50 H96"/></g>
-    <text x="50" y="27" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11" fill="rgba(255,255,255,.6)">N</text>
-    <g class="needle">
-      <path d="M50 16 L57 50 L50 46 L43 50 Z" fill="var(--amarelo)"/>
-      <path d="M50 84 L43 50 L50 54 L57 50 Z" fill="rgba(255,255,255,.5)"/>
-    </g>
-    <circle cx="50" cy="50" r="3.5" fill="#fff"/>
-  </svg></div>`;
-}
-
-/* rota plotada sobre a foto do Flex Boat (faixa da travessia) */
-function travessiaCourse() {
-  return `<svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g stroke="rgba(255,255,255,.10)" fill="none" stroke-width="1">
-      <path d="M-40 150 C 360 100 780 200 1120 130 S 1500 160 1500 160"/>
-      <path d="M-40 320 C 360 270 780 370 1120 300 S 1500 330 1500 330"/>
-      <path d="M-40 490 C 360 440 780 540 1120 470 S 1500 500 1500 500"/>
-    </g>
-    <path d="M120 500 C 430 470 720 300 980 250 S 1320 150 1360 130" fill="none"
-      stroke="var(--amarelo)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 11"
-      class="course-draw" style="--len:1500"/>
-    <g fill="var(--amarelo)">
-      <circle cx="120" cy="500" r="8"/><circle cx="1360" cy="130" r="8"/>
-    </g>
-    <g fill="none" stroke="var(--amarelo)" stroke-width="1.5" opacity=".5">
-      <circle cx="120" cy="500" r="16"/><circle cx="1360" cy="130" r="16"/>
-    </g>
-    <g font-family="'Space Mono', monospace" fill="rgba(255,255,255,.85)" font-size="15" letter-spacing="1.5">
-      <text x="104" y="540">MANGARATIBA</text>
-      <text x="1250" y="112">ABRAÃO</text>
-    </g>
   </svg>`;
 }
 
@@ -187,14 +147,13 @@ function head({ title, desc, canonical, type = "website" }) {
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">`;
 }
 
 function header({ active = "", solid = false, prefix = "" } = {}) {
   const A = (href, key, label) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${label}</a>`;
   return `<a class="skip-link" href="#main">Pular para o conteúdo</a>
-<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header${solid ? " header--solid is-scrolled" : ""}">
   <div class="wrap">
     <a class="brand" href="${prefix}index.html" aria-label="Vou de Barco — início">${I.mark}<span>Vou de Barco</span></a>
@@ -323,8 +282,7 @@ ${header({ active: "inicio" })}
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__chart" data-parallax="0.18">${chartBg(true)}</div>
-    ${compass()}
+    <div class="hero__chart">${chartBg(true)}</div>
     <div class="wrap">
       <div class="hero__inner">
         <span class="eyebrow eyebrow--light">Mangaratiba ⇄ Ilha Grande · Flex Boat</span>
@@ -351,44 +309,42 @@ ${header({ active: "inicio" })}
     </div>
   </section>
 
-  <!-- TRAVESSIA — faixa com foto do Flex Boat + rota plotada -->
-  <section class="travessia-band reveal" id="travessia">
-    <div class="travessia-band__bg"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia para a Ilha Grande" loading="lazy" width="1600" height="863"></div>
-    <div class="travessia-band__course">${travessiaCourse()}</div>
+  ${wave(C.abismo, C.nevoa)}
+
+  <!-- TRAVESSIA -->
+  <section class="section section--nevoa" id="travessia">
     <div class="wrap">
-      <div class="travessia-band__inner">
-        <div class="travessia-band__copy">
-          <span class="eyebrow eyebrow--light eyebrow--wp">A rota pioneira</span>
-          <h2>Do Rio à ilha, em cerca de 35 minutos.</h2>
-          <p class="lead">${esc(TRAV.slogan)} Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer essa travessia de Flex Boat por aqui.</p>
-          <div class="travessia-band__chips">
-            <span class="chip">${I.clock}${esc(TRAV.tempo)}</span>
-            <span class="chip">${I.boat}${esc(TRAV.embarcacao)}</span>
-            <span class="chip">${I.pin}Mangaratiba ⇄ Abraão</span>
-          </div>
-          <a class="btn" href="travessia.html">Ver horários e detalhes ${I.arrow}</a>
-        </div>
-        <div class="tcard reveal" data-d="1">
-          <div class="tcard__title">${I.clock} Horários de saída</div>
-          <div class="tcard__times">
+      <div class="travessia">
+        <div class="travessia__route reveal">
+          ${routeMap()}
+          <div class="travessia__times">
             <div><h4>${esc(TRAV.horarios.ida.titulo)}</h4><ul>${TRAV.horarios.ida.saidas.map((s) => `<li>${s}</li>`).join("")}</ul></div>
             <div><h4>${esc(TRAV.horarios.volta.titulo)}</h4><ul>${TRAV.horarios.volta.saidas.map((s) => `<li>${s}</li>`).join("")}</ul></div>
           </div>
-          <div class="tcard__foot">
-            <span class="spec-mini">Bilhetes: <b>${TRAV.bilhetes.join(" · ")}</b></span>
-            <span class="spec-mini">Preço <b>sob consulta</b></span>
-          </div>
+        </div>
+        <div class="travessia__copy reveal" data-d="1">
+          <span class="eyebrow">A rota pioneira</span>
+          <h2>Do Rio à ilha, em cerca de 35 minutos.</h2>
+          <p class="lead">${esc(TRAV.slogan)} Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer essa travessia de Flex Boat.</p>
+          <ul class="spec-list">
+            <li><span class="k">Rota</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
+            <li><span class="k">Embarcação</span><span class="v">${esc(TRAV.embarcacao)}</span></li>
+            <li><span class="k">Tempo</span><span class="v">${esc(TRAV.tempo)}</span></li>
+            <li><span class="k">Bilhetes</span><span class="v">${TRAV.bilhetes.join(" · ")}</span></li>
+          </ul>
+          <a class="btn" href="travessia.html">Detalhes e horários ${I.arrow}</a>
         </div>
       </div>
     </div>
-    <div class="band-wave" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="${C.branco}" d="M0,48 C240,116 480,4 720,44 C960,84 1200,12 1440,52 L1440,130 L0,130 Z"></path></svg></div>
   </section>
+
+  ${wave(C.nevoa, C.branco, true)}
 
   <!-- PASSEIOS -->
   <section class="section section--branco" id="passeios">
     <div class="wrap">
-      <div class="section__head reveal">
-        <span class="eyebrow eyebrow--wp">Roteiros · Costa Verde</span>
+      <div class="section__head">
+        <span class="eyebrow">Roteiros · Costa Verde</span>
         <h2 class="section-title">Cinco rumos para conhecer o melhor da ilha.</h2>
         <p class="lead">Cada passeio inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão. Preços sob consulta.</p>
       </div>
@@ -405,7 +361,7 @@ ${header({ active: "inicio" })}
     <div class="wrap">
       <div class="about">
         <div class="about__copy reveal">
-          <span class="eyebrow eyebrow--wp">Sobre a Vou de Barco</span>
+          <span class="eyebrow">Sobre a Vou de Barco</span>
           <h2 class="section-title">Nascemos para resolver um problema real.</h2>
           <p>A Vou de Barco é uma operação náutica com frota e tripulação próprias, dedicada a levar você até a Ilha Grande e a mostrar o melhor da Costa Verde no mar. Nascemos para resolver um problema real: chegar à Ilha mais rápido e confortável para quem vem do Rio.</p>
           <p>Mangaratiba é o ponto mais próximo, mas ninguém fazia a travessia de Flex Boat por ali. Encaramos o desafio com marinheiros experientes e embarcação preparada, e nos tornamos pioneiros nessa rota, hoje consolidada e referência na região. Levamos segurança e qualidade a sério: embarcações revisadas, motor em dia e coletes para todos a bordo.</p>
@@ -425,8 +381,8 @@ ${header({ active: "inicio" })}
   <!-- FAQ -->
   <section class="section section--branco" id="faq">
     <div class="wrap">
-      <div class="section__head center reveal">
-        <span class="eyebrow eyebrow--wp">Perguntas frequentes</span>
+      <div class="section__head center">
+        <span class="eyebrow">Perguntas frequentes</span>
         <h2 class="section-title">Tudo o que você precisa saber antes de embarcar.</h2>
       </div>
       <div class="faq">
@@ -442,7 +398,7 @@ ${header({ active: "inicio" })}
     <div class="wrap">
       <div class="contact">
         <div class="contact__aside reveal">
-          <span class="eyebrow eyebrow--light eyebrow--wp">Reserve com a gente</span>
+          <span class="eyebrow eyebrow--light">Reserve com a gente</span>
           <h2>Conte seu plano. A gente cuida do mar.</h2>
           <p class="lead">Preencha e a gente continua o atendimento pelo WhatsApp, com disponibilidade e valores para a sua data.</p>
           <div class="contact__channels">
@@ -512,8 +468,7 @@ function buildPasseio(p) {
 ${header({ active: "passeios", solid: true, prefix: "../" })}
 <main id="main">
 
-  <section class="subhero subhero--photo">
-    <div class="subhero__bg"><img src="../${p.img}" alt="Passeio ${esc(p.nome)} — Ilha Grande" width="1600" height="900"></div>
+  <section class="subhero">
     <div class="subhero__chart">${chartBg(false)}</div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../index.html#passeios">Passeios</a> · ${esc(p.nome)}</nav>
@@ -522,7 +477,7 @@ ${header({ active: "passeios", solid: true, prefix: "../" })}
       <p class="subhero__slogan">${esc(p.slogan)}</p>
       <div class="subhero__meta">
         <span class="chip">${I.clock}${esc(p.duracao)}</span>
-        <span class="chip">${I.boat}${esc(p.embarcacao)}</span>
+        <span class="chip">${esc(p.embarcacao)}</span>
         <span class="chip">${I.pin}${esc(p.saida)}</span>
       </div>
     </div>
@@ -533,18 +488,13 @@ ${header({ active: "passeios", solid: true, prefix: "../" })}
       <div class="detail">
         <div class="detail__main">
           <h2>O roteiro</h2>
-          <p>${esc(p.descricao || p.resumo)}</p>
+          <p>${esc(p.resumo)}</p>
 
           <h2>Paradas previstas</h2>
           <div class="stops">
             ${p.paradas.map((s, i) => `<div class="stop"><span class="n">${String(i + 1).padStart(2, "0")}</span><span class="name">${esc(s)}</span></div>`).join("\n            ")}
           </div>
-${p.pontos_fortes ? `
-          <h2>Por que vale a pena</h2>
-          <ul class="strong-list">
-            ${p.pontos_fortes.map((x) => `<li>${I.check}<span>${esc(x)}</span></li>`).join("\n            ")}
-          </ul>
-` : ""}
+
           <h2>Está incluso</h2>
           <ul class="included">
             ${incl.map((x) => `<li>${I.check}${esc(x)}</li>`).join("\n            ")}
@@ -599,8 +549,7 @@ function buildTravessia() {
 ${header({ active: "travessia", solid: true })}
 <main id="main">
 
-  <section class="subhero subhero--photo">
-    <div class="subhero__bg"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia Mangaratiba ⇄ Ilha Grande" width="1600" height="863"></div>
+  <section class="subhero">
     <div class="subhero__chart">${chartBg(true)}</div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Travessia</nav>
@@ -609,7 +558,7 @@ ${header({ active: "travessia", solid: true })}
       <p class="subhero__slogan">${esc(TRAV.slogan)}</p>
       <div class="subhero__meta">
         <span class="chip">${I.clock}${esc(TRAV.tempo)}</span>
-        <span class="chip">${I.boat}${esc(TRAV.embarcacao)}</span>
+        <span class="chip">${esc(TRAV.embarcacao)}</span>
         <span class="chip">${I.pin}Mangaratiba ⇄ Abraão</span>
       </div>
     </div>
@@ -712,6 +661,7 @@ const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 write("index.html", buildIndex());
 write("travessia.html", buildTravessia());
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
+PASSEIOS.forEach((p, i) => write(p.img, placeholder(p, i)));
 write("favicon.svg", favicon);
 write("sitemap.xml", sitemap);
 write("robots.txt", robots);
@@ -719,6 +669,6 @@ write("robots.txt", robots);
 console.log("✓ index.html");
 console.log("✓ travessia.html");
 PASSEIOS.forEach((p) => console.log(`✓ passeios/${p.id}.html`));
-console.log(`✓ favicon.svg`);
+console.log(`✓ ${PASSEIOS.length} placeholders SVG + favicon.svg`);
 console.log("✓ sitemap.xml + robots.txt");
 console.log("\nPronto. Abra index.html no navegador.");

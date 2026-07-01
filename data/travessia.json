@@ -3,7 +3,6 @@
   "embarcacao": "Flex Boat",
   "tempo": "~35 minutos",
   "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
-  "img": "assets/img/travessia-flex-boat.jpg",
   "bilhetes": ["Ida", "Volta", "Ida e volta"],
   "incluso": ["Passagem marítima", "Transporte de bagagem padrão"],
   "horarios": {

@@ -43,33 +43,6 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Efeitos de navegação: progresso, parallax, bússola ---- */
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var progress = document.querySelector(".scroll-progress");
-  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
-  var needle = document.querySelector(".compass .needle");
-  var ticking = false;
-
-  function onScrollFx() {
-    var y = window.scrollY || window.pageYOffset;
-    var docH = document.documentElement.scrollHeight - window.innerHeight;
-    var p = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
-    if (progress) progress.style.setProperty("--p", p.toFixed(4));
-    if (!reduceMotion) {
-      for (var i = 0; i < parallaxEls.length; i++) {
-        var el = parallaxEls[i];
-        var speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
-        el.style.transform = "translate3d(0," + (y * speed).toFixed(1) + "px,0)";
-      }
-      if (needle) needle.style.setProperty("--rot", (18 + p * 320).toFixed(1) + "deg");
-    }
-    ticking = false;
-  }
-  function requestFx() { if (!ticking) { ticking = true; window.requestAnimationFrame(onScrollFx); } }
-  window.addEventListener("scroll", requestFx, { passive: true });
-  window.addEventListener("resize", requestFx, { passive: true });
-  onScrollFx();
-
   /* ---- Formulário de contato → WhatsApp ---- */
   var form = document.querySelector("[data-wa-form]");
   if (form) {
