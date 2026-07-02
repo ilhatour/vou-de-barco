@@ -43,6 +43,23 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* ---- Painel de saídas: destaca a próxima saída de cada trecho ---- */
+  (function () {
+    var now = new Date();
+    var mins = now.getHours() * 60 + now.getMinutes();
+    document.querySelectorAll(".dep-route").forEach(function (route) {
+      var times = route.querySelectorAll(".dep-time");
+      var nextFound = false;
+      times.forEach(function (el) {
+        var p = (el.getAttribute("data-dep") || "0:0").split(":");
+        var t = parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+        if (t < mins) el.classList.add("is-past");
+        else if (!nextFound) { el.classList.add("is-next"); nextFound = true; }
+      });
+      if (!nextFound && times.length) times[0].classList.add("is-next"); // já passaram todas → 1ª de amanhã
+    });
+  })();
+
   /* ---- Formulário de contato → WhatsApp ---- */
   var form = document.querySelector("[data-wa-form]");
   if (form) {
