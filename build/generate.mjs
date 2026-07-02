@@ -528,13 +528,22 @@ ${header({ active: "passeios", solid: true, prefix: "../" })}
     <div class="wrap">
       <div class="detail">
         <div class="detail__main">
-          <h2>O roteiro</h2>
-          <p>${esc(p.resumo)}</p>
-
-          <h2>Paradas previstas</h2>
+          <h2>Sobre o passeio</h2>
+          <p>${esc(p.descricao || p.resumo)}</p>
+${p.pontos_fortes ? `
+          <h2>Por que vale a pena</h2>
+          <ul class="strong-list">
+            ${p.pontos_fortes.map((x) => `<li>${I.check}<span>${esc(x)}</span></li>`).join("\n            ")}
+          </ul>
+` : ""}
+          <h2>Roteiro do dia</h2>
           <div class="stops">
-            ${p.paradas.map((s, i) => `<div class="stop"><span class="n">${String(i + 1).padStart(2, "0")}</span><span class="name">${esc(s)}</span></div>`).join("\n            ")}
+            ${p.cronograma ? `<div class="stop stop--time"><span class="n">${esc(p.cronograma.checkin)}</span><span class="name">Check-in na nossa agência</span></div>
+            <div class="stop stop--time"><span class="n">${esc(p.cronograma.saida)}</span><span class="name">Saída do passeio</span></div>` : ""}
+            ${p.paradas.map((s) => `<div class="stop"><span class="n">→</span><span class="name">${esc(s)}</span></div>`).join("\n            ")}
+            ${p.cronograma ? `<div class="stop stop--time"><span class="n">${esc(p.cronograma.desembarque)}</span><span class="name">Desembarque na Vila do Abraão</span></div>` : ""}
           </div>
+          <p class="detail__note">O roteiro pode sofrer alterações para a melhor experiência e a segurança a bordo.</p>
 
           <h2>Está incluso</h2>
           <ul class="included">
