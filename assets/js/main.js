@@ -43,12 +43,12 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Painel de saídas: destaca a próxima saída de cada trecho ---- */
+  /* ---- Horários da travessia: destaca a próxima saída de cada trecho ---- */
   (function () {
     var now = new Date();
     var mins = now.getHours() * 60 + now.getMinutes();
-    document.querySelectorAll(".dep-route").forEach(function (route) {
-      var times = route.querySelectorAll(".dep-time");
+    document.querySelectorAll(".horarios__col").forEach(function (col) {
+      var times = col.querySelectorAll(".time[data-dep]");
       var nextFound = false;
       times.forEach(function (el) {
         var p = (el.getAttribute("data-dep") || "0:0").split(":");

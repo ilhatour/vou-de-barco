@@ -84,28 +84,6 @@ function chartBg(withRoute = true) {
   </svg>`;
 }
 
-/* painel "próximas saídas" — terminal de barca; JS destaca a próxima */
-function departuresBoard() {
-  const to24 = (s) => s.replace("h", ":").padEnd(5, "0");
-  const row = (titulo, saidas) => `<div class="dep-route">
-        <span class="dep-route__name">${esc(titulo)}</span>
-        <ul class="dep-times">${saidas.map((s) => `<li class="dep-time" data-dep="${to24(s)}"><span>${s}</span></li>`).join("")}</ul>
-      </div>`;
-  return `<section class="departures" aria-label="Próximas saídas da travessia">
-    <div class="wrap">
-      <div class="departures__head">
-        <span class="eyebrow eyebrow--light">Próximas saídas · Flex Boat</span>
-        <span class="departures__note">Sujeito a clima e maré · reserve com antecedência</span>
-      </div>
-      <div class="departures__routes">
-        ${row(TRAV.horarios.ida.titulo, TRAV.horarios.ida.saidas)}
-        ${row(TRAV.horarios.volta.titulo, TRAV.horarios.volta.saidas)}
-      </div>
-      <a class="btn departures__cta" href="${waLink("Olá, Vou de Barco! Quero reservar a travessia. Podem me passar horários e valores?")}" target="_blank" rel="noopener">${I.whatsapp} Reservar travessia</a>
-    </div>
-  </section>`;
-}
-
 function compass() {
   return `<div class="compass" aria-hidden="true"><svg viewBox="0 0 100 100">
     <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
@@ -365,8 +343,6 @@ ${header({ active: "inicio" })}
     </div>
   </section>
 
-  ${departuresBoard()}
-
   <!-- SELOS / PAINEL DE CONFIANÇA -->
   <section class="trust" aria-label="Por que a Vou de Barco">
     <div class="wrap">
@@ -400,11 +376,11 @@ ${header({ active: "inicio" })}
           <div class="horarios">
             <div class="horarios__col">
               <h4>${esc(TRAV.horarios.ida.titulo)}</h4>
-              <ul>${TRAV.horarios.ida.saidas.map((s) => `<li class="time">${s}</li>`).join("")}</ul>
+              <ul>${TRAV.horarios.ida.saidas.map((s) => `<li class="time" data-dep="${s.replace("h", ":")}">${s}</li>`).join("")}</ul>
             </div>
             <div class="horarios__col">
               <h4>${esc(TRAV.horarios.volta.titulo)}</h4>
-              <ul>${TRAV.horarios.volta.saidas.map((s) => `<li class="time">${s}</li>`).join("")}</ul>
+              <ul>${TRAV.horarios.volta.saidas.map((s) => `<li class="time" data-dep="${s.replace("h", ":")}">${s}</li>`).join("")}</ul>
             </div>
           </div>
           <p class="horarios__meta">Chegue ao cais com antecedência. Horários sujeitos a clima e maré. <b>Preço sob consulta.</b></p>

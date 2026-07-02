@@ -228,27 +228,6 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .trust__item svg { width: 26px; height: 26px; flex: 0 0 auto; color: var(--amarelo); margin-top: .1rem; }
 .trust__item b { color: var(--branco); font-weight: 700; }
 
-/* ---- Painel "Próximas saídas" (terminal de barca) ---- */
-.departures { position: relative; z-index: 2; background: var(--abismo); border-top: 1px solid var(--branco-14); }
-.departures .wrap { display: flex; align-items: center; gap: clamp(1.2rem, 3vw, 2.6rem); flex-wrap: wrap; padding-block: 1.4rem; }
-.departures__head { display: flex; flex-direction: column; gap: .2rem; flex: 0 0 auto; }
-.departures__head .eyebrow { margin-bottom: 0; }
-.departures__note { font-size: .78rem; color: var(--branco-45); }
-.departures__routes { display: flex; gap: clamp(1rem, 3vw, 2.4rem); flex: 1 1 auto; flex-wrap: wrap; }
-.dep-route { display: flex; flex-direction: column; gap: .5rem; }
-.dep-route__name { font-family: var(--label); font-size: var(--t-data); letter-spacing: .1em; text-transform: uppercase; color: var(--branco-70); }
-.dep-times { display: flex; gap: .5rem; flex-wrap: wrap; }
-.dep-time { position: relative; font-family: var(--label); font-weight: 700; font-size: 1.02rem; color: var(--branco);
-  background: var(--branco-14); border: 1px solid transparent; padding: .38rem .7rem; border-radius: 8px; letter-spacing: .02em; }
-.dep-time.is-next { background: var(--amarelo); color: var(--abismo); box-shadow: 0 0 0 4px rgba(255,202,30,.18); }
-.dep-time.is-next::after { content: "próxima"; position: absolute; top: -.72rem; left: 50%; transform: translateX(-50%);
-  font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amarelo); font-weight: 700; }
-.dep-time.is-past { opacity: .38; }
-.departures__cta { flex: 0 0 auto; }
-@media (max-width: 720px) {
-  .departures .wrap { flex-direction: column; align-items: flex-start; gap: 1.1rem; }
-  .departures__cta { width: 100%; justify-content: center; }
-}
 
 /* ============================================================
    SEÇÕES + ONDAS
@@ -290,8 +269,14 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .horarios__col h4 { font-family: var(--label); font-size: var(--t-data); letter-spacing: .08em; text-transform: uppercase; color: var(--cobalto); font-weight: 700; margin-bottom: .7rem; }
 .horarios__col ul { display: flex; flex-direction: column; }
 .horarios__col .time { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--abismo); padding: .55rem 0; border-bottom: 1px solid var(--bruma); display: flex; align-items: center; gap: .55rem; }
-.horarios__col .time::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--amarelo); flex: 0 0 auto; }
+.horarios__col .time::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--bruma); flex: 0 0 auto; }
 .horarios__col .time:last-child { border-bottom: 0; }
+.horarios__col .time.is-past { opacity: .4; }
+.horarios__col .time.is-past::before { background: var(--bruma); }
+.horarios__col .time.is-next::before { background: var(--amarelo); box-shadow: 0 0 0 3px rgba(255,202,30,.28); }
+.horarios__col .time.is-next::after { content: "próxima"; font-family: var(--label); font-weight: 700; font-size: .58rem;
+  letter-spacing: .1em; text-transform: uppercase; color: #a97e00; background: rgba(255,202,30,.22);
+  padding: .12rem .42rem; border-radius: 6px; margin-left: auto; }
 .horarios__meta { margin: 1.3rem 0; font-size: .9rem; color: var(--abismo-60); line-height: 1.5; }
 .horarios__meta b { color: var(--abismo); }
 .horarios__cta { margin-top: auto; display: flex; flex-direction: column; gap: .6rem; }
