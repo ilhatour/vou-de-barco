@@ -84,6 +84,18 @@ function chartBg(withRoute = true) {
   </svg>`;
 }
 
+function compass() {
+  return `<div class="compass" aria-hidden="true"><svg viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+    <g stroke="rgba(255,255,255,.3)" stroke-width="1"><path d="M50 4 V14 M50 86 V96 M4 50 H14 M86 50 H96"/></g>
+    <text x="50" y="27" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11" fill="rgba(255,255,255,.6)">N</text>
+    <path d="M50 16 L57 50 L50 46 L43 50 Z" fill="var(--amarelo)"/>
+    <path d="M50 84 L43 50 L50 54 L57 50 Z" fill="rgba(255,255,255,.5)"/>
+    <circle cx="50" cy="50" r="3.5" fill="#fff"/>
+  </svg></div>`;
+}
+
 /* ============================================================
    MAPA DA ROTA (cartão da travessia)
    ============================================================ */
@@ -282,7 +294,8 @@ ${header({ active: "inicio" })}
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__chart">${chartBg(true)}</div>
+    <div class="hero__chart">${chartBg(false)}</div>
+    ${compass()}
     <div class="wrap">
       <div class="hero__inner">
         <span class="eyebrow eyebrow--light">Mangaratiba ⇄ Ilha Grande · Flex Boat</span>
