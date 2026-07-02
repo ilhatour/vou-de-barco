@@ -278,14 +278,28 @@ function faqBlock() {
 /* JSON-LD */
 function ldOrg() {
   return `<script type="application/ld+json">${JSON.stringify({
-    "@context": "https://schema.org", "@type": "TravelAgency", name: "Vou de Barco", url: SITE,
+    "@context": "https://schema.org", "@type": "TravelAgency", "@id": SITE + "/#business",
+    name: "Vou de Barco", url: SITE,
+    image: SITE + "/assets/img/og-vou-de-barco.jpg", logo: SITE + "/favicon.svg",
     description: "Operação náutica com frota própria. Travessia de Flex Boat por Mangaratiba e passeios de barco em Ilha Grande e na Costa Verde.",
-    telephone: "+55-24-97403-1431", areaServed: "Ilha Grande, Mangaratiba e Costa Verde — RJ",
-    sameAs: [IG],
-    address: [
-      { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" },
-      { "@type": "PostalAddress", streetAddress: "Rua da Praia, s/n — em frente ao cais da barca", addressLocality: "Vila do Abraão, Ilha Grande", addressRegion: "RJ", addressCountry: "BR" },
+    telephone: "+55-24-97403-1431", knowsLanguage: "pt-BR",
+    areaServed: [
+      { "@type": "Place", name: "Ilha Grande" }, { "@type": "Place", name: "Mangaratiba" },
+      { "@type": "Place", name: "Angra dos Reis" }, { "@type": "Place", name: "Costa Verde, Rio de Janeiro" },
     ],
+    sameAs: [IG],
+    address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" },
+    geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 },
+    location: [
+      { "@type": "Place", name: "Agência Mangaratiba", address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 } },
+      { "@type": "Place", name: "Agência Vila do Abraão", address: { "@type": "PostalAddress", streetAddress: "Rua da Praia, s/n — em frente ao cais da barca", addressLocality: "Vila do Abraão, Ilha Grande", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -23.1385, longitude: -44.1717 } },
+    ],
+  })}</script>`;
+}
+function ldBreadcrumb(items) {
+  return `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: it.url })),
   })}</script>`;
 }
 function ldFaq() {
@@ -300,7 +314,7 @@ function ldFaq() {
    ============================================================ */
 function buildIndex() {
   const heroMsg = "Olá, Vou de Barco! Quero reservar.";
-  return `${head({ title: "Vou de Barco — Travessia e passeios de barco em Ilha Grande", desc: "Travessia rápida de Flex Boat por Mangaratiba — o ponto mais próximo do Rio — e passeios pelos cenários mais bonitos da Costa Verde. Frota própria e segurança em primeiro lugar.", canonical: `${SITE}/` })}
+  return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat entre Mangaratiba e a Ilha Grande (~35 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
 ${ldOrg()}
 ${ldFaq()}
 </head>
@@ -500,10 +514,11 @@ function buildPasseio(p) {
   const outros = PASSEIOS.filter((x) => x.id !== p.id);
   return `${head({ title: p.seo_title, desc: p.seo_desc, canonical: `${SITE}/passeios/${p.id}.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
-    "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.resumo,
-    touristType: p.para_quem, provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE },
-    itinerary: { "@type": "ItemList", itemListElement: p.paradas.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s })) },
+    "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.descricao || p.resumo,
+    touristType: p.para_quem, provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
+    image: SITE + "/" + p.img, itinerary: { "@type": "ItemList", itemListElement: p.paradas.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s })) },
   })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios", url: SITE + "/#passeios" }, { name: p.nome, url: `${SITE}/passeios/${p.id}.html` }])}
 </head>
 <body>
 ${header({ active: "passeios", solid: true, prefix: "../" })}
@@ -594,6 +609,14 @@ ${scripts("../")}
 function buildTravessia() {
   const msg = "Olá, Vou de Barco! Quero informações da travessia Mangaratiba ⇄ Ilha Grande (horários, bilhetes e valores).";
   return `${head({ title: TRAV.seo_title, desc: TRAV.seo_desc, canonical: `${SITE}/travessia.html` })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "Service", serviceType: "Travessia de barco (Flex Boat)",
+    name: "Travessia Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
+    description: "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em cerca de 35 minutos.",
+    provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
+    areaServed: [{ "@type": "Place", name: "Mangaratiba" }, { "@type": "Place", name: "Ilha Grande" }],
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Travessia", url: SITE + "/travessia.html" }])}
 </head>
 <body>
 ${header({ active: "travessia", solid: true })}
@@ -704,7 +727,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
 const urls = [`${SITE}/`, `${SITE}/travessia.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${u}</loc><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
+${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
 </urlset>`;
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 
