@@ -23,9 +23,9 @@
   --branco-14: rgba(255, 255, 255, .14);
   --amarelo-escuro: #E9B400;
 
-  /* Tipografia */
-  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
-  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Tipografia — Poppins (display) + DM Sans (texto), igual ilhatour */
+  --display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* Escala de tipo (fluida) */
