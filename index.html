@@ -109,47 +109,48 @@
   <!-- TRAVESSIA -->
   <section class="section section--nevoa" id="travessia">
     <div class="wrap">
-      <div class="travessia">
-        <div class="travessia__route reveal">
-          <svg class="route-map" viewBox="0 0 520 300" role="img" aria-label="Rota da travessia: Mangaratiba até a Vila do Abraão, Ilha Grande">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
-      </pattern>
-    </defs>
-    <rect width="520" height="300" fill="url(#grid)" rx="14"/>
-    <path d="M0 70 q60 6 120 0 t120 4 130-6 150 2 V0 H0Z" fill="rgba(31,102,196,.18)"/>
-    <path d="M40 250 q70 -8 150 -2 t170 -6 160 0 V300 H40Z" fill="rgba(31,102,196,.18)"/>
-    <path d="M70 95 C 200 150, 320 150, 450 200" fill="none" stroke="var(--amarelo)" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
-    <g transform="translate(70 95)"><circle r="7" fill="var(--amarelo)"/><circle r="13" fill="none" stroke="var(--amarelo)" stroke-opacity=".4" stroke-width="1.5"/></g>
-    <g transform="translate(450 200)"><circle r="7" fill="var(--amarelo)"/><circle r="13" fill="none" stroke="var(--amarelo)" stroke-opacity=".4" stroke-width="1.5"/></g>
-    <g transform="translate(255 168) rotate(22)" fill="var(--branco)">
-      <path d="M-9 4 H9 L6 11 H-6 Z"/><path d="M0 -10 L5 2 H-5 Z"/>
-    </g>
-    <g font-family="'Space Mono', monospace" font-size="13" fill="var(--branco)" letter-spacing="1">
-      <text x="58" y="80">MANGARATIBA</text>
-      <text x="360" y="232">VILA DO ABRAÃO</text>
-    </g>
-    <g font-family="'Space Mono', monospace" font-size="12" fill="var(--amarelo)" letter-spacing="1">
-      <text x="232" y="135">~35 MIN</text>
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--wp">A rota pioneira</span>
+        <h2 class="section-title">Do Rio à ilha, em cerca de 35 minutos.</h2>
+        <p class="lead">O ponto mais próximo do Rio, com estacionamento em conta. Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer a travessia de Flex Boat por aqui.</p>
+      </div>
+      <div class="crossing">
+        <div class="cross-card cross-card--dark reveal">
+          <svg class="route-diagram" viewBox="0 0 520 120" role="img" aria-label="Rota da travessia: Mangaratiba a Vila do Abraão em cerca de 35 minutos">
+    <text x="260" y="20" text-anchor="middle" font-family="'Space Mono',monospace" font-size="12" letter-spacing="1.5" fill="var(--amarelo)">≈ 35 MIN · RUMO 042°</text>
+    <line x1="60" y1="60" x2="460" y2="60" stroke="var(--branco-22)" stroke-width="2"/>
+    <line x1="60" y1="60" x2="460" y2="60" stroke="var(--amarelo)" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
+    <g transform="translate(255 60)"><path d="M-11 4 H11 L8 12 H-8 Z" fill="#fff"/><path d="M0 -11 L6 2 H-6 Z" fill="var(--amarelo)"/></g>
+    <g fill="var(--amarelo)"><circle cx="60" cy="60" r="8"/><circle cx="460" cy="60" r="8"/></g>
+    <g fill="none" stroke="var(--amarelo)" stroke-width="1.5" opacity=".45"><circle cx="60" cy="60" r="15"/><circle cx="460" cy="60" r="15"/></g>
+    <g font-family="'Space Mono',monospace" font-size="13" letter-spacing="1" fill="var(--branco)">
+      <text x="60" y="100" text-anchor="middle">MANGARATIBA</text>
+      <text x="460" y="100" text-anchor="middle">ABRAÃO</text>
     </g>
   </svg>
-          <div class="travessia__times">
-            <div><h4>Mangaratiba → Abraão</h4><ul><li>09h00</li><li>13h30</li><li>16h30</li></ul></div>
-            <div><h4>Abraão → Mangaratiba</h4><ul><li>10h00</li><li>14h00</li><li>17h15</li></ul></div>
+          <div class="cross-embark">
+            <div class="embark-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg><div><span class="k">Embarque</span><b>Centro de Mangaratiba</b><span class="d">No cais da barca — Av. Célio Lopes, 100</span></div></div>
+            <div class="embark-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.4"/><path d="M12 7.5V22"/><path d="M5 12H3a9 9 0 0 0 18 0h-2"/><path d="M8.5 10.5 12 12l3.5-1.5"/></svg><div><span class="k">Desembarque</span><b>Vila do Abraão · Ilha Grande</b><span class="d">Em frente ao cais da barca</span></div></div>
+            <div class="embark-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h18l-2.2 5.2a2 2 0 0 1-1.84 1.2H7.04a2 2 0 0 1-1.84-1.2L3 14Z"/><path d="M12 3v8M12 3l5 4-5 1.5L7 7l5-4Z"/></svg><div><span class="k">Embarcação · bilhetes</span><b>Flex Boat</b><span class="d">Ida · Volta · Ida e volta</span></div></div>
           </div>
         </div>
-        <div class="travessia__copy reveal" data-d="1">
-          <span class="eyebrow">A rota pioneira</span>
-          <h2>Do Rio à ilha, em cerca de 35 minutos.</h2>
-          <p class="lead">O ponto mais próximo do Rio, com estacionamento em conta. Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer essa travessia de Flex Boat.</p>
-          <ul class="spec-list">
-            <li><span class="k">Rota</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
-            <li><span class="k">Embarcação</span><span class="v">Flex Boat</span></li>
-            <li><span class="k">Tempo</span><span class="v">~35 minutos</span></li>
-            <li><span class="k">Bilhetes</span><span class="v">Ida · Volta · Ida e volta</span></li>
-          </ul>
-          <a class="btn" href="travessia.html">Detalhes e horários <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <div class="cross-card cross-card--horarios reveal" data-d="1">
+          <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Horários de saída</span>
+          <div class="horarios">
+            <div class="horarios__col">
+              <h4>Mangaratiba → Abraão</h4>
+              <ul><li class="time">09h00</li><li class="time">13h30</li><li class="time">16h30</li></ul>
+            </div>
+            <div class="horarios__col">
+              <h4>Abraão → Mangaratiba</h4>
+              <ul><li class="time">10h00</li><li class="time">14h00</li><li class="time">17h15</li></ul>
+            </div>
+          </div>
+          <p class="horarios__meta">Chegue ao cais com antecedência. Horários sujeitos a clima e maré. <b>Preço sob consulta.</b></p>
+          <div class="horarios__cta">
+            <a class="btn" href="https://wa.me/5524974031431?text=Ol%C3%A1%2C%20Vou%20de%20Barco!%20Quero%20informa%C3%A7%C3%B5es%20da%20travessia%20Mangaratiba%20%E2%87%84%20Ilha%20Grande%20(hor%C3%A1rios%2C%20bilhetes%20e%20valores)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10 10 0 0 0 2.1 13.5L1 22l8.7-1.07A10 10 0 1 0 19.05 4.9Zm-7.03 15.3a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.13.39.42-3.05-.2-.31a8.3 8.3 0 1 1 7.44 4.31Zm4.56-6.22c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.13.17 1.78 2.72 4.3 3.82.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg> Reservar no WhatsApp</a>
+            <a class="btn btn--outline" href="travessia.html">Ver detalhes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
         </div>
       </div>
     </div>

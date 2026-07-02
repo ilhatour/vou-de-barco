@@ -96,6 +96,22 @@ function compass() {
   </svg></div>`;
 }
 
+/* diagrama horizontal da travessia (Mangaratiba ⇄ Abraão · ≈35 min) */
+function routeDiagram() {
+  return `<svg class="route-diagram" viewBox="0 0 520 120" role="img" aria-label="Rota da travessia: Mangaratiba a Vila do Abraão em cerca de 35 minutos">
+    <text x="260" y="20" text-anchor="middle" font-family="'Space Mono',monospace" font-size="12" letter-spacing="1.5" fill="var(--amarelo)">≈ 35 MIN · RUMO 042°</text>
+    <line x1="60" y1="60" x2="460" y2="60" stroke="var(--branco-22)" stroke-width="2"/>
+    <line x1="60" y1="60" x2="460" y2="60" stroke="var(--amarelo)" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
+    <g transform="translate(255 60)"><path d="M-11 4 H11 L8 12 H-8 Z" fill="#fff"/><path d="M0 -11 L6 2 H-6 Z" fill="var(--amarelo)"/></g>
+    <g fill="var(--amarelo)"><circle cx="60" cy="60" r="8"/><circle cx="460" cy="60" r="8"/></g>
+    <g fill="none" stroke="var(--amarelo)" stroke-width="1.5" opacity=".45"><circle cx="60" cy="60" r="15"/><circle cx="460" cy="60" r="15"/></g>
+    <g font-family="'Space Mono',monospace" font-size="13" letter-spacing="1" fill="var(--branco)">
+      <text x="60" y="100" text-anchor="middle">MANGARATIBA</text>
+      <text x="460" y="100" text-anchor="middle">ABRAÃO</text>
+    </g>
+  </svg>`;
+}
+
 /* ============================================================
    MAPA DA ROTA (cartão da travessia)
    ============================================================ */
@@ -327,25 +343,37 @@ ${header({ active: "inicio" })}
   <!-- TRAVESSIA -->
   <section class="section section--nevoa" id="travessia">
     <div class="wrap">
-      <div class="travessia">
-        <div class="travessia__route reveal">
-          ${routeMap()}
-          <div class="travessia__times">
-            <div><h4>${esc(TRAV.horarios.ida.titulo)}</h4><ul>${TRAV.horarios.ida.saidas.map((s) => `<li>${s}</li>`).join("")}</ul></div>
-            <div><h4>${esc(TRAV.horarios.volta.titulo)}</h4><ul>${TRAV.horarios.volta.saidas.map((s) => `<li>${s}</li>`).join("")}</ul></div>
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--wp">A rota pioneira</span>
+        <h2 class="section-title">Do Rio à ilha, em cerca de 35 minutos.</h2>
+        <p class="lead">${esc(TRAV.slogan)} Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer a travessia de Flex Boat por aqui.</p>
+      </div>
+      <div class="crossing">
+        <div class="cross-card cross-card--dark reveal">
+          ${routeDiagram()}
+          <div class="cross-embark">
+            <div class="embark-item">${I.pin}<div><span class="k">Embarque</span><b>${esc(TRAV.embarque.local)}</b><span class="d">${esc(TRAV.embarque.detalhe)}</span></div></div>
+            <div class="embark-item">${I.anchor}<div><span class="k">Desembarque</span><b>${esc(TRAV.desembarque.local)}</b><span class="d">${esc(TRAV.desembarque.detalhe)}</span></div></div>
+            <div class="embark-item">${I.boat}<div><span class="k">Embarcação · bilhetes</span><b>${esc(TRAV.embarcacao)}</b><span class="d">${TRAV.bilhetes.join(" · ")}</span></div></div>
           </div>
         </div>
-        <div class="travessia__copy reveal" data-d="1">
-          <span class="eyebrow">A rota pioneira</span>
-          <h2>Do Rio à ilha, em cerca de 35 minutos.</h2>
-          <p class="lead">${esc(TRAV.slogan)} Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer essa travessia de Flex Boat.</p>
-          <ul class="spec-list">
-            <li><span class="k">Rota</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
-            <li><span class="k">Embarcação</span><span class="v">${esc(TRAV.embarcacao)}</span></li>
-            <li><span class="k">Tempo</span><span class="v">${esc(TRAV.tempo)}</span></li>
-            <li><span class="k">Bilhetes</span><span class="v">${TRAV.bilhetes.join(" · ")}</span></li>
-          </ul>
-          <a class="btn" href="travessia.html">Detalhes e horários ${I.arrow}</a>
+        <div class="cross-card cross-card--horarios reveal" data-d="1">
+          <span class="eyebrow">${I.clock} Horários de saída</span>
+          <div class="horarios">
+            <div class="horarios__col">
+              <h4>${esc(TRAV.horarios.ida.titulo)}</h4>
+              <ul>${TRAV.horarios.ida.saidas.map((s) => `<li class="time">${s}</li>`).join("")}</ul>
+            </div>
+            <div class="horarios__col">
+              <h4>${esc(TRAV.horarios.volta.titulo)}</h4>
+              <ul>${TRAV.horarios.volta.saidas.map((s) => `<li class="time">${s}</li>`).join("")}</ul>
+            </div>
+          </div>
+          <p class="horarios__meta">Chegue ao cais com antecedência. Horários sujeitos a clima e maré. <b>Preço sob consulta.</b></p>
+          <div class="horarios__cta">
+            <a class="btn" href="${waLink("Olá, Vou de Barco! Quero informações da travessia Mangaratiba ⇄ Ilha Grande (horários, bilhetes e valores).")}" target="_blank" rel="noopener">${I.whatsapp} Reservar no WhatsApp</a>
+            <a class="btn btn--outline" href="travessia.html">Ver detalhes ${I.arrow}</a>
+          </div>
         </div>
       </div>
     </div>

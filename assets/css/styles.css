@@ -251,20 +251,31 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 /* ============================================================
    TRAVESSIA — produto-herói
    ============================================================ */
-.travessia { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-.travessia__route {
-  background: var(--abismo); border-radius: var(--radius-lg);
-  padding: clamp(1.6rem, 3vw, 2.4rem); color: var(--branco);
-  box-shadow: var(--shadow); position: relative; overflow: hidden;
-}
-.route-map { width: 100%; height: auto; }
-.travessia__times { margin-top: 1.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--branco-14); border-radius: 12px; overflow: hidden; }
-.travessia__times > div { background: var(--abismo); padding: 1rem 1.1rem; }
-.travessia__times h4 { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .12em; text-transform: uppercase; color: var(--amarelo); font-weight: 400; margin-bottom: .6rem; }
-.travessia__times ul { display: flex; flex-wrap: wrap; gap: .4rem; }
-.travessia__times li { font-family: var(--mono); font-size: .9rem; color: var(--branco); background: var(--branco-14); padding: .25rem .55rem; border-radius: 6px; }
+.crossing { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.1rem, 2.4vw, 1.7rem); align-items: stretch; }
+.cross-card { border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.2rem); }
+.cross-card--dark { background: var(--abismo); color: var(--branco); box-shadow: var(--shadow); }
+.cross-card--horarios { background: var(--branco); border: 1px solid var(--bruma); display: flex; flex-direction: column; }
+.route-diagram { width: 100%; height: auto; margin-bottom: 1.7rem; }
+.cross-embark { display: grid; gap: 1.1rem; }
+.embark-item { display: flex; gap: .85rem; align-items: flex-start; }
+.embark-item > svg { width: 24px; height: 24px; color: var(--amarelo); flex: 0 0 auto; margin-top: .1rem; }
+.embark-item .k { font-family: var(--label); font-size: var(--t-data); letter-spacing: .12em; text-transform: uppercase; color: var(--branco-45); display: block; margin-bottom: .15rem; }
+.embark-item b { color: var(--branco); display: block; font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
+.embark-item .d { color: var(--branco-70); font-size: .92rem; }
+.cross-card--horarios .eyebrow { margin-bottom: 1.3rem; }
+.cross-card--horarios .eyebrow svg { width: 1.1em; height: 1.1em; }
+.horarios { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 1.8rem); }
+.horarios__col h4 { font-family: var(--label); font-size: var(--t-data); letter-spacing: .08em; text-transform: uppercase; color: var(--cobalto); font-weight: 700; margin-bottom: .7rem; }
+.horarios__col ul { display: flex; flex-direction: column; }
+.horarios__col .time { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--abismo); padding: .55rem 0; border-bottom: 1px solid var(--bruma); display: flex; align-items: center; gap: .55rem; }
+.horarios__col .time::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--amarelo); flex: 0 0 auto; }
+.horarios__col .time:last-child { border-bottom: 0; }
+.horarios__meta { margin: 1.3rem 0; font-size: .9rem; color: var(--abismo-60); line-height: 1.5; }
+.horarios__meta b { color: var(--abismo); }
+.horarios__cta { margin-top: auto; display: flex; flex-direction: column; gap: .6rem; }
+.horarios__cta .btn { width: 100%; justify-content: center; }
 
-.travessia__copy h2 { font-size: var(--t-h1); margin-bottom: 1.1rem; }
+.spec-list { margin: 1.6rem 0; border-top: 1px solid var(--bruma); }
 .spec-list { margin: 1.6rem 0; border-top: 1px solid var(--bruma); }
 .section--abismo .spec-list { border-top-color: var(--branco-14); }
 .spec-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--bruma); }
@@ -455,7 +466,7 @@ details.faq__item summary::-webkit-details-marker { display: none; }
    RESPONSIVO
    ============================================================ */
 @media (max-width: 980px) {
-  .travessia, .about, .contact, .detail { grid-template-columns: 1fr; }
+  .crossing, .about, .contact, .detail { grid-template-columns: 1fr; }
   .tours { grid-template-columns: repeat(2, 1fr); }
   .booking-card { position: static; }
   .footer__top { grid-template-columns: 1fr 1fr; }
