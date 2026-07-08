@@ -3,6 +3,7 @@
   "embarcacao": "Flex Boat",
   "tempo": "~35 minutos",
   "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
+  "img": "assets/img/travessia-flex-boat.jpg",
   "bilhetes": ["Ida", "Volta", "Ida e volta"],
   "embarque": { "local": "Centro de Mangaratiba", "detalhe": "No cais da barca — Av. Célio Lopes, 100" },
   "desembarque": { "local": "Vila do Abraão · Ilha Grande", "detalhe": "Em frente ao cais da barca" },

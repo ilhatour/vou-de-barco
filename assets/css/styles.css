@@ -256,6 +256,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .cross-card { border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.2rem); }
 .cross-card--dark { background: var(--abismo); color: var(--branco); box-shadow: var(--shadow); }
 .cross-card--horarios { background: var(--branco); border: 1px solid var(--bruma); display: flex; flex-direction: column; }
+.cross-card__photo { border-radius: 14px; overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 16 / 10; }
+.cross-card__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 .route-diagram { width: 100%; height: auto; margin-bottom: 1.7rem; }
 .cross-embark { display: grid; gap: 1.1rem; }
 .embark-item { display: flex; gap: .85rem; align-items: flex-start; }
@@ -420,8 +422,13 @@ details.faq__item summary::-webkit-details-marker { display: none; }
   background: radial-gradient(110% 100% at 80% 10%, #103a86 0%, var(--abismo) 60%);
   color: var(--branco); overflow: hidden;
 }
-.subhero__chart { position: absolute; inset: 0; opacity: .8; }
+.subhero__chart { position: absolute; inset: 0; opacity: .8; z-index: 1; }
 .subhero .wrap { position: relative; z-index: 2; }
+.subhero--photo { background: none; }
+.subhero__bg { position: absolute; inset: 0; z-index: 0; }
+.subhero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.subhero__bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(115deg, rgba(6,26,64,.93) 0%, rgba(26,91,180,.82) 52%, rgba(31,102,196,.58) 100%); }
 .crumbs { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .1em; color: var(--branco-45); margin-bottom: 1.4rem; }
 .crumbs a { color: var(--branco-70); }
 .crumbs a:hover { color: var(--amarelo); }

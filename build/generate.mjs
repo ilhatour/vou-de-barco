@@ -364,6 +364,7 @@ ${header({ active: "inicio" })}
       </div>
       <div class="crossing">
         <div class="cross-card cross-card--dark reveal">
+          <div class="cross-card__photo"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia para a Ilha Grande" loading="lazy" width="1080" height="1115"></div>
           ${routeDiagram()}
           <div class="cross-embark">
             <div class="embark-item">${I.pin}<div><span class="k">Embarque</span><b>${esc(TRAV.embarque.local)}</b><span class="d">${esc(TRAV.embarque.detalhe)}</span></div></div>
@@ -622,7 +623,8 @@ ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Travessia", url: 
 ${header({ active: "travessia", solid: true })}
 <main id="main">
 
-  <section class="subhero">
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia Mangaratiba ⇄ Ilha Grande" width="1080" height="1115"></div>
     <div class="subhero__chart">${chartBg(true)}</div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Travessia</nav>
