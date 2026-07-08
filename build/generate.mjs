@@ -644,20 +644,42 @@ ${header({ active: "travessia", solid: true })}
           <h2>A rota mais próxima do Rio</h2>
           <p>Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat — cerca de 35 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade. Fomos pioneiros nessa rota e hoje ela é referência na região.</p>
 
+          <h2>Como funciona</h2>
+          <div class="stops">
+            ${TRAV.como_funciona.map((s) => `<div class="stop stop--time"><span class="n">${esc(s.n)}</span><span class="name"><strong>${esc(s.titulo)}</strong> — ${esc(s.texto)}</span></div>`).join("\n            ")}
+          </div>
+
           <h2>Horários</h2>
           <div class="travessia__times" style="background:var(--bruma)">
             <div style="background:var(--nevoa)"><h4 style="color:var(--cobalto)">${esc(TRAV.horarios.ida.titulo)}</h4><ul>${TRAV.horarios.ida.saidas.map((s) => `<li style="background:var(--cobalto-12);color:var(--cobalto)">${s}</li>`).join("")}</ul></div>
             <div style="background:var(--nevoa)"><h4 style="color:var(--cobalto)">${esc(TRAV.horarios.volta.titulo)}</h4><ul>${TRAV.horarios.volta.saidas.map((s) => `<li style="background:var(--cobalto-12);color:var(--cobalto)">${s}</li>`).join("")}</ul></div>
           </div>
-          <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)">Recomendamos chegar ao cais com antecedência. Horários sujeitos às condições de clima e maré.</p>
+          <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)">Chegue ao cais cerca de 20 minutos antes do horário. Horários sujeitos às condições de clima e maré.</p>
 
-          <h2>Bilhetes e bagagem</h2>
-          <p>Você escolhe <strong>ida</strong>, <strong>volta</strong> ou <strong>ida e volta</strong>. A passagem inclui o transporte de bagagem padrão. Para grupos ou bagagem extra, fale com a gente pelo WhatsApp.</p>
+          <h2>O que levar</h2>
+          <ul class="included">
+            ${TRAV.o_que_levar.map((x) => `<li>${I.check}${esc(x)}</li>`).join("\n            ")}
+          </ul>
 
           <h2>Está incluso</h2>
           <ul class="included">
             ${TRAV.incluso.map((x) => `<li>${I.check}${esc(x)}</li>`).join("\n            ")}
           </ul>
+          <p class="detail__note"><strong>Não inclui:</strong> ${TRAV.nao_incluso.map((x) => esc(x)).join(" · ")}.</p>
+
+          <h2>Bilhetes e bagagem</h2>
+          <p>Você escolhe <strong>ida</strong>, <strong>volta</strong> ou <strong>ida e volta</strong>. Fechar ida e volta garante a sua vaga no retorno e simplifica a logística.</p>
+          <p>${esc(TRAV.bagagem)}</p>
+
+          <h2>Segurança a bordo</h2>
+          <ul class="strong-list">
+            ${TRAV.seguranca.map((x) => `<li>${I.shield}<span>${esc(x)}</span></li>`).join("\n            ")}
+          </ul>
+
+          <h2>Chuva e mar — o que esperar</h2>
+          <div class="tips">
+            ${TRAV.dicas.map((d) => `<div class="tip"><h4>${esc(d.titulo)}</h4><p>${esc(d.texto)}</p></div>`).join("\n            ")}
+          </div>
         </div>
 
         <aside class="booking-card">
