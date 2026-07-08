@@ -734,7 +734,6 @@ const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 write("index.html", buildIndex());
 write("travessia.html", buildTravessia());
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
-PASSEIOS.forEach((p, i) => write(p.img, placeholder(p, i)));
 write("favicon.svg", favicon);
 write("sitemap.xml", sitemap);
 write("robots.txt", robots);
