@@ -17,7 +17,7 @@ const TRAV = JSON.parse(read("data/travessia.json"));
 
 /* ---- Constantes da marca ---- */
 const WA = "5524974031431";
-const GA4 = ""; // ID do Google Analytics 4 (ex.: "G-XXXXXXXXXX"). Preencher quando o Miguel criar a propriedade.
+const GA4 = "G-5MZXPPJKSF"; // GA4 "Vou de Barco" (propriedade sob a conta Ilha Tour), fluxo web voudebarco.com.
 const SITE = "https://voudebarco.com";
 const IG = "https://instagram.com/voudebarco";
 const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
