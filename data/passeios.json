@@ -88,5 +88,23 @@
     "para_quem": "Ideal para quem já conhece os clássicos de Ilha Grande e quer explorar praias diferentes, lagoas e águas cristalinas. Combina com casais, grupos de amigos e fotógrafos.",
     "seo_title": "Passeio Ilha Tour 210° — Meros, Lagoa Verde e Araçatibinha | Vou de Barco",
     "seo_desc": "Roteiro autoral e exclusivo de dia inteiro por Ilha Grande: Praia dos Meros, Lagoa Verde e Araçatibinha. 10h às 17h. Reserve pelo WhatsApp."
+  },
+  {
+    "id": "gruta-do-acaia",
+    "nome": "Gruta do Acaiá",
+    "badge": "AVENTURA",
+    "slogan": "Um salão de pedra à beira-mar com água que parece brilhar, para quem já fez os clássicos.",
+    "duracao": "Dia inteiro (10h às 17h30)",
+    "embarcacao": "Lancha ou Speed Boat",
+    "saida": "Vila do Abraão",
+    "img": "assets/img/passeio-gruta-do-acaia.jpg",
+    "paradas": ["Lagoa Azul", "Lagoa Verde", "Gruta do Acaiá", "Saco do Céu", "Parada para almoço"],
+    "resumo": "Passeio de lancha até a Gruta do Acaiá, um salão de pedra à beira-mar com água azul-turquesa que parece brilhar. No caminho, Lagoa Azul, Lagoa Verde e Saco do Céu. Para quem já fez os clássicos e quer uma aventura com história para contar.",
+    "descricao": "A Gruta do Acaiá é um dos roteiros mais surpreendentes de Ilha Grande, pensado para quem já conhece os passeios tradicionais e quer viver algo diferente. O ponto alto é a entrada na gruta — um salão de pedra à beira-mar onde a água ganha um tom azul-turquesa que parece iluminar por dentro, um fenômeno raro e cinematográfico. No caminho, o passeio ainda reúne alguns dos cenários mais bonitos da ilha: a Lagoa Azul e a Lagoa Verde, ideais para snorkel e para nadar entre os peixinhos, e o tranquilo Saco do Céu. É um dia inteiro no mar, com paradas para banho, fotos e um almoço com calma numa praia com estrutura.",
+    "pontos_fortes": ["Entrada na Gruta do Acaiá, com a água azul que parece brilhar", "Roteiro fora do circuito comum, para quem já fez os clássicos", "Reúne Lagoa Azul, Lagoa Verde e Saco do Céu no mesmo dia", "Um dos passeios mais fotogênicos da ilha", "Dia inteiro no mar, com paradas de banho e snorkel", "Cooler com gelo e flutuadores a bordo"],
+    "cronograma": { "checkin": "10h00", "saida": "10h30", "desembarque": "17h30" },
+    "para_quem": "Ideal para quem já conhece os clássicos de Ilha Grande e quer um roteiro diferente e memorável. Indicado a partir de 10 anos. Por incluir a entrada na gruta, não é recomendado para quem tem claustrofobia.",
+    "seo_title": "Passeio Gruta do Acaiá — a gruta de água azul de Ilha Grande | Vou de Barco",
+    "seo_desc": "Passeio de lancha até a Gruta do Acaiá, com água azul-turquesa que parece brilhar, mais Lagoa Azul, Lagoa Verde e Saco do Céu. Dia inteiro. Reserve pelo WhatsApp."
   }
 ]
