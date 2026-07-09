@@ -6,7 +6,7 @@
   "img": "assets/img/travessia-flex-boat.jpg",
   "bilhetes": ["Ida", "Volta", "Ida e volta"],
   "embarque": { "local": "Centro de Mangaratiba", "detalhe": "No cais da barca — Av. Célio Lopes, 100" },
-  "desembarque": { "local": "Vila do Abraão · Ilha Grande", "detalhe": "Em frente ao cais da barca" },
+  "desembarque": { "local": "Vila do Abraão · Ilha Grande", "detalhe": "No Cais de Turismo, o cais principal da vila" },
   "horarios": {
     "ida": { "titulo": "Mangaratiba → Abraão", "saidas": ["09h00", "13h30", "16h30"] },
     "volta": { "titulo": "Abraão → Mangaratiba", "saidas": ["10h00", "14h00", "17h15"] }
