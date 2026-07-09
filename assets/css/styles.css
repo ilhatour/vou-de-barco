@@ -260,24 +260,13 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
    ============================================================ */
 .crossing { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.1rem, 2.4vw, 1.7rem); align-items: stretch; }
 .cross-card { border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.2rem); }
-.cross-card--dark { background: var(--abismo); color: var(--branco); box-shadow: var(--shadow); }
+.cross-card--dark { background: var(--abismo); color: var(--branco); box-shadow: var(--shadow);
+  display: grid; grid-template-columns: minmax(150px, 44%) 1fr; gap: clamp(1.1rem, 2.2vw, 1.7rem); align-items: stretch; }
+/* foto do Flex em retrato, ao lado das infos de embarque */
+.cross-photo { border-radius: 14px; overflow: hidden; min-height: 220px; }
+.cross-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
 .cross-card--horarios { background: var(--branco); border: 1px solid var(--bruma); display: flex; flex-direction: column; }
-.cross-card__photo { border-radius: 14px; overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 16 / 10; }
-.cross-card__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
-.route-diagram { width: 100%; height: auto; margin-bottom: 1.7rem; }
-/* mapa esquemático (continente → ilha) dentro do card escuro */
-.cross-map { width: 100%; height: auto; display: block; border-radius: 14px; margin-bottom: 1.6rem;
-  border: 1px solid var(--branco-14); }
-/* faixa com a foto do Flex Boat, largura total abaixo dos dois cards */
-.cross-banner { position: relative; margin-top: clamp(1.1rem, 2.4vw, 1.7rem); border-radius: var(--radius-lg);
-  overflow: hidden; box-shadow: var(--shadow); }
-.cross-banner img { width: 100%; height: clamp(200px, 26vw, 300px); object-fit: cover; object-position: center 52%; display: block; }
-.cross-banner figcaption { position: absolute; left: clamp(1rem, 2.5vw, 1.6rem); bottom: clamp(1rem, 2.5vw, 1.5rem);
-  display: inline-flex; align-items: center; gap: .5rem; font-family: var(--label); font-size: var(--t-data);
-  letter-spacing: .08em; color: var(--branco); background: rgba(6,26,64,.62); padding: .5rem .9rem; border-radius: 999px;
-  border: 1px solid var(--branco-22); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-.cross-banner figcaption svg { width: 1.05em; height: 1.05em; color: var(--amarelo); }
-.cross-embark { display: grid; gap: 1.1rem; }
+.cross-embark { display: grid; gap: 1.1rem; align-content: center; }
 .embark-item { display: flex; gap: .85rem; align-items: flex-start; }
 .embark-item > svg { width: 24px; height: 24px; color: var(--amarelo); flex: 0 0 auto; margin-top: .1rem; }
 .embark-item .k { font-family: var(--label); font-size: var(--t-data); letter-spacing: .12em; text-transform: uppercase; color: var(--branco-45); display: block; margin-bottom: .15rem; }
@@ -511,6 +500,8 @@ details.faq__item summary::-webkit-details-marker { display: none; }
    ============================================================ */
 @media (max-width: 980px) {
   .crossing, .about, .contact, .detail { grid-template-columns: 1fr; }
+  .cross-card--dark { grid-template-columns: 1fr; }
+  .cross-photo { min-height: 0; aspect-ratio: 4 / 3; }
   .tours { grid-template-columns: repeat(2, 1fr); }
   .booking-card { position: static; }
   .footer__top { grid-template-columns: 1fr 1fr; }
