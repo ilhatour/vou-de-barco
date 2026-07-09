@@ -1,7 +1,7 @@
 {
   "rota": "Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
   "embarcacao": "Flex Boat",
-  "tempo": "~35 minutos",
+  "tempo": "~40 minutos",
   "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
   "img": "assets/img/travessia-flex-boat.jpg",
   "bilhetes": ["Ida", "Volta", "Ida e volta"],
@@ -14,7 +14,7 @@
   "como_funciona": [
     { "n": "01", "titulo": "Chegue ao cais", "texto": "Vá ao cais de Mangaratiba com um documento com foto. Recomendamos chegar com antecedência, com calma." },
     { "n": "02", "titulo": "Embarque", "texto": "Apresente-se cerca de 20 minutos antes do horário e suba a bordo com a nossa equipe." },
-    { "n": "03", "titulo": "Travessia", "texto": "Cerca de 35 minutos de mar em Flex Boat, com coletes e suporte a bordo do início ao fim." },
+    { "n": "03", "titulo": "Travessia", "texto": "Cerca de 40 minutos de mar em Flex Boat, com coletes e suporte a bordo do início ao fim." },
     { "n": "04", "titulo": "Desembarque", "texto": "Chegada no cais da Vila do Abraão, bem no centro da vila — Ilha Grande começa aqui." }
   ],
   "incluso": [
@@ -47,5 +47,5 @@
     { "titulo": "E se o mar estiver agitado?", "texto": "Em alguns dias o mar fica mais movimentado (às vezes até com sol). É normal e seguro. Se você enjoa fácil, evite comer muito antes de embarcar." }
   ],
   "seo_title": "Travessia Mangaratiba ⇄ Ilha Grande em Flex Boat | Vou de Barco",
-  "seo_desc": "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão (Ilha Grande) em ~35 min. Como funciona, o que levar, horários e reserva pelo WhatsApp."
+  "seo_desc": "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão (Ilha Grande) em ~40 min. Como funciona, o que levar, horários e reserva pelo WhatsApp."
 }

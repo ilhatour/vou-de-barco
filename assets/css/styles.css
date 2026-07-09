@@ -194,6 +194,11 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .compass svg { width: 100%; height: 100%; display: block; }
 .hero__chart { position: absolute; inset: 0; z-index: 0; opacity: .9; }
 .hero__chart svg { width: 100%; height: 100%; }
+/* foto de praia no fundo do hero (com véu cobalto p/ leitura do texto) */
+.hero__bg { position: absolute; inset: 0; z-index: 0; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.hero__bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(6,26,64,.93) 0%, rgba(6,26,64,.74) 44%, rgba(16,58,134,.42) 100%); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; padding-block: clamp(2rem, 6vh, 5rem); }
 .hero__inner { max-width: 40rem; }
 .hero h1 {
@@ -426,7 +431,8 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .subhero .wrap { position: relative; z-index: 2; }
 .subhero--photo { background: none; }
 .subhero__bg { position: absolute; inset: 0; z-index: 0; }
-.subhero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 66%; }
+.subhero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.subhero--flex .subhero__bg img { object-position: center 62%; }
 .subhero__bg::after { content: ""; position: absolute; inset: 0;
   background: linear-gradient(115deg, rgba(6,26,64,.93) 0%, rgba(26,91,180,.82) 52%, rgba(31,102,196,.58) 100%); }
 .crumbs { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .1em; color: var(--branco-45); margin-bottom: 1.4rem; }

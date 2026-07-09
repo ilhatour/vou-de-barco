@@ -26,7 +26,7 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
    ÍCONES (inline SVG, currentColor)
    ============================================================ */
 const I = {
-  whatsapp: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10 10 0 0 0 2.1 13.5L1 22l8.7-1.07A10 10 0 1 0 19.05 4.9Zm-7.03 15.3a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.13.39.42-3.05-.2-.31a8.3 8.3 0 1 1 7.44 4.31Zm4.56-6.22c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.13.17 1.78 2.72 4.3 3.82.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>`,
+  whatsapp: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.78 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24Zm-4.53 4.4c-.21 0-.56.08-.85.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.66.75.24 1.44.21 1.98.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37-.31-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.31-.16-1.33-.49-2.53-1.56-.94-.83-1.57-1.86-1.75-2.17-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.11-.21.05-.39-.02-.55-.08-.16-.71-1.72-.98-2.35-.26-.61-.52-.53-.71-.54-.18-.01-.39-.01-.6-.01Z"/></svg>`,
   shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 7.7 8 9 4.6-1.3 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>`,
   anchor: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.4"/><path d="M12 7.5V22"/><path d="M5 12H3a9 9 0 0 0 18 0h-2"/><path d="M8.5 10.5 12 12l3.5-1.5"/></svg>`,
   heart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5.5a4.5 4.5 0 0 0-7 .9 4.5 4.5 0 0 0-7-.9C2.8 7.6 3 11 7 14.5l5 4.5 5-4.5c4-3.5 4.2-6.9 2-9Z"/></svg>`,
@@ -56,7 +56,7 @@ function chartBg(withRoute = true) {
     <g class="chart-labels" font-family="'Space Mono', monospace" fill="rgba(255,255,255,.55)" font-size="13" letter-spacing="1">
       <text x="120" y="500">MANGARATIBA</text>
       <text x="1230" y="108">ABRAÃO</text>
-      <text x="700" y="300" fill="var(--amarelo)" opacity=".85">35 MIN · FLEX BOAT</text>
+      <text x="700" y="300" fill="var(--amarelo)" opacity=".85">40 MIN · FLEX BOAT</text>
     </g>` : "";
   return `<svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <defs>
@@ -96,10 +96,10 @@ function compass() {
   </svg></div>`;
 }
 
-/* diagrama horizontal da travessia (Mangaratiba ⇄ Abraão · ≈35 min) */
+/* diagrama horizontal da travessia (Mangaratiba ⇄ Abraão · ≈40 min) */
 function routeDiagram() {
-  return `<svg class="route-diagram" viewBox="0 0 520 120" role="img" aria-label="Rota da travessia: Mangaratiba a Vila do Abraão em cerca de 35 minutos">
-    <text x="260" y="20" text-anchor="middle" font-family="'Space Mono',monospace" font-size="12" letter-spacing="1.5" fill="var(--amarelo)">≈ 35 MIN · RUMO 042°</text>
+  return `<svg class="route-diagram" viewBox="0 0 520 120" role="img" aria-label="Rota da travessia: Mangaratiba a Vila do Abraão em cerca de 40 minutos">
+    <text x="260" y="20" text-anchor="middle" font-family="'Space Mono',monospace" font-size="12" letter-spacing="1.5" fill="var(--amarelo)">≈ 40 MIN · RUMO 042°</text>
     <line x1="60" y1="60" x2="460" y2="60" stroke="var(--branco-22)" stroke-width="2"/>
     <line x1="60" y1="60" x2="460" y2="60" stroke="var(--amarelo)" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
     <g transform="translate(255 60)"><path d="M-11 4 H11 L8 12 H-8 Z" fill="#fff"/><path d="M0 -11 L6 2 H-6 Z" fill="var(--amarelo)"/></g>
@@ -136,7 +136,7 @@ function routeMap() {
       <text x="360" y="232">VILA DO ABRAÃO</text>
     </g>
     <g font-family="'Space Mono', monospace" font-size="12" fill="var(--amarelo)" letter-spacing="1">
-      <text x="232" y="135">~35 MIN</text>
+      <text x="232" y="135">~40 MIN</text>
     </g>
   </svg>`;
 }
@@ -260,7 +260,7 @@ function tourCard(p, prefix = "") {
 }
 
 const FAQ = [
-  ["Travessia", "Qual é a rota e quanto tempo dura?", "Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat. O trajeto leva cerca de 35 minutos. Mangaratiba é o ponto mais próximo do Rio de Janeiro."],
+  ["Travessia", "Qual é a rota e quanto tempo dura?", "Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat. O trajeto leva cerca de 40 minutos. Mangaratiba é o ponto mais próximo do Rio de Janeiro."],
   ["Travessia", "Quais são os horários?", "Saídas de Mangaratiba para Abraão: 09h00, 13h30 e 16h30. Saídas de Abraão para Mangaratiba: 10h00, 14h00 e 17h15. Recomendamos chegar ao cais com antecedência."],
   ["Travessia", "Posso comprar só ida, só volta ou ida e volta? E a bagagem?", "Você escolhe ida, volta ou ida e volta. A passagem inclui o transporte de bagagem padrão. Para grupos ou bagagem extra, fale com a gente pelo WhatsApp."],
   ["Passeio", "O que está incluso?", "Todos os passeios incluem água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim."],
@@ -314,7 +314,7 @@ function ldFaq() {
    ============================================================ */
 function buildIndex() {
   const heroMsg = "Olá, Vou de Barco! Quero reservar.";
-  return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat entre Mangaratiba e a Ilha Grande (~35 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
+  return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat entre Mangaratiba e a Ilha Grande (~40 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
 ${ldOrg()}
 ${ldFaq()}
 </head>
@@ -324,7 +324,7 @@ ${header({ active: "inicio" })}
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__chart">${chartBg(false)}</div>
+    <div class="hero__bg"><img src="assets/img/hero-praia.jpg" alt="Águas cristalinas de Ilha Grande, na Costa Verde" width="1080" height="1116" fetchpriority="high"></div>
     ${compass()}
     <div class="wrap">
       <div class="hero__inner">
@@ -339,7 +339,7 @@ ${header({ active: "inicio" })}
       </div>
     </div>
     <div class="hero__readout" aria-hidden="true">
-      ROTA PIONEIRA<br><b>MANGARATIBA → ABRAÃO</b><br>≈ 35 MIN · FLEX BOAT
+      ROTA PIONEIRA<br><b>MANGARATIBA → ABRAÃO</b><br>≈ 40 MIN · FLEX BOAT
     </div>
   </section>
 
@@ -359,7 +359,7 @@ ${header({ active: "inicio" })}
     <div class="wrap">
       <div class="section__head reveal">
         <span class="eyebrow eyebrow--wp">A rota pioneira</span>
-        <h2 class="section-title">Do Rio à ilha, em cerca de 35 minutos.</h2>
+        <h2 class="section-title">Do Rio à ilha, em cerca de 40 minutos.</h2>
         <p class="lead">${esc(TRAV.slogan)} Mangaratiba é o ponto mais próximo do Rio de Janeiro — e fomos os primeiros a fazer a travessia de Flex Boat por aqui.</p>
       </div>
       <div class="crossing">
@@ -525,8 +525,8 @@ ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios", url: S
 ${header({ active: "passeios", solid: true, prefix: "../" })}
 <main id="main">
 
-  <section class="subhero">
-    <div class="subhero__chart">${chartBg(false)}</div>
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="../${p.img}" alt="Passeio ${esc(p.nome)} — Ilha Grande" width="1080" height="1350"></div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../index.html#passeios">Passeios</a> · ${esc(p.nome)}</nav>
       <span class="eyebrow eyebrow--light">${esc(p.badge)} · Saída pela ${esc(p.saida)}</span>
@@ -613,7 +613,7 @@ function buildTravessia() {
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "Service", serviceType: "Travessia de barco (Flex Boat)",
     name: "Travessia Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
-    description: "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em cerca de 35 minutos.",
+    description: "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em cerca de 40 minutos.",
     provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
     areaServed: [{ "@type": "Place", name: "Mangaratiba" }, { "@type": "Place", name: "Ilha Grande" }],
   })}</script>
@@ -623,9 +623,8 @@ ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Travessia", url: 
 ${header({ active: "travessia", solid: true })}
 <main id="main">
 
-  <section class="subhero subhero--photo">
+  <section class="subhero subhero--photo subhero--flex">
     <div class="subhero__bg"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia Mangaratiba ⇄ Ilha Grande" width="1080" height="1115"></div>
-    <div class="subhero__chart">${chartBg(true)}</div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Travessia</nav>
       <span class="eyebrow eyebrow--light">Rota pioneira · Flex Boat</span>
@@ -644,7 +643,7 @@ ${header({ active: "travessia", solid: true })}
       <div class="detail">
         <div class="detail__main">
           <h2>A rota mais próxima do Rio</h2>
-          <p>Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat — cerca de 35 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade. Fomos pioneiros nessa rota e hoje ela é referência na região.</p>
+          <p>Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat — cerca de 40 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade. Fomos pioneiros nessa rota e hoje ela é referência na região.</p>
 
           <h2>Como funciona</h2>
           <div class="stops">
