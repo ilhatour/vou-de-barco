@@ -112,6 +112,41 @@ function routeDiagram() {
   </svg>`;
 }
 
+/* mapa esquemático: continente (Mangaratiba) → Ilha Grande (Abraão) */
+function islandMap() {
+  return `<svg class="cross-map" viewBox="0 0 540 320" role="img" aria-label="Mapa da travessia: do continente, em Mangaratiba, até a Vila do Abraão, na Ilha Grande">
+    <defs>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2350"/><stop offset="1" stop-color="#061631"/></linearGradient>
+    </defs>
+    <rect width="540" height="320" fill="url(#sea)"/>
+    <g stroke="rgba(220,230,236,.06)" fill="none" stroke-width="1">
+      <path d="M0 148 C 120 130 260 168 400 150 S 540 158 540 158"/>
+      <path d="M0 208 C 140 193 280 228 420 208 S 540 216 540 216"/>
+    </g>
+    <!-- continente (Costa Verde) -->
+    <path d="M-10 -10 H550 V64 C 470 70 432 92 360 88 C 300 85 278 62 210 70 C 150 77 120 94 60 88 C 20 84 -10 90 -10 90 Z"
+      fill="#173a6b" stroke="rgba(220,230,236,.45)" stroke-width="1.5"/>
+    <text x="400" y="34" text-anchor="middle" font-family="'Space Mono',monospace" font-size="10.5" letter-spacing="1.5" fill="rgba(220,230,236,.42)">CONTINENTE · COSTA VERDE</text>
+    <!-- Ilha Grande -->
+    <path d="M150 208 C 118 182 182 156 250 162 C 300 166 300 149 352 158 C 422 170 452 198 430 238 C 412 272 350 289 280 285 C 205 281 130 262 129 232 C 128 220 138 217 150 208 Z"
+      fill="#1c4a86" stroke="rgba(220,230,236,.5)" stroke-width="1.5"/>
+    <text x="292" y="243" text-anchor="middle" font-family="'Space Mono',monospace" font-size="15" letter-spacing="2.5" fill="rgba(238,241,244,.6)">ILHA GRANDE</text>
+    <circle cx="474" cy="120" r="5" fill="#173a6b" stroke="rgba(220,230,236,.3)"/>
+    <circle cx="92" cy="152" r="4" fill="#173a6b" stroke="rgba(220,230,236,.3)"/>
+    <!-- rota -->
+    <path d="M170 76 C 210 108 252 132 292 160" fill="none" stroke="var(--amarelo)" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <g transform="translate(232 119) rotate(37)"><path d="M-9 4 H9 L6 11 H-6 Z" fill="#fff"/><path d="M0 -10 L5 2 H-5 Z" fill="var(--amarelo)"/></g>
+    <g transform="translate(170 76)"><circle r="6.5" fill="var(--amarelo)"/><circle r="12" fill="none" stroke="var(--amarelo)" stroke-opacity=".4" stroke-width="1.5"/></g>
+    <g transform="translate(292 160)"><circle r="6.5" fill="var(--amarelo)"/><circle r="12" fill="none" stroke="var(--amarelo)" stroke-opacity=".4" stroke-width="1.5"/></g>
+    <g font-family="'Space Mono',monospace" font-size="12.5" letter-spacing="1" fill="var(--branco)">
+      <text x="170" y="60" text-anchor="middle">MANGARATIBA</text>
+      <text x="300" y="150" text-anchor="middle">VILA DO ABRAÃO</text>
+    </g>
+    <text x="262" y="112" font-family="'Space Mono',monospace" font-size="11.5" fill="var(--amarelo)" transform="rotate(37 262 112)">≈ 40 MIN</text>
+    <g transform="translate(508 288)"><path d="M0 -12 L4 4 L0 0 L-4 4 Z" fill="var(--amarelo)"/><text x="0" y="17" text-anchor="middle" font-family="'Space Mono',monospace" font-size="10" fill="rgba(220,230,236,.5)">N</text></g>
+  </svg>`;
+}
+
 /* ============================================================
    MAPA DA ROTA (cartão da travessia)
    ============================================================ */
@@ -364,8 +399,7 @@ ${header({ active: "inicio" })}
       </div>
       <div class="crossing">
         <div class="cross-card cross-card--dark reveal">
-          <div class="cross-card__photo"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia para a Ilha Grande" loading="lazy" width="1080" height="1115"></div>
-          ${routeDiagram()}
+          ${islandMap()}
           <div class="cross-embark">
             <div class="embark-item">${I.pin}<div><span class="k">Embarque</span><b>${esc(TRAV.embarque.local)}</b><span class="d">${esc(TRAV.embarque.detalhe)}</span></div></div>
             <div class="embark-item">${I.anchor}<div><span class="k">Desembarque</span><b>${esc(TRAV.desembarque.local)}</b><span class="d">${esc(TRAV.desembarque.detalhe)}</span></div></div>
@@ -391,6 +425,10 @@ ${header({ active: "inicio" })}
           </div>
         </div>
       </div>
+      <figure class="cross-banner reveal">
+        <img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia para a Ilha Grande" loading="lazy" width="1080" height="1115">
+        <figcaption>${I.boat}<span>Flex Boat próprio · Mangaratiba ⇄ Vila do Abraão</span></figcaption>
+      </figure>
     </div>
   </section>
 
