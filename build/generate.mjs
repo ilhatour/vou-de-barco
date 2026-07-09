@@ -543,7 +543,11 @@ function buildPasseio(p) {
     touristType: p.para_quem, provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
     image: SITE + "/" + p.img, itinerary: { "@type": "ItemList", itemListElement: p.paradas.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s })) },
   })}</script>
-${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios", url: SITE + "/#passeios" }, { name: p.nome, url: `${SITE}/passeios/${p.id}.html` }])}
+${p.faq ? `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: p.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+` : ""}${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios", url: SITE + "/#passeios" }, { name: p.nome, url: `${SITE}/passeios/${p.id}.html` }])}
 </head>
 <body>
 ${header({ active: "passeios", solid: true, prefix: "../" })}
@@ -592,7 +596,12 @@ ${p.pontos_fortes ? `
 
           <h2>Para quem é</h2>
           <p>${esc(p.para_quem)}</p>
-        </div>
+${p.faq ? `
+          <h2>Perguntas frequentes</h2>
+          <div class="faq">
+            ${p.faq.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+` : ""}        </div>
 
         <aside class="booking-card">
           <h3>Reservar este passeio</h3>
@@ -639,7 +648,12 @@ function buildTravessia() {
     name: "Travessia Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
     description: "Travessia rápida de Flex Boat entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em cerca de 40 minutos.",
     provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
-    areaServed: [{ "@type": "Place", name: "Mangaratiba" }, { "@type": "Place", name: "Ilha Grande" }],
+    areaServed: [{ "@type": "Place", name: "Mangaratiba" }, { "@type": "Place", name: "Ilha Grande" }, { "@type": "Place", name: "Vila do Abraão" }, { "@type": "Place", name: "Rio de Janeiro" }],
+    image: SITE + "/" + TRAV.img, url: SITE + "/travessia.html",
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: TRAV.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
   })}</script>
 ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Travessia", url: SITE + "/travessia.html" }])}
 </head>
@@ -667,7 +681,7 @@ ${header({ active: "travessia", solid: true })}
       <div class="detail">
         <div class="detail__main">
           <h2>A rota mais próxima do Rio</h2>
-          <p>Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat — cerca de 40 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade. Fomos pioneiros nessa rota e hoje ela é referência na região.</p>
+          <p>Fazemos a travessia entre o <strong>cais de Mangaratiba</strong> e a Vila do Abraão, na Ilha Grande, em <strong>Flex Boat</strong> — cerca de 40 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade de carro. Fomos pioneiros nessa rota e hoje ela é referência na região. Veja também <a href="como-chegar.html">como chegar à Ilha Grande</a> passo a passo.</p>
 
           <h2>Como funciona</h2>
           <div class="stops">
@@ -704,6 +718,11 @@ ${header({ active: "travessia", solid: true })}
           <h2>Chuva e mar — o que esperar</h2>
           <div class="tips">
             ${TRAV.dicas.map((d) => `<div class="tip"><h4>${esc(d.titulo)}</h4><p>${esc(d.texto)}</p></div>`).join("\n            ")}
+          </div>
+
+          <h2>Perguntas frequentes sobre a travessia</h2>
+          <div class="faq">
+            ${TRAV.faq.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
           </div>
         </div>
 

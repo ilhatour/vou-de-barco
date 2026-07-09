@@ -51,7 +51,15 @@
     "cronograma": { "checkin": "10h00", "saida": "10h30", "desembarque": "17h30" },
     "para_quem": "Ideal para quem busca paisagens deslumbrantes, praias de cartão-postal e águas cristalinas para banho, fotos e snorkel. Combina muito com casais, grupos de amigos e fotógrafos.",
     "seo_title": "Passeio Ilhas Paradisíacas — Dentista e Botinas | Vou de Barco",
-    "seo_desc": "As ilhas mais desejadas de Angra: Praia do Dentista, Cataguases, Botinas e Piedade. Passeio de 7h pela Costa Verde com águas cristalinas. Reserve no WhatsApp."
+    "seo_desc": "As ilhas mais desejadas de Angra: Praia do Dentista, Cataguases, Botinas e Piedade. Passeio de 7h pela Costa Verde com águas cristalinas. Reserve no WhatsApp.",
+    "faq": [
+      ["Quanto tempo dura o passeio Ilhas Paradisíacas?", "Cerca de 7 horas: saída pela Vila do Abraão por volta das 10h30 e retorno previsto para as 17h30."],
+      ["Quais praias e ilhas o passeio visita?", "Praia do Dentista, Ilha de Cataguases, Ilha de Piedade e as Ilhas Botinas — algumas das paisagens mais bonitas de Angra dos Reis, com águas cristalinas para banho e snorkel."],
+      ["Onde fica a Praia do Dentista?", "Fica na Ilha da Gipóia, em Angra dos Reis, e é uma das praias mais famosas do Brasil pela areia branquinha e água transparente. É uma das paradas do roteiro."],
+      ["O que está incluso no passeio?", "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim. O almoço não está incluso (parada em praia com estrutura)."],
+      ["O passeio é bom para famílias e crianças?", "Sim. É um roteiro leve, com paradas de banho em águas calmas e cristalinas — ótimo para famílias, casais e grupos de amigos."],
+      ["Preciso saber nadar?", "Não. Todos os passeios têm coletes salva-vidas a bordo e flutuadores para você aproveitar as paradas com segurança, mesmo sem saber nadar."]
+    ]
   },
   {
     "id": "volta-na-ilha",
