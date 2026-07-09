@@ -222,6 +222,7 @@ function footer({ prefix = "" } = {}) {
       </div>
       <div class="footer__col">
         <h5>Navegue</h5>
+        <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
         <a href="${prefix}index.html#passeios">Passeios</a>
         <a href="${prefix}travessia.html">Travessia</a>
@@ -681,7 +682,7 @@ ${header({ active: "travessia", solid: true })}
       <div class="detail">
         <div class="detail__main">
           <h2>A rota mais próxima do Rio</h2>
-          <p>Fazemos a travessia entre o <strong>cais de Mangaratiba</strong> e a Vila do Abraão, na Ilha Grande, em <strong>Flex Boat</strong> — cerca de 40 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade de carro. Fomos pioneiros nessa rota e hoje ela é referência na região. Veja também <a href="como-chegar.html">como chegar à Ilha Grande</a> passo a passo.</p>
+          <p>Fazemos a travessia entre o <strong>cais de Mangaratiba</strong> e a Vila do Abraão, na Ilha Grande, em <strong>Flex Boat</strong> — cerca de 40 minutos de mar. Mangaratiba é o ponto mais próximo do Rio de Janeiro e tem estacionamento em conta, o que torna a viagem mais rápida e tranquila para quem vem da cidade de carro. Fomos pioneiros nessa rota e hoje ela é referência na região. Saiba mais sobre <a href="mangaratiba.html">Mangaratiba, a porta de entrada da Ilha Grande</a>, e veja <a href="como-chegar.html">como chegar</a> passo a passo.</p>
 
           <h2>Como funciona</h2>
           <div class="stops">
@@ -877,6 +878,113 @@ ${scripts()}
 }
 
 /* ============================================================
+   PÁGINA: MANGARATIBA (cluster de turismo / travessia)
+   ============================================================ */
+const MANGA_FAQ = [
+  ["Como ir de Mangaratiba para a Ilha Grande?", "A partir do cais de Mangaratiba você faz a travessia de barco até a Vila do Abraão, na Ilha Grande. Fazemos essa travessia em Flex Boat, em cerca de 40 minutos. É o trajeto mais curto para quem vem do Rio de Janeiro."],
+  ["Onde fica o cais de Mangaratiba?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 100. É o cais central da cidade, de onde saem as embarcações para a Ilha Grande."],
+  ["Quanto tempo de Mangaratiba até a Ilha Grande?", "Cerca de 40 minutos de Flex Boat entre Mangaratiba e a Vila do Abraão, com desembarque no Cais de Turismo, no centro da vila."],
+  ["Tem estacionamento em Mangaratiba?", "Sim, há estacionamento próximo ao cais, em conta. É um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro e quer deixar o veículo em segurança."],
+  ["Por que sair de Mangaratiba e não de Angra ou Conceição de Jacareí?", "Mangaratiba é o ponto de travessia mais próximo do Rio de Janeiro — menos estrada, chegada mais rápida e estacionamento em conta. Por isso é a rota preferida de quem vem da capital."],
+  ["Quanto custa a travessia de Mangaratiba para a Ilha Grande?", "O valor é sob consulta e varia conforme o trecho (ida, volta ou ida e volta) e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço na hora."],
+];
+function buildMangaratiba() {
+  const msg = "Olá, Vou de Barco! Quero informações da travessia de Mangaratiba para a Ilha Grande.";
+  const title = "Mangaratiba ⇄ Ilha Grande: travessia, cais e como chegar | Vou de Barco";
+  const desc = "Mangaratiba é a porta de entrada mais próxima do Rio para a Ilha Grande. Veja como chegar, o cais de embarque, estacionamento e a travessia de Flex Boat até a Vila do Abraão (~40 min).";
+  return `${head({ title, desc, canonical: `${SITE}/mangaratiba.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: MANGA_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Mangaratiba", url: SITE + "/mangaratiba.html" }])}
+</head>
+<body>
+${header({ active: "mangaratiba", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo subhero--flex">
+    <div class="subhero__bg"><img src="${TRAV.img}" alt="Baía de Mangaratiba, ponto de partida da travessia para a Ilha Grande" width="1080" height="1115"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Mangaratiba</nav>
+      <span class="eyebrow eyebrow--light">Costa Verde · Rio de Janeiro</span>
+      <h1>Mangaratiba ⇄ Ilha Grande</h1>
+      <p class="subhero__slogan">A porta de entrada mais próxima do Rio para a Ilha Grande — e onde a sua travessia começa.</p>
+      <div class="subhero__meta">
+        <span class="chip">${I.clock}~40 min de travessia</span>
+        <span class="chip">${esc(TRAV.embarcacao)}</span>
+        <span class="chip">${I.pin}Cais de Mangaratiba</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail__main">
+          <h2>Por que Mangaratiba é o melhor caminho para a Ilha Grande</h2>
+          <p>Mangaratiba é um município do litoral sul do Rio de Janeiro, na Costa Verde, e o <strong>ponto de partida mais próximo da capital</strong> para a Ilha Grande. Quem vem do Rio chega mais rápido, encara menos estrada e ainda encontra <strong>estacionamento em conta</strong> perto do cais. É de lá que sai a nossa travessia de Flex Boat até a <strong>Vila do Abraão</strong>, o principal povoado da ilha.</p>
+          <p>Boa parte de quem pesquisa <strong>turismo em Mangaratiba</strong> está, na verdade, a caminho da Ilha Grande — e é justamente essa conexão, rápida e segura, que a Vou de Barco faz todos os dias.</p>
+
+          <h2>Como chegar a Mangaratiba</h2>
+          <p>Saindo do Rio de Janeiro, o acesso é pela Rio-Santos (BR-101), cerca de 2h a 2h30 de carro ou ônibus até o Centro de Mangaratiba. Veja o guia completo de <a href="como-chegar.html">como chegar à Ilha Grande</a> passo a passo.</p>
+
+          <h2>O cais de Mangaratiba: onde embarcar</h2>
+          <p>O embarque é no <strong>cais da barca, no Centro de Mangaratiba — Av. Célio Lopes, 100</strong>. É o cais central da cidade, com boa infraestrutura e estacionamento próximo. Chegue cerca de 20 minutos antes do horário da sua travessia.</p>
+
+          <h2>A travessia de Mangaratiba para a Ilha Grande</h2>
+          <p>Fazemos a travessia em <strong>Flex Boat</strong> entre Mangaratiba e a Vila do Abraão em cerca de <strong>40 minutos</strong>, com coletes e suporte da nossa equipe a bordo. Você escolhe ida, volta ou ida e volta.</p>
+          <div class="travessia__times" style="background:var(--bruma)">
+            <div style="background:var(--nevoa)"><h4 style="color:var(--cobalto)">${esc(TRAV.horarios.ida.titulo)}</h4><ul>${TRAV.horarios.ida.saidas.map((s) => `<li style="background:var(--cobalto-12);color:var(--cobalto)">${s}</li>`).join("")}</ul></div>
+            <div style="background:var(--nevoa)"><h4 style="color:var(--cobalto)">${esc(TRAV.horarios.volta.titulo)}</h4><ul>${TRAV.horarios.volta.saidas.map((s) => `<li style="background:var(--cobalto-12);color:var(--cobalto)">${s}</li>`).join("")}</ul></div>
+          </div>
+          <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)"><a href="travessia.html">Ver todos os detalhes da travessia →</a></p>
+
+          <h2>O que fazer depois de chegar à Ilha Grande</h2>
+          <p>Da Vila do Abraão saem os passeios de barco pelos cenários mais bonitos da região: Lagoa Azul, Lagoa Verde, Praia dos Meros, Aventureiro, a Gruta do Acaiá e as ilhas paradisíacas de Angra. Conheça a ilha pelo mar com a gente.</p>
+
+          <h2>Perguntas frequentes sobre Mangaratiba</h2>
+          <div class="faq">
+            ${MANGA_FAQ.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+        </div>
+
+        <aside class="booking-card">
+          <h3>Travessia de Mangaratiba</h3>
+          <p class="price-note">Preço sob consulta</p>
+          <ul class="spec-list">
+            <li><span class="k">Rota</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
+            <li><span class="k">Embarcação</span><span class="v">${esc(TRAV.embarcacao)}</span></li>
+            <li><span class="k">Tempo</span><span class="v">${esc(TRAV.tempo)}</span></li>
+            <li><span class="k">Embarque</span><span class="v">Av. Célio Lopes, 100</span></li>
+          </ul>
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Reservar no WhatsApp</a>
+          <a class="back" href="travessia.html">${I.arrow} Ver a travessia</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Da ilha para o mar</span><h2 class="section-title">Passeios saindo da Ilha Grande</h2></div>
+      <div class="tours">
+        ${PASSEIOS.slice(0, 3).map((x) => tourCard(x)).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+/* ============================================================
    PLACEHOLDERS DE IMAGEM (SVG carta náutica) — até as fotos reais
    ============================================================ */
 function placeholder(p, i) {
@@ -905,7 +1013,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/como-chegar.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -915,6 +1023,7 @@ const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 write("index.html", buildIndex());
 write("travessia.html", buildTravessia());
 write("como-chegar.html", buildComoChegar());
+write("mangaratiba.html", buildMangaratiba());
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
 write("favicon.svg", favicon);
 write("sitemap.xml", sitemap);
