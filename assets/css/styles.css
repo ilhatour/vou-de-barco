@@ -401,6 +401,10 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--branco-14); }
 .footer__brand .brand { color: var(--branco); margin-bottom: 1rem; }
 .footer__brand p { max-width: 36ch; font-size: .95rem; }
+.footer__nap { font-style: normal; margin-top: 1rem; font-size: .9rem; color: var(--branco-70); line-height: 2.1; }
+.footer__nap svg { width: 1em; height: 1em; color: var(--amarelo); vertical-align: -.12em; margin-right: .45rem; }
+.footer__nap a { color: var(--branco-70); }
+.footer__nap a:hover { color: var(--amarelo); }
 .footer__col h5 { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .12em; text-transform: uppercase; color: var(--amarelo); font-weight: 400; margin-bottom: 1rem; }
 .footer__col a { display: block; color: var(--branco-70); padding: .3rem 0; font-size: .95rem; }
 .footer__col a:hover { color: var(--branco); }

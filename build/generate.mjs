@@ -17,6 +17,7 @@ const TRAV = JSON.parse(read("data/travessia.json"));
 
 /* ---- Constantes da marca ---- */
 const WA = "5524974031431";
+const GA4 = ""; // ID do Google Analytics 4 (ex.: "G-XXXXXXXXXX"). Preencher quando o Miguel criar a propriedade.
 const SITE = "https://voudebarco.com";
 const IG = "https://instagram.com/voudebarco";
 const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
@@ -176,7 +177,9 @@ function head({ title, desc, canonical, type = "website" }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">`;
+<link rel="stylesheet" href="/assets/css/styles.css">${GA4 ? `
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4}');</script>` : ""}`;
 }
 
 function header({ active = "", solid = false, prefix = "" } = {}) {
@@ -211,6 +214,10 @@ function footer({ prefix = "" } = {}) {
       <div class="footer__brand">
         <a class="brand" href="${prefix}index.html">${I.mark}<span>Vou de Barco</span></a>
         <p>Travessia e passeios de barco em Ilha Grande e Mangaratiba. Frota e tripulação próprias, segurança em primeiro lugar.</p>
+        <address class="footer__nap">
+          ${I.pin}<span>Av. Célio Lopes, 100 — Centro, Mangaratiba/RJ</span><br>
+          ${I.whatsapp}<a href="${waLink("Olá, Vou de Barco!")}" target="_blank" rel="noopener">(24) 97403-1431</a>
+        </address>
       </div>
       <div class="footer__col">
         <h5>Navegue</h5>
@@ -294,6 +301,21 @@ function ldOrg() {
       { "@type": "Place", name: "Agência Mangaratiba", address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 } },
       { "@type": "Place", name: "Agência Vila do Abraão", address: { "@type": "PostalAddress", streetAddress: "Rua da Praia, s/n — em frente ao cais da barca", addressLocality: "Vila do Abraão, Ilha Grande", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -23.1385, longitude: -44.1717 } },
     ],
+    slogan: "Ilha Grande começa aqui.",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog", name: "Travessia e passeios de barco em Ilha Grande",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Travessia Mangaratiba ⇄ Ilha Grande (Flex Boat)", url: SITE + "/travessia.html" } },
+        ...PASSEIOS.map((p) => ({ "@type": "Offer", itemOffered: { "@type": "TouristTrip", name: `Passeio ${p.nome}`, url: `${SITE}/passeios/${p.id}.html` } })),
+      ],
+    },
+  })}</script>`;
+}
+function ldWebsite() {
+  return `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website",
+    name: "Vou de Barco", url: SITE, inLanguage: "pt-BR",
+    publisher: { "@id": SITE + "/#business" },
   })}</script>`;
 }
 function ldBreadcrumb(items) {
@@ -316,6 +338,7 @@ function buildIndex() {
   const heroMsg = "Olá, Vou de Barco! Quero reservar.";
   return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat entre Mangaratiba e a Ilha Grande (~40 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
 ${ldOrg()}
+${ldWebsite()}
 ${ldFaq()}
 </head>
 <body>
