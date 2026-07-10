@@ -426,8 +426,8 @@ ${header({ active: "inicio" })}
     <div class="wrap">
       <div class="section__head">
         <span class="eyebrow">Roteiros · Costa Verde</span>
-        <h2 class="section-title">Cinco rumos para conhecer o melhor da ilha.</h2>
-        <p class="lead">Cada passeio inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão. Preços sob consulta.</p>
+        <h2 class="section-title">Passeios de barco pelos melhores cantos da ilha.</h2>
+        <p class="lead">Seis roteiros de <strong>passeio de barco e de lancha em Ilha Grande</strong> e Angra. Cada um inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão. Preços sob consulta.</p>
       </div>
       <div class="tours">
         ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
@@ -578,6 +578,7 @@ ${header({ active: "passeios", solid: true, prefix: "../" })}
     <div class="wrap">
       <div class="detail">
         <div class="detail__main">
+          <p class="lead">Passeio de barco e de lancha em Ilha Grande, com saída pela ${esc(p.saida)} · ${esc(p.duracao)}.</p>
           <h2>Sobre o passeio</h2>
           <p>${esc(p.descricao || p.resumo)}</p>
 ${p.pontos_fortes ? `
@@ -930,6 +931,7 @@ ${header({ active: "mangaratiba", solid: true })}
           <h2>Por que Mangaratiba é o melhor caminho para a Ilha Grande</h2>
           <p>Mangaratiba é um município do litoral sul do Rio de Janeiro, na Costa Verde, e o <strong>ponto de partida mais próximo da capital</strong> para a Ilha Grande. Quem vem do Rio chega mais rápido, encara menos estrada e ainda encontra <strong>estacionamento em conta</strong> perto do cais. É de lá que sai a nossa travessia de Flex Boat até a <strong>Vila do Abraão</strong>, o principal povoado da ilha.</p>
           <p>Boa parte de quem pesquisa <strong>turismo em Mangaratiba</strong> está, na verdade, a caminho da Ilha Grande — e é justamente essa conexão, rápida e segura, que a Vou de Barco faz todos os dias.</p>
+          <p>Procurando a <strong>barca para a Ilha Grande</strong>? A travessia de Flex Boat é a alternativa mais rápida: enquanto a barca tradicional pode levar mais de uma hora, o nosso Flex Boat faz o trajeto Mangaratiba ⇄ Vila do Abraão em cerca de 40 minutos, com horários ao longo do dia.</p>
 
           <h2>Como chegar a Mangaratiba</h2>
           <p>Saindo do Rio de Janeiro, o acesso é pela Rio-Santos (BR-101), cerca de 2h a 2h30 de carro ou ônibus até o Centro de Mangaratiba. Veja o guia completo de <a href="como-chegar.html">como chegar à Ilha Grande</a> passo a passo.</p>
