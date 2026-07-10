@@ -60,6 +60,23 @@
     });
   })();
 
+  /* ---- Botões flutuantes: descem após 2s com a tela parada ---- */
+  (function () {
+    var floatEl = document.querySelector("[data-float]");
+    if (!floatEl) return;
+    var timer;
+    var hide = function () { floatEl.classList.add("is-idle"); };
+    var wake = function () {
+      floatEl.classList.remove("is-idle");
+      clearTimeout(timer);
+      timer = setTimeout(hide, 2000);
+    };
+    ["scroll", "mousemove", "touchstart", "keydown", "pointerdown", "wheel"].forEach(function (ev) {
+      window.addEventListener(ev, wake, { passive: true });
+    });
+    wake(); // inicia o contador de 2s
+  })();
+
   /* ---- Formulário de contato → WhatsApp ---- */
   var form = document.querySelector("[data-wa-form]");
   if (form) {

@@ -205,8 +205,10 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
 }
 
 function waFloat() {
-  return `<a class="wa-float" href="${waLink("Olá, Vou de Barco! Quero reservar.")}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    ${I.whatsapp}<span class="label">Reservar no WhatsApp</span></a>`;
+  return `<div class="float-social" data-float>
+    <a class="float-btn float-btn--wa" href="${waLink("Olá, Vou de Barco! Quero reservar.")}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">${I.whatsapp}</a>
+    <a class="float-btn float-btn--ig" href="${IG}" target="_blank" rel="noopener" aria-label="Instagram da Vou de Barco">${I.instagram}</a>
+  </div>`;
 }
 
 function footer({ prefix = "" } = {}) {
@@ -366,8 +368,8 @@ ${header({ active: "inicio" })}
           <a class="btn btn--ghost" href="#travessia">Ver travessia</a>
           <a class="btn btn--ghost" href="#passeios">Ver passeios</a>
         </div>
-        <a class="hero__reviews" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas com 39 avaliações no Google">
-          <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>· 39 avaliações no Google</span>
+        <a class="hero__reviews" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas no Google">
+          <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>no Google</span>
         </a>
       </div>
     </div>
@@ -376,16 +378,18 @@ ${header({ active: "inicio" })}
     </div>
   </section>
 
+  ${wave(C.abismo, C.branco)}
+
   <!-- SELOS / PAINEL DE CONFIANÇA -->
   <section class="trust" aria-label="Por que a Vou de Barco">
     <div class="wrap">
       <div class="trust__item">${I.compass}<span><b>Pioneiros no Flex Boat por Mangaratiba</b>, o ponto mais próximo do Rio.</span></div>
-      <div class="trust__item">${I.shield}<span><b>Frota própria, revisada</b> e com coletes para todos a bordo.</span></div>
-      <div class="trust__item">${I.heart}<span><b>Atendimento que cuida de você</b> do cais até o destino.</span></div>
+      <div class="trust__item">${I.shield}<span><b>Frota própria e revisada</b>, com marinheiros experientes.</span></div>
+      <div class="trust__item">${I.pin}<span><b>Segurança e conhecimento local</b> de quem vive a Costa Verde.</span></div>
     </div>
   </section>
 
-  ${wave(C.abismo, C.nevoa)}
+  ${wave(C.branco, C.nevoa)}
 
   <!-- TRAVESSIA -->
   <section class="section section--nevoa" id="travessia">
