@@ -173,6 +173,7 @@ function head({ title, desc, canonical, type = "website" }) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${SITE}/assets/img/og-vou-de-barco.jpg">
 <meta name="theme-color" content="#061A40">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -296,7 +297,7 @@ function ldOrg() {
   return `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "TravelAgency", "@id": SITE + "/#business",
     name: "Vou de Barco", url: SITE,
-    image: SITE + "/assets/img/og-vou-de-barco.jpg", logo: SITE + "/favicon.svg",
+    image: SITE + "/assets/img/og-vou-de-barco.jpg", logo: SITE + "/assets/img/logo-vdb.png",
     description: "Operação náutica com frota própria. Travessia de Flex Boat por Mangaratiba e passeios de barco em Ilha Grande e na Costa Verde.",
     telephone: "+55-24-97403-1431", knowsLanguage: "pt-BR",
     areaServed: [
