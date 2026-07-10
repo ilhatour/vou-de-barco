@@ -193,8 +193,8 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
       ${A(`${prefix}index.html#inicio`, "inicio", "Início")}
       ${A(`${prefix}index.html#travessia`, "travessia", "Travessia")}
       ${A(`${prefix}como-chegar.html`, "comochegar", "Como chegar")}
-      ${A(`${prefix}index.html#passeios`, "passeios", "Passeios")}
-      ${A(`${prefix}index.html#sobre`, "sobre", "Sobre")}
+      ${A(`${prefix}passeios-ilha-grande.html`, "passeios", "Passeios")}
+      ${A(`${prefix}sobre.html`, "sobre", "Sobre")}
       ${A(`${prefix}index.html#contato`, "contato", "Contato")}
       <a class="btn nav-cta" href="${waLink("Olá, Vou de Barco! Quero reservar.")}" target="_blank" rel="noopener">${I.whatsapp} Reservar</a>
     </nav>
@@ -222,11 +222,11 @@ function footer({ prefix = "" } = {}) {
       </div>
       <div class="footer__col">
         <h5>Navegue</h5>
+        <a href="${prefix}travessia.html">Travessia</a>
+        <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
         <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
-        <a href="${prefix}index.html#passeios">Passeios</a>
-        <a href="${prefix}travessia.html">Travessia</a>
-        <a href="${prefix}index.html#sobre">Sobre</a>
+        <a href="${prefix}sobre.html">Sobre</a>
         <a href="${prefix}index.html#contato">Contato</a>
       </div>
       <div class="footer__col">
@@ -446,13 +446,18 @@ ${header({ active: "inicio" })}
           <h2 class="section-title">Nascemos para resolver um problema real.</h2>
           <p>A Vou de Barco é uma operação náutica com frota e tripulação próprias, dedicada a levar você até a Ilha Grande e a mostrar o melhor da Costa Verde no mar. Nascemos para resolver um problema real: chegar à Ilha mais rápido e confortável para quem vem do Rio.</p>
           <p>Mangaratiba é o ponto mais próximo, mas ninguém fazia a travessia de Flex Boat por ali. Encaramos o desafio com marinheiros experientes e embarcação preparada, e nos tornamos pioneiros nessa rota, hoje consolidada e referência na região. Levamos segurança e qualidade a sério: embarcações revisadas, motor em dia e coletes para todos a bordo.</p>
+          <p>Temos <strong>agência de turismo física no Centro de Mangaratiba</strong> e operação regularizada (cadastro no CADASTUR, do Ministério do Turismo). Aqui você fala com gente de verdade, do cais até o seu destino.</p>
         </div>
-        <div class="diffs reveal" data-d="1">
-          <div class="diff">${I.compass}<h4>Pioneiros no Flex Boat por Mangaratiba</h4></div>
-          <div class="diff">${I.anchor}<h4>Frota própria e revisada</h4></div>
-          <div class="diff">${I.heart}<h4>Marinheiros experientes e atendimento acolhedor</h4></div>
-          <div class="diff">${I.boat}<h4>Passeios e travessia para todos os perfis</h4></div>
-        </div>
+        <figure class="about__photo reveal" data-d="1">
+          <img src="assets/img/agencia-mangaratiba.jpg" alt="Agência de turismo da Vou de Barco no Centro de Mangaratiba" loading="lazy" width="960" height="1200">
+          <figcaption>${I.pin} Nossa agência, no Centro de Mangaratiba</figcaption>
+        </figure>
+      </div>
+      <div class="diffs diffs--row reveal">
+        <div class="diff">${I.compass}<h4>Pioneiros no Flex Boat por Mangaratiba</h4></div>
+        <div class="diff">${I.anchor}<h4>Frota própria e revisada</h4></div>
+        <div class="diff">${I.heart}<h4>Marinheiros experientes e atendimento acolhedor</h4></div>
+        <div class="diff">${I.boat}<h4>Passeios e travessia para todos os perfis</h4></div>
       </div>
     </div>
   </section>
@@ -985,6 +990,169 @@ ${scripts()}
 }
 
 /* ============================================================
+   PÁGINA: SOBRE
+   ============================================================ */
+const SOBRE_FAQ = [
+  ["A Vou de Barco é uma empresa regularizada?", "Sim. Somos uma agência de turismo com agência física no Centro de Mangaratiba e cadastro no CADASTUR, do Ministério do Turismo. Trabalhamos com frota própria, embarcações revisadas e coletes para todos a bordo."],
+  ["Onde fica a agência da Vou de Barco?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 100. Também atendemos na Vila do Abraão, na Ilha Grande."],
+  ["A frota é própria?", "Sim, a Vou de Barco opera com frota e tripulação próprias, com marinheiros experientes que conhecem a região. Segurança e manutenção em dia são prioridade."],
+  ["Como faço para reservar?", "Todo o atendimento é pelo WhatsApp: você conta o seu plano (travessia e/ou passeios, data e número de pessoas) e a gente passa disponibilidade e valores, sem compromisso."],
+];
+function buildSobre() {
+  const msg = "Olá, Vou de Barco! Quero falar com vocês sobre a travessia e os passeios.";
+  const title = "Sobre a Vou de Barco — agência náutica em Mangaratiba e Ilha Grande | Vou de Barco";
+  const desc = "Conheça a Vou de Barco: operação náutica com frota própria, pioneira na travessia de Flex Boat por Mangaratiba, agência de turismo regularizada (CADASTUR) na Costa Verde do Rio.";
+  return `${head({ title, desc, canonical: `${SITE}/sobre.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "AboutPage",
+    mainEntity: { "@id": SITE + "/#business" }, url: SITE + "/sobre.html",
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: SOBRE_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Sobre", url: SITE + "/sobre.html" }])}
+</head>
+<body>
+${header({ active: "sobre", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo subhero--flex">
+    <div class="subhero__bg"><img src="${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia para a Ilha Grande" width="1080" height="1115"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Sobre</nav>
+      <span class="eyebrow eyebrow--light">Quem é a Vou de Barco</span>
+      <h1>Gente de verdade, do cais até o seu destino</h1>
+      <p class="subhero__slogan">Operação náutica com frota própria, pioneira na travessia de Flex Boat por Mangaratiba.</p>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="about">
+        <div class="about__copy">
+          <h2>Nascemos para resolver um problema real</h2>
+          <p>A Vou de Barco é uma operação náutica com <strong>frota e tripulação próprias</strong>, dedicada a levar você até a Ilha Grande e a mostrar o melhor da Costa Verde no mar. Nascemos para resolver um problema real: chegar à ilha de forma mais rápida e confortável para quem vem do Rio de Janeiro.</p>
+          <p>Mangaratiba é o ponto mais próximo da capital, mas ninguém fazia a travessia de <strong>Flex Boat</strong> por ali. Encaramos o desafio com marinheiros experientes e embarcação preparada, e nos tornamos <strong>pioneiros nessa rota</strong>, hoje consolidada e referência na região.</p>
+          <p>Temos <strong>agência de turismo física no Centro de Mangaratiba</strong> e operação regularizada, com cadastro no CADASTUR (Ministério do Turismo). Levamos segurança a sério: embarcações revisadas, motor em dia e coletes para todos a bordo.</p>
+        </div>
+        <figure class="about__photo">
+          <img src="assets/img/agencia-mangaratiba.jpg" alt="Agência de turismo da Vou de Barco no Centro de Mangaratiba" loading="lazy" width="960" height="1200">
+          <figcaption>${I.pin} Nossa agência, no Centro de Mangaratiba</figcaption>
+        </figure>
+      </div>
+      <div class="diffs diffs--row" style="margin-top:clamp(2rem,4vw,3rem)">
+        <div class="diff">${I.compass}<h4>Pioneiros no Flex Boat por Mangaratiba</h4></div>
+        <div class="diff">${I.anchor}<h4>Frota própria e revisada</h4></div>
+        <div class="diff">${I.heart}<h4>Marinheiros experientes e atendimento acolhedor</h4></div>
+        <div class="diff">${I.shield}<h4>Agência regularizada · CADASTUR</h4></div>
+      </div>
+
+      <div class="detail" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <div class="detail__main">
+          <h2>O que a gente faz</h2>
+          <p>Fazemos a <a href="travessia.html">travessia de Mangaratiba para a Ilha Grande</a> em Flex Boat, em cerca de 40 minutos, e <a href="index.html#passeios">passeios de barco</a> pelos cenários mais bonitos da Costa Verde — Lagoa Azul, Lagoa Verde, Praia dos Meros, Aventureiro, a Gruta do Acaiá e as ilhas paradisíacas de Angra. Veja também <a href="mangaratiba.html">Mangaratiba, a porta de entrada da ilha</a>, e <a href="como-chegar.html">como chegar</a>.</p>
+
+          <h2>Perguntas frequentes</h2>
+          <div class="faq">
+            ${SOBRE_FAQ.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+        </div>
+        <aside class="booking-card">
+          <h3>Fale com a gente</h3>
+          <p class="price-note">Atendimento pelo WhatsApp</p>
+          <ul class="spec-list">
+            <li><span class="k">Agência</span><span class="v">Mangaratiba · Abraão</span></li>
+            <li><span class="k">Frota</span><span class="v">Própria · Flex Boat</span></li>
+            <li><span class="k">Cadastro</span><span class="v">CADASTUR</span></li>
+          </ul>
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Falar no WhatsApp</a>
+          <a class="back" href="index.html">${I.arrowL} Voltar ao início</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+/* ============================================================
+   PÁGINA: PASSEIOS DE BARCO EM ILHA GRANDE (cluster)
+   ============================================================ */
+const PASSEIOS_FAQ = [
+  ["Quanto custa um passeio de barco em Ilha Grande?", "O valor é sob consulta e varia conforme o passeio, a data e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço atualizado na hora, sem compromisso."],
+  ["Qual é o melhor passeio de barco em Ilha Grande?", "Depende do seu tempo e do seu perfil: a Meia Volta é ótima para famílias em mar calmo; o Ilhas Paradisíacas reúne as praias mais fotogênicas de Angra; o Volta na Ilha é o mais completo e aventureiro; e a Gruta do Acaiá é o mais surpreendente. A gente ajuda a escolher pelo WhatsApp."],
+  ["O que está incluso nos passeios?", "Todos os passeios incluem água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim. O almoço não está incluso."],
+  ["De onde saem os passeios?", "Da Vila do Abraão, na Ilha Grande. Se você vem do continente, fazemos a travessia de Flex Boat de Mangaratiba até a vila."],
+  ["Precisa reservar com antecedência?", "Sim, recomendamos reservar pelo WhatsApp para garantir a sua vaga na data desejada, principalmente em fins de semana e alta temporada."],
+];
+function buildPasseiosIlhaGrande() {
+  const msg = "Olá, Vou de Barco! Quero informações sobre os passeios de barco em Ilha Grande.";
+  const title = "Passeios de barco em Ilha Grande — Lagoa Azul, Dentista e mais | Vou de Barco";
+  const desc = "Passeios de barco e de lancha em Ilha Grande e Angra: Lagoa Azul, Lagoa Verde, Praia do Dentista, Aventureiro, Gruta do Acaiá e ilhas paradisíacas. Saída da Vila do Abraão. Reserve pelo WhatsApp.";
+  return `${head({ title, desc, canonical: `${SITE}/passeios-ilha-grande.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: PASSEIOS_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "ItemList",
+    itemListElement: PASSEIOS.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.nome, url: `${SITE}/passeios/${p.id}.html` })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Ilha Grande", url: SITE + "/passeios-ilha-grande.html" }])}
+</head>
+<body>
+${header({ active: "passeios", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="assets/img/hero-praia.jpg" alt="Águas cristalinas de Ilha Grande em um passeio de barco" width="1080" height="1116"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Passeios em Ilha Grande</nav>
+      <span class="eyebrow eyebrow--light">Roteiros · Costa Verde</span>
+      <h1>Passeios de barco em Ilha Grande</h1>
+      <p class="subhero__slogan">Lagoa Azul, Praia do Dentista, Aventureiro, Gruta do Acaiá e as ilhas mais bonitas de Angra — pelo mar, com a gente.</p>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow">Escolha o seu roteiro</span>
+        <h2 class="section-title">Seis jeitos de conhecer a ilha pelo mar</h2>
+        <p class="lead">Cada passeio de barco inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão — e, se você vem do Rio, levamos você até lá na <a href="travessia.html">travessia por Mangaratiba</a>. Preços sob consulta.</p>
+      </div>
+      <div class="tours">
+        ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head center"><span class="eyebrow">Perguntas frequentes</span><h2 class="section-title">Sobre os passeios de barco em Ilha Grande</h2></div>
+      <div class="faq">
+        ${PASSEIOS_FAQ.map(([q, a]) => `<details class="faq__item reveal"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+/* ============================================================
    PLACEHOLDERS DE IMAGEM (SVG carta náutica) — até as fotos reais
    ============================================================ */
 function placeholder(p, i) {
@@ -1013,7 +1181,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -1024,6 +1192,8 @@ write("index.html", buildIndex());
 write("travessia.html", buildTravessia());
 write("como-chegar.html", buildComoChegar());
 write("mangaratiba.html", buildMangaratiba());
+write("sobre.html", buildSobre());
+write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
 write("favicon.svg", favicon);
 write("sitemap.xml", sitemap);

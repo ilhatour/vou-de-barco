@@ -8,14 +8,47 @@
     "embarcacao": "Speed Boat ou Lancha",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-ilha-tour-90.jpg",
-    "paradas": ["Lagoa Azul", "Saco do Céu", "Pontos exclusivos escolhidos no dia", "Parada para almoço"],
+    "paradas": [
+      "Lagoa Azul",
+      "Saco do Céu",
+      "Pontos exclusivos escolhidos no dia",
+      "Parada para almoço"
+    ],
     "resumo": "Roteiro exclusivo pela Costa Norte de Ilha Grande, com parada garantida na Lagoa Azul e praias escolhidas no dia pelo marinheiro. Sai mais tarde e volta mais cedo — ideal para o dia da chegada ou da saída.",
     "descricao": "O Ilha Tour 90° é um roteiro exclusivo da Vou de Barco, perfeito para quem quer aproveitar o mar de Ilha Grande numa experiência mais leve, curta e especial. Sai por volta das 11h30 e volta por volta das 16h — ótimo para quem chegou de manhã, vai embora mais tarde ou quer encaixar um passeio bonito sem ocupar o dia inteiro. O roteiro passa pela Lagoa Azul, um dos pontos mais famosos da ilha para banho e snorkel, pelo Saco do Céu e por pontos exclusivos escolhidos no dia, conforme as melhores condições de mar e beleza. Essa curadoria deixa cada saída única, revelando um cantinho diferente da ilha.",
-    "pontos_fortes": ["Roteiro exclusivo pela Costa Norte, com Lagoa Azul garantida", "Praias escolhidas no dia, conforme as melhores condições", "Mais curto que os clássicos: sobra parte do dia livre", "Ideal para o dia da chegada ou da saída", "Cooler com gelo e flutuadores a bordo"],
-    "cronograma": { "checkin": "11h00", "saida": "11h30", "desembarque": "16h00" },
+    "pontos_fortes": [
+      "Roteiro exclusivo pela Costa Norte, com Lagoa Azul garantida",
+      "Praias escolhidas no dia, conforme as melhores condições",
+      "Mais curto que os clássicos: sobra parte do dia livre",
+      "Ideal para o dia da chegada ou da saída",
+      "Cooler com gelo e flutuadores a bordo"
+    ],
+    "cronograma": {
+      "checkin": "11h00",
+      "saida": "11h30",
+      "desembarque": "16h00"
+    },
     "para_quem": "Perfeito para quem chegou de manhã e já quer começar a viagem no mar. Leve, bonito e mais curto — ideal para quem tem pouco tempo na ilha, viaja sozinho, em casal ou em pequenos grupos.",
     "seo_title": "Passeio Ilha Tour 90° — Lagoa Azul e Costa Norte | Vou de Barco",
-    "seo_desc": "Passeio exclusivo pela Costa Norte de Ilha Grande com Lagoa Azul, Saco do Céu e pontos escolhidos no dia. Saída da Vila do Abraão, ~4 a 5h. Reserve pelo WhatsApp."
+    "seo_desc": "Passeio exclusivo pela Costa Norte de Ilha Grande com Lagoa Azul, Saco do Céu e pontos escolhidos no dia. Saída da Vila do Abraão, ~4 a 5h. Reserve pelo WhatsApp.",
+    "faq": [
+      [
+        "Quanto tempo dura o Ilha Tour 90°?",
+        "Cerca de 4 a 5 horas. Sai por volta das 11h30 e volta por volta das 16h — ideal para o dia da chegada ou da saída, sem ocupar o dia inteiro."
+      ],
+      [
+        "Quais pontos o passeio visita?",
+        "Lagoa Azul (parada garantida para banho e snorkel), Saco do Céu e pontos exclusivos escolhidos no dia pelo marinheiro, conforme as melhores condições de mar."
+      ],
+      [
+        "O que está incluso?",
+        "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo. O almoço não está incluso."
+      ],
+      [
+        "É bom para quem tem pouco tempo na ilha?",
+        "Sim. Por ser mais curto que os passeios clássicos, é perfeito para quem chegou de manhã ou vai embora mais tarde e quer aproveitar o mar mesmo assim."
+      ]
+    ]
   },
   {
     "id": "meia-volta",
@@ -26,14 +59,48 @@
     "embarcacao": "Lancha ou Flex Boat",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-meia-volta.jpg",
-    "paradas": ["Lagoa Azul", "Lagoa Verde", "Praia do Amor", "Praia da Feiticeira", "Parada para almoço"],
+    "paradas": [
+      "Lagoa Azul",
+      "Lagoa Verde",
+      "Praia do Amor",
+      "Praia da Feiticeira",
+      "Parada para almoço"
+    ],
     "resumo": "Passeio de lancha pela Costa Norte, em mar abrigado, passando por alguns dos cenários mais clássicos da ilha. Águas calmas e cristalinas, paradas tranquilas de banho e snorkel, com retorno previsto até 16h30.",
     "descricao": "O Meia Volta é aquele passeio clássico que combina tudo o que muita gente procura em Ilha Grande: água cristalina, vida marinha, paisagens lindas e uma navegação mais confortável pela Costa Norte. Perfeito para quem quer viver um dia leve no mar, com paradas famosas e clima tranquilo para mergulhar e relaxar sem pressa. O roteiro passa por Lagoa Azul e Lagoa Verde — ideais para snorkel e para o contato de perto com os peixinhos — e segue por lugares charmosos como a Praia do Amor e a Praia da Feiticeira.",
-    "pontos_fortes": ["Alguns dos pontos mais desejados da Costa Norte num só passeio", "Lagoa Azul e Lagoa Verde, perfeitas para snorkel", "Águas calmas por ser uma área de mar abrigado", "Retorno mais cedo, dá para voltar ao continente no mesmo dia", "Excelente custo-benefício"],
-    "cronograma": { "checkin": "10h00", "saida": "10h30", "desembarque": "16h30" },
+    "pontos_fortes": [
+      "Alguns dos pontos mais desejados da Costa Norte num só passeio",
+      "Lagoa Azul e Lagoa Verde, perfeitas para snorkel",
+      "Águas calmas por ser uma área de mar abrigado",
+      "Retorno mais cedo, dá para voltar ao continente no mesmo dia",
+      "Excelente custo-benefício"
+    ],
+    "cronograma": {
+      "checkin": "10h00",
+      "saida": "10h30",
+      "desembarque": "16h30"
+    },
     "para_quem": "Ideal para quem busca um passeio tranquilo e confortável. Por navegar em mar abrigado, é uma ótima opção para famílias com crianças, terceira idade, gestantes e quem prefere evitar mar aberto — sem abrir mão dos clássicos da ilha.",
     "seo_title": "Passeio Meia Volta — Lagoa Azul e Lagoa Verde | Vou de Barco",
-    "seo_desc": "Passeio de lancha em mar abrigado pela Costa Norte de Ilha Grande: Lagoa Azul, Lagoa Verde, Praia do Amor e Feiticeira. ~6h, ideal para famílias. Reserve no WhatsApp."
+    "seo_desc": "Passeio de lancha em mar abrigado pela Costa Norte de Ilha Grande: Lagoa Azul, Lagoa Verde, Praia do Amor e Feiticeira. ~6h, ideal para famílias. Reserve no WhatsApp.",
+    "faq": [
+      [
+        "Quanto tempo dura o passeio Meia Volta?",
+        "Cerca de 6 horas, com retorno previsto até as 16h30 — dá para voltar ao continente no mesmo dia."
+      ],
+      [
+        "Quais praias e lagoas o passeio visita?",
+        "Lagoa Azul e Lagoa Verde (ótimas para snorkel), Praia do Amor e Praia da Feiticeira, na Costa Norte da ilha."
+      ],
+      [
+        "O passeio é bom para famílias com crianças?",
+        "Sim. Navega em mar abrigado, com águas calmas — ótimo para famílias, terceira idade, gestantes e quem prefere evitar mar aberto."
+      ],
+      [
+        "O que está incluso?",
+        "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da equipe a bordo. O almoço não está incluso."
+      ]
+    ]
   },
   {
     "id": "ilhas-paradisiacas",
@@ -44,21 +111,56 @@
     "embarcacao": "Lancha ou Flex Boat",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-ilhas-paradisiacas.jpg",
-    "paradas": ["Praia do Dentista", "Ilha de Piedade", "Ilha de Cataguases", "Ilhas Botinas", "Parada para almoço"],
+    "paradas": [
+      "Praia do Dentista",
+      "Ilha de Piedade",
+      "Ilha de Cataguases",
+      "Ilhas Botinas",
+      "Parada para almoço"
+    ],
     "resumo": "Um dos roteiros mais lindos e desejados da Costa Verde: águas cristalinas, ilhas paradisíacas e cenários de cartão-postal. Entre banho de mar, fotos e snorkel, cada parada revela um visual diferente.",
     "descricao": "O Ilhas Paradisíacas é um dos roteiros mais procurados por quem visita a região — e não é por acaso. É aquele passeio de águas cristalinas, ilhas cinematográficas e paradas que parecem cenário de foto: perfeito para mergulhar, relaxar, fazer snorkel e sentir de perto o visual mais paradisíaco da Costa Verde. O roteiro passa pela Praia do Dentista (areia branquíssima, uma das mais famosas do Brasil), pela Ilha de Piedade, Ilha de Cataguases e Ilhas Botinas, uma das melhores paradas para ver peixinhos e vida marinha.",
-    "pontos_fortes": ["Une praias de areia branca e os melhores pontos de mergulho", "Passa pela Praia do Dentista, uma das mais famosas do Brasil", "Águas muito cristalinas e vida marinha abundante", "Pouco tempo de navegação entre uma parada e outra", "Alta chance de encontrar tartarugas e golfinhos", "Roteiro leve, visual e muito fotogênico"],
-    "cronograma": { "checkin": "10h00", "saida": "10h30", "desembarque": "17h30" },
+    "pontos_fortes": [
+      "Une praias de areia branca e os melhores pontos de mergulho",
+      "Passa pela Praia do Dentista, uma das mais famosas do Brasil",
+      "Águas muito cristalinas e vida marinha abundante",
+      "Pouco tempo de navegação entre uma parada e outra",
+      "Alta chance de encontrar tartarugas e golfinhos",
+      "Roteiro leve, visual e muito fotogênico"
+    ],
+    "cronograma": {
+      "checkin": "10h00",
+      "saida": "10h30",
+      "desembarque": "17h30"
+    },
     "para_quem": "Ideal para quem busca paisagens deslumbrantes, praias de cartão-postal e águas cristalinas para banho, fotos e snorkel. Combina muito com casais, grupos de amigos e fotógrafos.",
     "seo_title": "Passeio Ilhas Paradisíacas — Dentista e Botinas | Vou de Barco",
     "seo_desc": "As ilhas mais desejadas de Angra: Praia do Dentista, Cataguases, Botinas e Piedade. Passeio de 7h pela Costa Verde com águas cristalinas. Reserve no WhatsApp.",
     "faq": [
-      ["Quanto tempo dura o passeio Ilhas Paradisíacas?", "Cerca de 7 horas: saída pela Vila do Abraão por volta das 10h30 e retorno previsto para as 17h30."],
-      ["Quais praias e ilhas o passeio visita?", "Praia do Dentista, Ilha de Cataguases, Ilha de Piedade e as Ilhas Botinas — algumas das paisagens mais bonitas de Angra dos Reis, com águas cristalinas para banho e snorkel."],
-      ["Onde fica a Praia do Dentista?", "Fica na Ilha da Gipóia, em Angra dos Reis, e é uma das praias mais famosas do Brasil pela areia branquinha e água transparente. É uma das paradas do roteiro."],
-      ["O que está incluso no passeio?", "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim. O almoço não está incluso (parada em praia com estrutura)."],
-      ["O passeio é bom para famílias e crianças?", "Sim. É um roteiro leve, com paradas de banho em águas calmas e cristalinas — ótimo para famílias, casais e grupos de amigos."],
-      ["Preciso saber nadar?", "Não. Todos os passeios têm coletes salva-vidas a bordo e flutuadores para você aproveitar as paradas com segurança, mesmo sem saber nadar."]
+      [
+        "Quanto tempo dura o passeio Ilhas Paradisíacas?",
+        "Cerca de 7 horas: saída pela Vila do Abraão por volta das 10h30 e retorno previsto para as 17h30."
+      ],
+      [
+        "Quais praias e ilhas o passeio visita?",
+        "Praia do Dentista, Ilha de Cataguases, Ilha de Piedade e as Ilhas Botinas — algumas das paisagens mais bonitas de Angra dos Reis, com águas cristalinas para banho e snorkel."
+      ],
+      [
+        "Onde fica a Praia do Dentista?",
+        "Fica na Ilha da Gipóia, em Angra dos Reis, e é uma das praias mais famosas do Brasil pela areia branquinha e água transparente. É uma das paradas do roteiro."
+      ],
+      [
+        "O que está incluso no passeio?",
+        "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim. O almoço não está incluso (parada em praia com estrutura)."
+      ],
+      [
+        "O passeio é bom para famílias e crianças?",
+        "Sim. É um roteiro leve, com paradas de banho em águas calmas e cristalinas — ótimo para famílias, casais e grupos de amigos."
+      ],
+      [
+        "Preciso saber nadar?",
+        "Não. Todos os passeios têm coletes salva-vidas a bordo e flutuadores para você aproveitar as paradas com segurança, mesmo sem saber nadar."
+      ]
     ]
   },
   {
@@ -70,14 +172,49 @@
     "embarcacao": "Lancha ou Flex Boat",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-volta-na-ilha.jpg",
-    "paradas": ["Praia do Caxadaço", "Praia de Parnaioca", "Praia do Aventureiro", "Praia dos Meros", "Parada para almoço"],
+    "paradas": [
+      "Praia do Caxadaço",
+      "Praia de Parnaioca",
+      "Praia do Aventureiro",
+      "Praia dos Meros",
+      "Parada para almoço"
+    ],
     "resumo": "Um dos passeios mais completos da ilha. A lancha contorna Ilha Grande e visita praias oceânicas de difícil acesso, incluindo a famosa Praia do Aventureiro e seu icônico coqueiro torto.",
     "descricao": "O Volta na Ilha é um dos roteiros mais completos e desejados de Ilha Grande. A experiência percorre diferentes lados da ilha, com mais tempo de navegação e paradas em praias famosas, selvagens e de difícil acesso — como Caxadaço, Parnaioca, Aventureiro e Meros. Entre os destaques está a Praia do Aventureiro, uma das mais famosas da ilha, conhecida pelo visual paradisíaco e pelo icônico coqueiro torto. Por contornar a ilha e navegar por mar aberto, a saída depende das condições do mar e não acontece todos os dias.",
-    "pontos_fortes": ["O roteiro mais completo para explorar a ilha pelo mar", "Praias remotas, oceânicas e de difícil acesso", "Menos movimento e paisagens mais selvagens", "Visita ao Aventureiro, do icônico coqueiro torto", "Mirantes, mini-trilhas, mergulho e fotos inesquecíveis", "Experiência premium, aventureira e fora do óbvio"],
-    "cronograma": { "checkin": "09h00", "saida": "09h30", "desembarque": "17h30" },
+    "pontos_fortes": [
+      "O roteiro mais completo para explorar a ilha pelo mar",
+      "Praias remotas, oceânicas e de difícil acesso",
+      "Menos movimento e paisagens mais selvagens",
+      "Visita ao Aventureiro, do icônico coqueiro torto",
+      "Mirantes, mini-trilhas, mergulho e fotos inesquecíveis",
+      "Experiência premium, aventureira e fora do óbvio"
+    ],
+    "cronograma": {
+      "checkin": "09h00",
+      "saida": "09h30",
+      "desembarque": "17h30"
+    },
     "para_quem": "Ideal para o viajante aventureiro que tem um dia inteiro e quer conhecer o máximo de Ilha Grande num roteiro só. Combina com quem já fez os clássicos e busca algo mais completo e selvagem.",
     "seo_title": "Passeio Volta na Ilha — Aventureiro e praias oceânicas | Vou de Barco",
-    "seo_desc": "O passeio mais completo de Ilha Grande: contorna a ilha até o Aventureiro, Caxadaço, Meros e Parnaioca. ~8h por praias selvagens. Reserve no WhatsApp."
+    "seo_desc": "O passeio mais completo de Ilha Grande: contorna a ilha até o Aventureiro, Caxadaço, Meros e Parnaioca. ~8h por praias selvagens. Reserve no WhatsApp.",
+    "faq": [
+      [
+        "Quanto tempo dura o passeio Volta na Ilha?",
+        "Cerca de 8 horas — é o roteiro mais completo, com saída por volta das 09h30 e retorno por volta das 17h30."
+      ],
+      [
+        "Quais praias o passeio visita?",
+        "Contorna a Ilha Grande passando por praias oceânicas e de difícil acesso, como Caxadaço, Parnaioca, a famosa Praia do Aventureiro (do coqueiro torto) e a Praia dos Meros."
+      ],
+      [
+        "O passeio acontece todos os dias?",
+        "Não. Por navegar em mar aberto e contornar a ilha, a saída depende das condições do mar. Confirmamos a data com você pelo WhatsApp."
+      ],
+      [
+        "Para quem é indicado?",
+        "Para o viajante aventureiro que tem o dia inteiro e quer conhecer o máximo da ilha num roteiro só — especialmente quem já fez os clássicos."
+      ]
+    ]
   },
   {
     "id": "ilha-tour-210",
@@ -88,14 +225,49 @@
     "embarcacao": "Lancha ou Flex Boat",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-ilha-tour-210.jpg",
-    "paradas": ["Praia dos Meros", "Lagoa Verde", "Praia de Araçatibinha", "Cantinho da Ilha", "Parada para almoço"],
+    "paradas": [
+      "Praia dos Meros",
+      "Lagoa Verde",
+      "Praia de Araçatibinha",
+      "Cantinho da Ilha",
+      "Parada para almoço"
+    ],
     "resumo": "Roteiro autoral e exclusivo, para quem quer uma Ilha Grande diferente dos passeios tradicionais. Reúne Meros, Lagoa Verde, Araçatibinha e um cantinho especial, com águas cristalinas e pontos pouco usuais.",
     "descricao": "O Ilha Tour 210° é um roteiro compartilhado e autoral da Vou de Barco, pensado para quem quer fugir dos passeios mais tradicionais e conhecer um lado diferente da ilha. A navegação passa por pontos menos óbvios, combinando praia, lagoa, águas cristalinas e cantinhos especiais fora do circuito comum. O roteiro conta com paradas na Praia dos Meros, Lagoa Verde, Araçatibinha e um cantinho ainda pouco conhecido, escolhido pela nossa equipe pela beleza e exclusividade.",
-    "pontos_fortes": ["Roteiro autoral, fora do circuito comum", "Paradas em Meros, Lagoa Verde e Araçatibinha", "Mix de praia, lagoa e águas cristalinas", "Ideal para quem quer fugir dos roteiros clássicos", "Visual diferente, bonito e pouco usual", "Cooler com gelo e flutuadores a bordo"],
-    "cronograma": { "checkin": "09h30", "saida": "10h00", "desembarque": "17h00" },
+    "pontos_fortes": [
+      "Roteiro autoral, fora do circuito comum",
+      "Paradas em Meros, Lagoa Verde e Araçatibinha",
+      "Mix de praia, lagoa e águas cristalinas",
+      "Ideal para quem quer fugir dos roteiros clássicos",
+      "Visual diferente, bonito e pouco usual",
+      "Cooler com gelo e flutuadores a bordo"
+    ],
+    "cronograma": {
+      "checkin": "09h30",
+      "saida": "10h00",
+      "desembarque": "17h00"
+    },
     "para_quem": "Ideal para quem já conhece os clássicos de Ilha Grande e quer explorar praias diferentes, lagoas e águas cristalinas. Combina com casais, grupos de amigos e fotógrafos.",
     "seo_title": "Passeio Ilha Tour 210° — Meros, Lagoa Verde e Araçatibinha | Vou de Barco",
-    "seo_desc": "Roteiro autoral e exclusivo de dia inteiro por Ilha Grande: Praia dos Meros, Lagoa Verde e Araçatibinha. 10h às 17h. Reserve pelo WhatsApp."
+    "seo_desc": "Roteiro autoral e exclusivo de dia inteiro por Ilha Grande: Praia dos Meros, Lagoa Verde e Araçatibinha. 10h às 17h. Reserve pelo WhatsApp.",
+    "faq": [
+      [
+        "Quanto tempo dura o Ilha Tour 210°?",
+        "Dia inteiro, das 10h às 17h, com saída pela Vila do Abraão."
+      ],
+      [
+        "O que esse roteiro tem de diferente?",
+        "É um roteiro autoral, fora do circuito comum: reúne Praia dos Meros, Lagoa Verde, Araçatibinha e um cantinho especial escolhido pela nossa equipe pela beleza e exclusividade."
+      ],
+      [
+        "O que está incluso?",
+        "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da equipe a bordo. O almoço não está incluso."
+      ],
+      [
+        "Para quem é indicado?",
+        "Para quem já conhece os clássicos de Ilha Grande e quer explorar praias diferentes, lagoas e águas cristalinas fora do óbvio."
+      ]
+    ]
   },
   {
     "id": "gruta-do-acaia",
@@ -106,13 +278,48 @@
     "embarcacao": "Lancha ou Speed Boat",
     "saida": "Vila do Abraão",
     "img": "assets/img/passeio-gruta-do-acaia.jpg",
-    "paradas": ["Lagoa Azul", "Lagoa Verde", "Gruta do Acaiá", "Saco do Céu", "Parada para almoço"],
+    "paradas": [
+      "Lagoa Azul",
+      "Lagoa Verde",
+      "Gruta do Acaiá",
+      "Saco do Céu",
+      "Parada para almoço"
+    ],
     "resumo": "Passeio de lancha até a Gruta do Acaiá, um salão de pedra à beira-mar com água azul-turquesa que parece brilhar. No caminho, Lagoa Azul, Lagoa Verde e Saco do Céu. Para quem já fez os clássicos e quer uma aventura com história para contar.",
     "descricao": "A Gruta do Acaiá é um dos roteiros mais surpreendentes de Ilha Grande, pensado para quem já conhece os passeios tradicionais e quer viver algo diferente. O ponto alto é a entrada na gruta — um salão de pedra à beira-mar onde a água ganha um tom azul-turquesa que parece iluminar por dentro, um fenômeno raro e cinematográfico. No caminho, o passeio ainda reúne alguns dos cenários mais bonitos da ilha: a Lagoa Azul e a Lagoa Verde, ideais para snorkel e para nadar entre os peixinhos, e o tranquilo Saco do Céu. É um dia inteiro no mar, com paradas para banho, fotos e um almoço com calma numa praia com estrutura.",
-    "pontos_fortes": ["Entrada na Gruta do Acaiá, com a água azul que parece brilhar", "Roteiro fora do circuito comum, para quem já fez os clássicos", "Reúne Lagoa Azul, Lagoa Verde e Saco do Céu no mesmo dia", "Um dos passeios mais fotogênicos da ilha", "Dia inteiro no mar, com paradas de banho e snorkel", "Cooler com gelo e flutuadores a bordo"],
-    "cronograma": { "checkin": "10h00", "saida": "10h30", "desembarque": "17h30" },
+    "pontos_fortes": [
+      "Entrada na Gruta do Acaiá, com a água azul que parece brilhar",
+      "Roteiro fora do circuito comum, para quem já fez os clássicos",
+      "Reúne Lagoa Azul, Lagoa Verde e Saco do Céu no mesmo dia",
+      "Um dos passeios mais fotogênicos da ilha",
+      "Dia inteiro no mar, com paradas de banho e snorkel",
+      "Cooler com gelo e flutuadores a bordo"
+    ],
+    "cronograma": {
+      "checkin": "10h00",
+      "saida": "10h30",
+      "desembarque": "17h30"
+    },
     "para_quem": "Ideal para quem já conhece os clássicos de Ilha Grande e quer um roteiro diferente e memorável. Indicado a partir de 10 anos. Por incluir a entrada na gruta, não é recomendado para quem tem claustrofobia.",
     "seo_title": "Passeio Gruta do Acaiá — a gruta de água azul de Ilha Grande | Vou de Barco",
-    "seo_desc": "Passeio de lancha até a Gruta do Acaiá, com água azul-turquesa que parece brilhar, mais Lagoa Azul, Lagoa Verde e Saco do Céu. Dia inteiro. Reserve pelo WhatsApp."
+    "seo_desc": "Passeio de lancha até a Gruta do Acaiá, com água azul-turquesa que parece brilhar, mais Lagoa Azul, Lagoa Verde e Saco do Céu. Dia inteiro. Reserve pelo WhatsApp.",
+    "faq": [
+      [
+        "O que é a Gruta do Acaíá?",
+        "Um salão de pedra à beira-mar onde a água ganha um tom azul-turquesa que parece brilhar por dentro — um fenômeno raro e cinematográfico, e o ponto alto do passeio."
+      ],
+      [
+        "Quem tem claustrofobia pode fazer?",
+        "Como o roteiro inclui a entrada na gruta, não é recomendado para quem tem claustrofobia. É indicado a partir de 10 anos."
+      ],
+      [
+        "Quanto tempo dura e o que mais visita?",
+        "Dia inteiro (10h às 17h30). Além da gruta, o passeio reúne Lagoa Azul, Lagoa Verde e o tranquilo Saco do Céu."
+      ],
+      [
+        "O que está incluso?",
+        "Água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da equipe a bordo. O almoço não está incluso (parada em praia com estrutura)."
+      ]
+    ]
   }
 ]
