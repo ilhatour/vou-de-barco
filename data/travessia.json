@@ -5,7 +5,7 @@
   "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
   "img": "assets/img/travessia-flex-boat.jpg",
   "bilhetes": ["Ida", "Volta", "Ida e volta"],
-  "embarque": { "local": "Centro de Mangaratiba", "detalhe": "No cais da barca — Av. Célio Lopes, 100" },
+  "embarque": { "local": "Centro de Mangaratiba", "detalhe": "No cais da barca — Av. Célio Lopes, 89" },
   "desembarque": { "local": "Vila do Abraão · Ilha Grande", "detalhe": "No Cais de Turismo, o cais principal da vila" },
   "horarios": {
     "ida": { "titulo": "Mangaratiba → Abraão", "saidas": ["09h00", "13h30", "16h30"] },
@@ -48,7 +48,7 @@
   ],
   "faq": [
     ["Quanto custa a travessia de Mangaratiba para a Ilha Grande?", "O valor é sob consulta e varia conforme o trecho (ida, volta ou ida e volta) e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço atualizado na hora, sem compromisso."],
-    ["De onde sai a travessia? Onde fica o cais de Mangaratiba?", "O embarque é no Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 100. É o cais central da cidade, fácil de chegar pela Rio-Santos (BR-101)."],
+    ["De onde sai a travessia? Onde fica o cais de Mangaratiba?", "O embarque é no Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 89. É o cais central da cidade, fácil de chegar pela Rio-Santos (BR-101)."],
     ["Tem estacionamento em Mangaratiba?", "Sim. Há estacionamento próximo ao cais, em conta — um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro."],
     ["Quanto tempo dura a travessia até a Ilha Grande?", "Cerca de 40 minutos de Flex Boat entre Mangaratiba e a Vila do Abraão, com desembarque no Cais de Turismo, no centro da vila."],
     ["Preciso reservar com antecedência?", "Sim, recomendamos reservar pelo WhatsApp para garantir a sua vaga na data e no horário desejados — principalmente em fins de semana e na alta temporada."],

@@ -216,7 +216,7 @@ function footer({ prefix = "" } = {}) {
         <a class="brand" href="${prefix}index.html">${I.mark}<span>Vou de Barco</span></a>
         <p>Travessia e passeios de barco em Ilha Grande e Mangaratiba. Frota e tripulação próprias, segurança em primeiro lugar.</p>
         <address class="footer__nap">
-          ${I.pin}<span>Av. Célio Lopes, 100 — Centro, Mangaratiba/RJ</span><br>
+          ${I.pin}<span>Av. Célio Lopes, 89 — Centro, Mangaratiba/RJ</span><br>
           ${I.whatsapp}<a href="${waLink("Olá, Vou de Barco!")}" target="_blank" rel="noopener">(24) 97403-1431</a>
         </address>
       </div>
@@ -298,13 +298,14 @@ function ldOrg() {
       { "@type": "Place", name: "Angra dos Reis" }, { "@type": "Place", name: "Costa Verde, Rio de Janeiro" },
     ],
     sameAs: [IG],
-    address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" },
+    address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 89 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" },
     geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 },
     location: [
-      { "@type": "Place", name: "Agência Mangaratiba", address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 100 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 } },
+      { "@type": "Place", name: "Agência Mangaratiba", address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 89 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 } },
       { "@type": "Place", name: "Agência Vila do Abraão", address: { "@type": "PostalAddress", streetAddress: "Rua da Praia, s/n — em frente ao cais da barca", addressLocality: "Vila do Abraão, Ilha Grande", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -23.1385, longitude: -44.1717 } },
     ],
     slogan: "Ilha Grande começa aqui.",
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.5", reviewCount: "39", bestRating: "5", worstRating: "1" },
     hasOfferCatalog: {
       "@type": "OfferCatalog", name: "Travessia e passeios de barco em Ilha Grande",
       itemListElement: [
@@ -362,6 +363,9 @@ ${header({ active: "inicio" })}
           <a class="btn btn--ghost" href="#travessia">Ver travessia</a>
           <a class="btn btn--ghost" href="#passeios">Ver passeios</a>
         </div>
+        <a class="hero__reviews" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas com 39 avaliações no Google">
+          <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>· 39 avaliações no Google</span>
+        </a>
       </div>
     </div>
     <div class="hero__readout" aria-hidden="true">
@@ -490,7 +494,7 @@ ${header({ active: "inicio" })}
           <div class="contact__channels">
             <div class="channel">${I.whatsapp}<span><b>WhatsApp</b><a href="${waLink("Olá, Vou de Barco!")}" target="_blank" rel="noopener">(24) 97403-1431</a></span></div>
             <div class="channel">${I.instagram}<span><b>Instagram</b><a href="${IG}" target="_blank" rel="noopener">@voudebarco</a></span></div>
-            <div class="channel">${I.pin}<span><b>Mangaratiba</b><span>Av. Célio Lopes, 100 — Centro</span></span></div>
+            <div class="channel">${I.pin}<span><b>Mangaratiba</b><span>Av. Célio Lopes, 89 — Centro</span></span></div>
             <div class="channel">${I.pin}<span><b>Vila do Abraão (Ilha Grande)</b><span>Rua da Praia, s/n — em frente ao cais da barca</span></span></div>
           </div>
         </div>
@@ -888,7 +892,7 @@ ${scripts()}
    ============================================================ */
 const MANGA_FAQ = [
   ["Como ir de Mangaratiba para a Ilha Grande?", "A partir do cais de Mangaratiba você faz a travessia de barco até a Vila do Abraão, na Ilha Grande. Fazemos essa travessia em Flex Boat, em cerca de 40 minutos. É o trajeto mais curto para quem vem do Rio de Janeiro."],
-  ["Onde fica o cais de Mangaratiba?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 100. É o cais central da cidade, de onde saem as embarcações para a Ilha Grande."],
+  ["Onde fica o cais de Mangaratiba?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 89. É o cais central da cidade, de onde saem as embarcações para a Ilha Grande."],
   ["Quanto tempo de Mangaratiba até a Ilha Grande?", "Cerca de 40 minutos de Flex Boat entre Mangaratiba e a Vila do Abraão, com desembarque no Cais de Turismo, no centro da vila."],
   ["Tem estacionamento em Mangaratiba?", "Sim, há estacionamento próximo ao cais, em conta. É um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro e quer deixar o veículo em segurança."],
   ["Por que sair de Mangaratiba e não de Angra ou Conceição de Jacareí?", "Mangaratiba é o ponto de travessia mais próximo do Rio de Janeiro — menos estrada, chegada mais rápida e estacionamento em conta. Por isso é a rota preferida de quem vem da capital."],
@@ -937,7 +941,7 @@ ${header({ active: "mangaratiba", solid: true })}
           <p>Saindo do Rio de Janeiro, o acesso é pela Rio-Santos (BR-101), cerca de 2h a 2h30 de carro ou ônibus até o Centro de Mangaratiba. Veja o guia completo de <a href="como-chegar.html">como chegar à Ilha Grande</a> passo a passo.</p>
 
           <h2>O cais de Mangaratiba: onde embarcar</h2>
-          <p>O embarque é no <strong>cais da barca, no Centro de Mangaratiba — Av. Célio Lopes, 100</strong>. É o cais central da cidade, com boa infraestrutura e estacionamento próximo. Chegue cerca de 20 minutos antes do horário da sua travessia.</p>
+          <p>O embarque é no <strong>cais da barca, no Centro de Mangaratiba — Av. Célio Lopes, 89</strong>. É o cais central da cidade, com boa infraestrutura e estacionamento próximo. Chegue cerca de 20 minutos antes do horário da sua travessia.</p>
 
           <h2>A travessia de Mangaratiba para a Ilha Grande</h2>
           <p>Fazemos a travessia em <strong>Flex Boat</strong> entre Mangaratiba e a Vila do Abraão em cerca de <strong>40 minutos</strong>, com coletes e suporte da nossa equipe a bordo. Você escolhe ida, volta ou ida e volta.</p>
@@ -963,7 +967,7 @@ ${header({ active: "mangaratiba", solid: true })}
             <li><span class="k">Rota</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
             <li><span class="k">Embarcação</span><span class="v">${esc(TRAV.embarcacao)}</span></li>
             <li><span class="k">Tempo</span><span class="v">${esc(TRAV.tempo)}</span></li>
-            <li><span class="k">Embarque</span><span class="v">Av. Célio Lopes, 100</span></li>
+            <li><span class="k">Embarque</span><span class="v">Av. Célio Lopes, 89</span></li>
           </ul>
           <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Reservar no WhatsApp</a>
           <a class="back" href="travessia.html">${I.arrow} Ver a travessia</a>
@@ -996,7 +1000,7 @@ ${scripts()}
    ============================================================ */
 const SOBRE_FAQ = [
   ["A Vou de Barco é uma empresa regularizada?", "Sim. Somos uma agência de turismo com agência física no Centro de Mangaratiba e cadastro no CADASTUR, do Ministério do Turismo. Trabalhamos com frota própria, embarcações revisadas e coletes para todos a bordo."],
-  ["Onde fica a agência da Vou de Barco?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 100. Também atendemos na Vila do Abraão, na Ilha Grande."],
+  ["Onde fica a agência da Vou de Barco?", "No Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 89. Também atendemos na Vila do Abraão, na Ilha Grande."],
   ["A frota é própria?", "Sim, a Vou de Barco opera com frota e tripulação próprias, com marinheiros experientes que conhecem a região. Segurança e manutenção em dia são prioridade."],
   ["Como faço para reservar?", "Todo o atendimento é pelo WhatsApp: você conta o seu plano (travessia e/ou passeios, data e número de pessoas) e a gente passa disponibilidade e valores, sem compromisso."],
 ];

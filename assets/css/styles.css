@@ -209,6 +209,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .hero h1 .accent { color: var(--amarelo); }
 .hero__sub { font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--branco-70); max-width: 46ch; margin-bottom: 2rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; }
+.hero__reviews { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1.5rem; font-size: .95rem; color: var(--branco-70); }
+.hero__reviews .stars { color: var(--amarelo); letter-spacing: .08em; }
+.hero__reviews b { color: var(--branco); font-weight: 700; }
+.hero__reviews:hover { color: var(--branco); }
 
 /* leitura de instrumento no hero (rumo da rota) */
 .hero__readout {
