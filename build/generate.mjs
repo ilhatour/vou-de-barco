@@ -14,6 +14,7 @@ const write = (p, c) => { mkdirSync(dirname(join(ROOT, p)), { recursive: true })
 
 const PASSEIOS = JSON.parse(read("data/passeios.json"));
 const TRAV = JSON.parse(read("data/travessia.json"));
+const BLOG = JSON.parse(read("data/blog.json"));
 
 /* ---- Constantes da marca ---- */
 const WA = "5524974031431";
@@ -194,6 +195,7 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
       ${A(`${prefix}index.html#travessia`, "travessia", "Travessia")}
       ${A(`${prefix}como-chegar.html`, "comochegar", "Como chegar")}
       ${A(`${prefix}passeios-ilha-grande.html`, "passeios", "Passeios")}
+      ${A(`${prefix}blog.html`, "blog", "Blog")}
       ${A(`${prefix}sobre.html`, "sobre", "Sobre")}
       ${A(`${prefix}index.html#contato`, "contato", "Contato")}
       <a class="btn nav-cta" href="${waLink("Olá, Vou de Barco! Quero reservar.")}" target="_blank" rel="noopener">${I.whatsapp} Reservar</a>
@@ -226,6 +228,7 @@ function footer({ prefix = "" } = {}) {
         <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
         <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
+        <a href="${prefix}blog.html">Blog</a>
         <a href="${prefix}sobre.html">Sobre</a>
         <a href="${prefix}index.html#contato">Contato</a>
       </div>
@@ -1159,6 +1162,135 @@ ${scripts()}
 }
 
 /* ============================================================
+   BLOG
+   ============================================================ */
+const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+function fmtData(iso) { const [a, m, d] = iso.split("-"); return `${d} ${MESES[+m - 1]} ${a}`; }
+function renderBlocks(blocks) {
+  return blocks.map((b) => {
+    if (typeof b === "string") return `<p>${esc(b)}</p>`;
+    if (b.h2) return `<h2>${esc(b.h2)}</h2>`;
+    if (b.lista) return `<ul class="included">\n            ${b.lista.map((x) => `<li>${I.check}${esc(x)}</li>`).join("\n            ")}\n          </ul>`;
+    if (b.html) return b.html;
+    return "";
+  }).join("\n          ");
+}
+function blogCard(post, prefix = "") {
+  return `<article class="tour reveal">
+  <div class="tour__media">
+    <span class="tour__badge">${esc(post.categoria)}</span>
+    <img src="${prefix}${post.img}" alt="${esc(post.titulo)}" loading="lazy" width="640" height="480">
+  </div>
+  <div class="tour__body">
+    <h3 class="tour__name" style="font-size:1.2rem">${esc(post.titulo)}</h3>
+    <p class="tour__slogan">${esc(post.resumo)}</p>
+    <div class="tour__meta"><span class="chip">${I.clock}${fmtData(post.data)}</span></div>
+    <a class="tour__link" href="${prefix}blog/${post.slug}.html">Ler artigo ${I.arrow}</a>
+  </div>
+  <a class="tour__stretch" href="${prefix}blog/${post.slug}.html" aria-label="Ler ${esc(post.titulo)}"></a>
+</article>`;
+}
+function buildBlogIndex() {
+  const title = "Blog da Vou de Barco — dicas de Ilha Grande, Mangaratiba e passeios de barco";
+  const desc = "Guias, roteiros e dicas para a sua viagem à Ilha Grande: o que fazer, melhor época, como chegar e os melhores passeios de barco pela Costa Verde.";
+  return `${head({ title, desc, canonical: `${SITE}/blog.html` })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "Blog", "@id": SITE + "/blog.html", name: "Blog da Vou de Barco", url: SITE + "/blog.html",
+    publisher: { "@id": SITE + "/#business" },
+    blogPost: BLOG.map((p) => ({ "@type": "BlogPosting", headline: p.titulo, url: `${SITE}/blog/${p.slug}.html`, datePublished: p.data, image: SITE + "/" + p.img })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Blog", url: SITE + "/blog.html" }])}
+</head>
+<body>
+${header({ active: "blog", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="assets/img/hero-praia.jpg" alt="Águas cristalinas de Ilha Grande" width="1080" height="1116"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Blog</nav>
+      <span class="eyebrow eyebrow--light">Guias & dicas</span>
+      <h1>Blog da Vou de Barco</h1>
+      <p class="subhero__slogan">Tudo para planejar a sua viagem à Ilha Grande e aproveitar o melhor da Costa Verde no mar.</p>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="tours">
+        ${BLOG.map((p) => blogCard(p)).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+function buildPost(post) {
+  const msg = "Olá, Vou de Barco! Vim pelo blog e quero informações sobre a travessia e os passeios.";
+  const outros = BLOG.filter((p) => p.slug !== post.slug).slice(0, 3);
+  return `${head({ title: post.seo_title, desc: post.seo_desc, canonical: `${SITE}/blog/${post.slug}.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "BlogPosting", headline: post.titulo, description: post.seo_desc,
+    image: SITE + "/" + post.img, datePublished: post.data, dateModified: post.data,
+    author: { "@type": "Organization", name: post.autor, url: SITE }, publisher: { "@id": SITE + "/#business" },
+    mainEntityOfPage: `${SITE}/blog/${post.slug}.html`,
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Blog", url: SITE + "/blog.html" }, { name: post.titulo, url: `${SITE}/blog/${post.slug}.html` }])}
+</head>
+<body>
+${header({ active: "blog", solid: true, prefix: "../" })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="../${post.img}" alt="${esc(post.titulo)}" width="1080" height="720"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../blog.html">Blog</a> · ${esc(post.categoria)}</nav>
+      <span class="eyebrow eyebrow--light">${esc(post.categoria)} · ${fmtData(post.data)}</span>
+      <h1>${esc(post.titulo)}</h1>
+      <p class="subhero__slogan">${esc(post.resumo)}</p>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <article class="post">
+        <div class="post__body">
+          ${renderBlocks(post.conteudo)}
+        </div>
+        <p class="post__meta">Publicado por <strong>${esc(post.autor)}</strong> · ${fmtData(post.data)}</p>
+        <div class="post__cta">
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Falar no WhatsApp</a>
+          <a class="btn btn--outline" href="../travessia.html">Ver a travessia ${I.arrow}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Continue lendo</span><h2 class="section-title">Outros artigos</h2></div>
+      <div class="tours">
+        ${outros.map((p) => blogCard(p, "../")).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer({ prefix: "../" })}
+${waFloat()}
+${scripts("../")}
+</body>
+</html>`;
+}
+
+/* ============================================================
    PLACEHOLDERS DE IMAGEM (SVG carta náutica) — até as fotos reais
    ============================================================ */
 function placeholder(p, i) {
@@ -1187,7 +1319,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -1200,6 +1332,8 @@ write("como-chegar.html", buildComoChegar());
 write("mangaratiba.html", buildMangaratiba());
 write("sobre.html", buildSobre());
 write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
+write("blog.html", buildBlogIndex());
+BLOG.forEach((p) => write(`blog/${p.slug}.html`, buildPost(p)));
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
 write("favicon.svg", favicon);
 write("sitemap.xml", sitemap);

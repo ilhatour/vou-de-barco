@@ -471,6 +471,15 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .stop--time .n { color: var(--abismo); }
 .stop .name { font-weight: 600; }
 .detail__note { font-size: .88rem; color: var(--abismo-60); margin-top: .9rem; }
+/* Blog — coluna de leitura */
+.post { max-width: 760px; margin-inline: auto; }
+.post__body > * + * { margin-top: 1.1rem; }
+.post__body h2 { font-size: var(--t-h2); margin: 2.2rem 0 .2rem; }
+.post__body p { color: var(--abismo-85); font-size: 1.05rem; line-height: 1.75; }
+.post__body a { color: var(--cobalto); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.post__body ul.included { margin-top: .4rem; }
+.post__meta { margin-top: 2.2rem; padding-top: 1.2rem; border-top: 1px solid var(--bruma); font-size: .9rem; color: var(--abismo-60); }
+.post__cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.4rem; }
 .strong-list { display: grid; gap: .55rem; margin-top: 1.1rem; }
 .strong-list li { display: flex; gap: .7rem; align-items: flex-start; color: var(--abismo-85); }
 .strong-list svg { width: 1.15em; height: 1.15em; color: var(--cobalto); flex: 0 0 auto; margin-top: .28rem; }
