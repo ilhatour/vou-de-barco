@@ -357,7 +357,7 @@ ${header({ active: "inicio" })}
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__bg"><img src="assets/img/hero-praia.jpg" alt="Águas cristalinas de Ilha Grande, na Costa Verde" width="1080" height="1116" fetchpriority="high"></div>
+    <div class="hero__bg"><img src="assets/img/hero-home.jpg" alt="Lanchas nas águas cristalinas da Ilha de Cataguases, em Ilha Grande" width="1920" height="1080" fetchpriority="high"></div>
     ${compass()}
     <div class="wrap">
       <div class="hero__inner">

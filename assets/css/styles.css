@@ -202,8 +202,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .hero__bg::after { content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(6,26,64,0) 42%, rgba(6,26,64,.5) 80%, rgba(6,26,64,.96) 100%),
-    linear-gradient(95deg, rgba(6,26,64,.8) 0%, rgba(6,26,64,.42) 34%, rgba(6,26,64,.06) 62%, rgba(6,26,64,0) 86%); }
+    linear-gradient(180deg, rgba(6,26,64,0) 56%, rgba(6,26,64,.32) 85%, rgba(6,26,64,.9) 100%),
+    linear-gradient(100deg, rgba(6,26,64,.72) 0%, rgba(6,26,64,.34) 30%, rgba(6,26,64,.04) 58%, rgba(6,26,64,0) 82%); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; padding-block: clamp(2rem, 6vh, 5rem); }
 .hero__inner { max-width: 40rem; }
 .hero h1 {
@@ -211,7 +211,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
   margin: .2rem 0 1.3rem; text-wrap: balance;
 }
 .hero h1 .accent { color: var(--amarelo); }
-.hero__sub { font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--branco-70); max-width: 46ch; margin-bottom: 2rem; }
+.hero__sub { font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--branco); max-width: 46ch; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(6,26,64,.55); }
+.hero h1 { text-shadow: 0 2px 22px rgba(6,26,64,.4); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; }
 .hero__reviews { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1.5rem; font-size: .95rem; color: var(--branco-70); }
 .hero__reviews .stars { color: var(--amarelo); letter-spacing: .08em; }
