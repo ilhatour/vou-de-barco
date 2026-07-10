@@ -185,8 +185,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
    HERO — assinatura: rota plotada na carta náutica
    ============================================================ */
 .hero {
-  position: relative; min-height: 70svh;
-  display: flex; align-items: center;
+  position: relative; min-height: 82svh;
+  display: flex; align-items: flex-end;
   background: radial-gradient(120% 90% at 78% 18%, #103a86 0%, var(--abismo) 55%);
   color: var(--branco); overflow: hidden;
   padding-top: var(--header-h);
@@ -204,8 +204,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
   background:
     linear-gradient(180deg, rgba(6,26,64,0) 56%, rgba(6,26,64,.32) 85%, rgba(6,26,64,.9) 100%),
     linear-gradient(100deg, rgba(6,26,64,.72) 0%, rgba(6,26,64,.34) 30%, rgba(6,26,64,.04) 58%, rgba(6,26,64,0) 82%); }
-.hero .wrap { position: relative; z-index: 2; width: 100%; padding-block: clamp(2rem, 6vh, 5rem); }
-.hero__inner { max-width: 40rem; }
+.hero .wrap { position: relative; z-index: 2; width: 100%; padding-top: clamp(2rem, 6vh, 4rem); padding-bottom: clamp(3rem, 8vh, 6rem); }
+.hero__inner { max-width: 42rem; }
 .hero h1 {
   font-size: var(--t-hero); color: var(--branco);
   margin: .2rem 0 1.3rem; text-wrap: balance;
