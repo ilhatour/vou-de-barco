@@ -173,7 +173,8 @@ function head({ title, desc, canonical, type = "website" }) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${SITE}/assets/img/og-vou-de-barco.jpg">
 <meta name="theme-color" content="#061A40">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,7 +189,7 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
   return `<a class="skip-link" href="#main">Pular para o conteúdo</a>
 <header class="site-header${solid ? " header--solid is-scrolled" : ""}">
   <div class="wrap">
-    <a class="brand" href="${prefix}index.html" aria-label="Vou de Barco — início">${I.mark}<span>Vou de Barco</span></a>
+    <a class="brand" href="${prefix}index.html" aria-label="Vou de Barco — início"><img class="brand__logo" src="${prefix}assets/img/logo-vdb.png" alt="" width="42" height="42"><span>Vou de Barco</span></a>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">${I.menu}</button>
     <nav class="nav" id="nav" aria-label="Principal">
       ${A(`${prefix}index.html#inicio`, "inicio", "Início")}
@@ -217,7 +218,7 @@ function footer({ prefix = "" } = {}) {
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <a class="brand" href="${prefix}index.html">${I.mark}<span>Vou de Barco</span></a>
+        <a class="brand" href="${prefix}index.html"><img class="brand__logo" src="${prefix}assets/img/logo-vdb.png" alt="" width="46" height="46"><span>Vou de Barco</span></a>
         <p>Travessia e passeios de barco em Ilha Grande e Mangaratiba. Frota e tripulação próprias, segurança em primeiro lugar.</p>
         <address class="footer__nap">
           ${I.pin}<span>Av. Célio Lopes, 89 — Centro, Mangaratiba/RJ</span><br>

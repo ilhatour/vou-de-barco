@@ -164,6 +164,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .is-scrolled .brand, .header--solid .brand { color: var(--abismo); }
 .brand .mark { width: 30px; height: 30px; flex: 0 0 auto; }
 .brand .mark path, .brand .mark circle { transition: stroke .35s, fill .35s; }
+.brand__logo { width: 40px; height: 40px; flex: 0 0 auto; display: block; }
+.footer__brand .brand__logo { width: 46px; height: 46px; }
 
 .nav { display: flex; align-items: center; gap: .4rem; }
 .nav a {
