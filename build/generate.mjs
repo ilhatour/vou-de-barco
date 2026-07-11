@@ -362,17 +362,21 @@ ${header({ active: "inicio" })}
     ${compass()}
     <div class="wrap">
       <div class="hero__inner">
-        <span class="eyebrow eyebrow--light">Mangaratiba ⇄ Ilha Grande · Flex Boat</span>
-        <h1>Ilha Grande <span class="accent">começa aqui.</span></h1>
-        <p class="hero__sub">Travessia rápida de Flex Boat por Mangaratiba e passeios pelos cenários mais bonitos da Costa Verde. Frota própria, marinheiros experientes e segurança em primeiro lugar.</p>
-        <div class="hero__actions">
-          <a class="btn" href="${waLink(heroMsg)}" target="_blank" rel="noopener">${I.whatsapp} Reservar pelo WhatsApp</a>
-          <a class="btn btn--ghost" href="#travessia">Ver travessia</a>
-          <a class="btn btn--ghost" href="#passeios">Ver passeios</a>
+        <div class="hero__top">
+          <a class="hero__reviews hero__reviews--top" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas no Google">
+            <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>no Google</span>
+          </a>
+          <h1>Ilha Grande <span class="accent">começa aqui.</span></h1>
         </div>
-        <a class="hero__reviews" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas no Google">
-          <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>no Google</span>
-        </a>
+        <div class="hero__bottom">
+          <p class="hero__sub">Travessia rápida de Flex Boat por Mangaratiba e passeios pelos cenários mais bonitos da Costa Verde. Frota própria, marinheiros experientes e segurança em primeiro lugar.</p>
+          <div class="hero__actions">
+            <a class="btn" href="${waLink(heroMsg)}" target="_blank" rel="noopener">${I.whatsapp} Reservar pelo WhatsApp</a>
+            <a class="btn btn--ghost" href="#travessia">Ver travessia</a>
+            <a class="btn btn--ghost" href="#passeios">Ver passeios</a>
+          </div>
+          <span class="eyebrow eyebrow--light hero__route">Mangaratiba ⇄ Ilha Grande · Flex Boat</span>
+        </div>
       </div>
     </div>
     <div class="hero__readout" aria-hidden="true">
