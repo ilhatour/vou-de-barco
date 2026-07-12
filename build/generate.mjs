@@ -157,19 +157,19 @@ const C = { branco: "#FFFFFF", nevoa: "#EEF1F4", abismo: "#061A40" };
 /* ============================================================
    PARTIAIS
    ============================================================ */
-function head({ title, desc, canonical, type = "website" }) {
+function head({ title, desc, canonical, type = "website", lang = "pt-BR", alternates = "" }) {
   return `<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="${lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<link rel="canonical" href="${canonical}">
+<link rel="canonical" href="${canonical}">${alternates}
 <meta property="og:type" content="${type}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
-<meta property="og:locale" content="pt_BR">
+<meta property="og:locale" content="${lang === "en" ? "en_US" : "pt_BR"}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${SITE}/assets/img/og-vou-de-barco.jpg">
 <meta name="theme-color" content="#061A40">
@@ -235,6 +235,7 @@ function footer({ prefix = "" } = {}) {
         <a href="${prefix}blog.html">Blog</a>
         <a href="${prefix}sobre.html">Sobre</a>
         <a href="${prefix}index.html#contato">Contato</a>
+        <a href="${prefix}en/mangaratiba-to-ilha-grande.html" hreflang="en" lang="en">🇬🇧 English</a>
       </div>
       <div class="footer__col">
         <h5>Passeios</h5>
@@ -664,9 +665,118 @@ ${scripts("../")}
 /* ============================================================
    PÁGINA: TRAVESSIA
    ============================================================ */
+/* hreflang PT ↔ EN da travessia */
+const EN_URL = `${SITE}/en/mangaratiba-to-ilha-grande.html`;
+const HREFLANG_TRAVESSIA = `
+<link rel="alternate" hreflang="pt-BR" href="${SITE}/travessia.html">
+<link rel="alternate" hreflang="en" href="${EN_URL}">
+<link rel="alternate" hreflang="x-default" href="${SITE}/travessia.html">`;
+
+/* ============================================================
+   PÁGINA EM INGLÊS: Mangaratiba to Ilha Grande
+   ============================================================ */
+const EN_FAQ = [
+  ["How do I get from Rio de Janeiro to Ilha Grande?", "Drive or take a bus along the Rio-Santos highway (BR-101) to Mangaratiba — the closest departure point to Rio, about 1h30–2h30 from the city. From the Mangaratiba pier, our Flex Boat speedboat takes you to Vila do Abraão, Ilha Grande's main village, in about 40 minutes."],
+  ["How long is the boat trip from Mangaratiba to Ilha Grande?", "About 40 minutes by Flex Boat (speedboat). The traditional ferry does the same route in up to 110 minutes, with only one departure per day."],
+  ["What are the ferry times from Mangaratiba to Ilha Grande?", "The traditional ferry (Barcas Rio) runs once a day: it departs Mangaratiba at 8:00 am and returns from Abraão at 5:30 pm. Times may change — always check the official Barcas Rio website. Our Flex Boat runs three times a day in each direction."],
+  ["What are the Flex Boat departure times?", "Mangaratiba → Abraão: 9:00 am, 1:30 pm and 4:30 pm. Abraão → Mangaratiba: 10:00 am, 2:00 pm and 5:15 pm. Please arrive at the pier about 20 minutes before departure."],
+  ["How much does the transfer cost?", "Prices are quoted on request and depend on the leg (one way or round trip) and the number of passengers. Message us on WhatsApp and we will send you current prices right away — no commitment."],
+  ["Is there parking in Mangaratiba?", "Yes, there is affordable parking near the pier — one of the reasons Mangaratiba is the most practical departure point if you are coming from Rio by car."],
+  ["Can I bring luggage?", "Each passenger can bring 1 carry-on bag up to 10 kg plus 1 bag up to 23 kg. Extra volumes depend on available space and may have a fee. For pets, please contact us on WhatsApp in advance."],
+];
+function buildEnglish() {
+  const msg = "Hello, Vou de Barco! I'd like to book the speedboat transfer from Mangaratiba to Ilha Grande.";
+  const title = "Mangaratiba to Ilha Grande: speedboat transfer & ferry times | Vou de Barco";
+  const desc = "How to get from Rio de Janeiro to Ilha Grande via Mangaratiba: fast Flex Boat transfer (~40 min, 3 daily departures) and traditional ferry times. Book on WhatsApp.";
+  const alternates = `
+<link rel="alternate" hreflang="pt-BR" href="${SITE}/travessia.html">
+<link rel="alternate" hreflang="en" href="${EN_URL}">
+<link rel="alternate" hreflang="x-default" href="${SITE}/travessia.html">`;
+  return `${head({ title, desc, canonical: EN_URL, type: "article", lang: "en", alternates })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: EN_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Home", url: SITE + "/" }, { name: "Mangaratiba to Ilha Grande", url: EN_URL }])}
+</head>
+<body>
+${header({ active: "travessia", solid: true, prefix: "../" })}
+<main id="main">
+
+  <section class="subhero subhero--photo subhero--flex">
+    <div class="subhero__bg"><img src="../${TRAV.img}" alt="Vou de Barco Flex Boat speedboat crossing from Mangaratiba to Ilha Grande" width="1080" height="1115"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> · English</nav>
+      <span class="eyebrow eyebrow--light">Rio de Janeiro · Costa Verde</span>
+      <h1>Mangaratiba to Ilha Grande</h1>
+      <p class="subhero__slogan">The fastest way from Rio to Ilha Grande: a 40-minute speedboat ride from the closest pier to the city.</p>
+      <div class="subhero__meta">
+        <span class="chip">${I.clock}~40 min crossing</span>
+        <span class="chip">Flex Boat (speedboat)</span>
+        <span class="chip">${I.pin}Mangaratiba ⇄ Abraão</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail__main">
+          <h2>Getting to Ilha Grande from Rio de Janeiro</h2>
+          <p>Ilha Grande has no cars and no bridges — you can only get there by boat. The closest departure point to Rio de Janeiro is <strong>Mangaratiba</strong>, a small coastal town about 1h30–2h30 from the city along the Rio-Santos highway (BR-101). From the Mangaratiba pier, boats cross to <strong>Vila do Abraão</strong>, Ilha Grande's main village.</p>
+          <p>We are <strong>Vou de Barco</strong>, a local boat company with its own fleet, experienced crew and a registered travel agency right by the pier. We pioneered the fast <strong>Flex Boat (speedboat) crossing</strong> from Mangaratiba.</p>
+
+          <h2>Flex Boat speedboat: ~40 minutes, 3 departures a day</h2>
+          <ul>
+            <li><strong>Mangaratiba → Vila do Abraão:</strong> 9:00 am · 1:30 pm · 4:30 pm</li>
+            <li><strong>Vila do Abraão → Mangaratiba:</strong> 10:00 am · 2:00 pm · 5:15 pm</li>
+            <li><strong>Crossing time:</strong> about 40 minutes · life jackets for everyone on board</li>
+            <li><strong>Tickets:</strong> one way or round trip · prices on request</li>
+          </ul>
+          <p style="font-size:.95rem;color:var(--abismo-60)">Times may be adjusted due to weather and tide. Please arrive about 20 minutes before departure.</p>
+
+          <h2>Traditional ferry (Barcas Rio): times and fare</h2>
+          <p>There is also a <strong>traditional ferry</strong> from the same pier, operated by Barcas Rio, with <strong>one departure per day</strong> in each direction:</p>
+          <ul>
+            <li><strong>Mangaratiba → Vila do Abraão:</strong> 8:00 am</li>
+            <li><strong>Vila do Abraão → Mangaratiba:</strong> 5:30 pm</li>
+            <li><strong>Trip time:</strong> up to 110 minutes · fare around R$ 20.50</li>
+          </ul>
+          <p style="font-size:.95rem;color:var(--abismo-60)">⚠️ Ferry times and fares may change without notice — please double-check on the <a href="${BARCA.site}" target="_blank" rel="noopener">official Barcas Rio website</a>.</p>
+
+          <h2>Frequently asked questions</h2>
+          <div class="faq">
+            ${EN_FAQ.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+        </div>
+
+        <aside class="booking-card">
+          <h3>Book your crossing</h3>
+          <p class="price-note">Prices on request</p>
+          <ul class="spec-list">
+            <li><span class="k">Route</span><span class="v">Mangaratiba ⇄ Abraão</span></li>
+            <li><span class="k">Boat</span><span class="v">Flex Boat (speedboat)</span></li>
+            <li><span class="k">Time</span><span class="v">~40 minutes</span></li>
+            <li><span class="k">Departures</span><span class="v">3 per day, each way</span></li>
+          </ul>
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Book on WhatsApp</a>
+          <a class="back" href="../travessia.html">${I.arrow} Página em português</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer({ prefix: "../" })}
+${waFloat()}
+${scripts("../")}
+</body>
+</html>`;
+}
+
 function buildTravessia() {
   const msg = "Olá, Vou de Barco! Quero informações da travessia Mangaratiba ⇄ Ilha Grande (horários, bilhetes e valores).";
-  return `${head({ title: TRAV.seo_title, desc: TRAV.seo_desc, canonical: `${SITE}/travessia.html` })}
+  return `${head({ title: TRAV.seo_title, desc: TRAV.seo_desc, canonical: `${SITE}/travessia.html`, alternates: HREFLANG_TRAVESSIA })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "Service", serviceType: "Travessia de barco (Flex Boat)",
     name: "Travessia Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
@@ -910,11 +1020,22 @@ const MANGA_FAQ = [
   ["Tem estacionamento em Mangaratiba?", "Sim, há estacionamento próximo ao cais, em conta. É um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro e quer deixar o veículo em segurança."],
   ["Por que sair de Mangaratiba e não de Angra ou Conceição de Jacareí?", "Mangaratiba é o ponto de travessia mais próximo do Rio de Janeiro — menos estrada, chegada mais rápida e estacionamento em conta. Por isso é a rota preferida de quem vem da capital."],
   ["Quanto custa a travessia de Mangaratiba para a Ilha Grande?", "O valor é sob consulta e varia conforme o trecho (ida, volta ou ida e volta) e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço na hora."],
+  ["Qual é o horário da barca de Mangaratiba para a Ilha Grande?", "A barca tradicional (Barcas Rio) tem um horário por dia em cada sentido: saída de Mangaratiba às 08h00 e retorno do Abraão às 17h30, com viagem de até 110 minutos. Esses horários podem mudar — confirme sempre no site oficial da Barcas Rio. Se precisar de mais flexibilidade, o nosso Flex Boat tem três saídas diárias em cada sentido e faz o trajeto em cerca de 40 minutos."],
 ];
+
+/* Horários da barca tradicional (fonte: barcasrio.com.br, linha Mangaratiba > Ilha Grande) */
+const BARCA = {
+  operadora: "Barcas Rio",
+  ida: "08h00 (Mangaratiba → Abraão)",
+  volta: "17h30 (Abraão → Mangaratiba)",
+  duracao: "até 110 minutos",
+  tarifa: "R$ 20,50 (valor de referência)",
+  site: "https://barcasrio.com.br/linhas-horarios-e-tarifas/",
+};
 function buildMangaratiba() {
   const msg = "Olá, Vou de Barco! Quero informações da travessia de Mangaratiba para a Ilha Grande.";
-  const title = "Mangaratiba ⇄ Ilha Grande: travessia, cais e como chegar | Vou de Barco";
-  const desc = "Mangaratiba é a porta de entrada mais próxima do Rio para a Ilha Grande. Veja como chegar, o cais de embarque, estacionamento e a travessia de Flex Boat até a Vila do Abraão (~40 min).";
+  const title = "Mangaratiba ⇄ Ilha Grande: barca, horários e travessia rápida | Vou de Barco";
+  const desc = "Horários da barca Mangaratiba ⇄ Ilha Grande (08h00 / 17h30) e a travessia rápida de Flex Boat (~40 min, 3 saídas por dia). Cais de Mangaratiba, estacionamento e como chegar.";
   return `${head({ title, desc, canonical: `${SITE}/mangaratiba.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "FAQPage",
@@ -963,6 +1084,16 @@ ${header({ active: "mangaratiba", solid: true })}
             <div style="background:var(--nevoa)"><h4 style="color:var(--cobalto)">${esc(TRAV.horarios.volta.titulo)}</h4><ul>${TRAV.horarios.volta.saidas.map((s) => `<li style="background:var(--cobalto-12);color:var(--cobalto)">${s}</li>`).join("")}</ul></div>
           </div>
           <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)"><a href="travessia.html">Ver todos os detalhes da travessia →</a></p>
+
+          <h2>Horários da barca Mangaratiba ⇄ Ilha Grande (barca tradicional)</h2>
+          <p>Além do Flex Boat, a <strong>barca tradicional</strong> (operada pela ${esc(BARCA.operadora)}) também sai do cais de Mangaratiba, com <strong>um horário por dia</strong> em cada sentido:</p>
+          <ul>
+            <li><strong>Mangaratiba → Vila do Abraão:</strong> 08h00</li>
+            <li><strong>Vila do Abraão → Mangaratiba:</strong> 17h30</li>
+            <li><strong>Duração:</strong> ${esc(BARCA.duracao)} · <strong>Tarifa:</strong> ${esc(BARCA.tarifa)}</li>
+          </ul>
+          <p style="font-size:.95rem;color:var(--abismo-60)">⚠️ Os horários e tarifas da barca podem mudar sem aviso. Para ter certeza, confirme no <a href="${BARCA.site}" target="_blank" rel="noopener">site oficial da Barcas Rio</a>.</p>
+          <p>Se os horários da barca não encaixam no seu plano, o nosso <strong>Flex Boat tem três saídas diárias</strong> em cada sentido e faz o trajeto em cerca de 40 minutos — <a href="travessia.html">veja os horários da travessia</a>.</p>
 
           <h2>O que fazer depois de chegar à Ilha Grande</h2>
           <p>Da Vila do Abraão saem os passeios de barco pelos cenários mais bonitos da região: Lagoa Azul, Lagoa Verde, Praia dos Meros, Aventureiro, a Gruta do Acaiá e as ilhas paradisíacas de Angra. Conheça a ilha pelo mar com a gente.</p>
@@ -1329,7 +1460,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -1343,6 +1474,7 @@ write("mangaratiba.html", buildMangaratiba());
 write("sobre.html", buildSobre());
 write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
 write("blog.html", buildBlogIndex());
+write("en/mangaratiba-to-ilha-grande.html", buildEnglish());
 BLOG.forEach((p) => write(`blog/${p.slug}.html`, buildPost(p)));
 PASSEIOS.forEach((p) => write(`passeios/${p.id}.html`, buildPasseio(p)));
 write("favicon.svg", favicon);

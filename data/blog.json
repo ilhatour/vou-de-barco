@@ -161,5 +161,61 @@
     "html": "<p>Quer saber mais sobre a cidade que é a porta de entrada da ilha? Veja nosso guia de <a href=\"../mangaratiba.html\">Mangaratiba ⇄ Ilha Grande</a>. E para o seu roteiro na ilha, confira os <a href=\"../passeios-ilha-grande.html\">passeios de barco em Ilha Grande</a>.</p>"
    }
   ]
+ },
+ {
+  "slug": "barca-mangaratiba-ilha-grande",
+  "titulo": "Barca Mangaratiba ⇄ Ilha Grande: horários, preço e a alternativa rápida",
+  "resumo": "Horários da barca tradicional entre Mangaratiba e a Vila do Abraão, tarifa, duração da viagem — e o comparativo com o Flex Boat, que faz o mesmo trajeto em cerca de 40 minutos.",
+  "data": "2026-07-10",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Como chegar",
+  "img": "assets/img/travessia-flex-boat.jpg",
+  "seo_title": "Barca Mangaratiba x Ilha Grande: horários, preço e alternativa rápida",
+  "seo_desc": "Horários da barca Mangaratiba ⇄ Ilha Grande (Barcas Rio): saída 08h00, volta 17h30, até 110 min de viagem. Compare com o Flex Boat: ~40 minutos e 3 saídas por dia.",
+  "conteudo": [
+   "Quem pesquisa a barca de Mangaratiba para a Ilha Grande geralmente quer saber duas coisas: os horários e quanto tempo leva. Aqui vai o resumo direto — e também a alternativa mais rápida saindo do mesmo cais.",
+   {
+    "h2": "Horários da barca Mangaratiba ⇄ Ilha Grande"
+   },
+   "A barca tradicional é operada pela Barcas Rio e tem um horário por dia em cada sentido:",
+   {
+    "lista": [
+     "Mangaratiba → Vila do Abraão: 08h00",
+     "Vila do Abraão → Mangaratiba: 17h30",
+     "Duração: até 110 minutos de viagem",
+     "Tarifa: R$ 20,50 (valor de referência)"
+    ]
+   },
+   {
+    "html": "<p>⚠️ <strong>Importante:</strong> horários e tarifas da barca podem mudar sem aviso — para ter certeza, confirme no <a href=\"https://barcasrio.com.br/linhas-horarios-e-tarifas/\" target=\"_blank\" rel=\"noopener\">site oficial da Barcas Rio</a> antes de viajar.</p>"
+   },
+   {
+    "h2": "De onde a barca sai"
+   },
+   {
+    "html": "<p>A barca sai do cais central de Mangaratiba, no Centro da cidade, com acesso pela Rio-Santos (BR-101) e estacionamento próximo. Preparamos um guia completo do embarque em <a href=\"cais-de-mangaratiba.html\">Cais de Mangaratiba: onde fica e de onde sai a travessia</a>.</p>"
+   },
+   {
+    "h2": "Barca ou Flex Boat: qual escolher?"
+   },
+   "A barca é a opção mais econômica, mas tem só uma saída por dia e a viagem é longa. O Flex Boat sai do mesmo cais e faz o trajeto em cerca de 40 minutos, com três horários por dia em cada sentido — ideal pra quem quer aproveitar o dia na ilha ou chegou depois das 08h.",
+   {
+    "lista": [
+     "Barca: 1 saída/dia (08h00), até 110 minutos de viagem",
+     "Flex Boat: 3 saídas/dia (09h00, 13h30 e 16h30), cerca de 40 minutos",
+     "Volta — Barca: 17h30 · Flex Boat: 10h00, 14h00 e 17h15",
+     "Os dois saem do mesmo cais, no Centro de Mangaratiba"
+    ]
+   },
+   {
+    "html": "<p>Fomos os pioneiros na travessia de Flex Boat por Mangaratiba, com frota própria, marinheiros experientes e coletes para todos a bordo. Veja os detalhes, horários e valores na página da <a href=\"../travessia.html\">travessia Mangaratiba ⇄ Ilha Grande</a> ou chame a gente no WhatsApp.</p>"
+   },
+   {
+    "h2": "Chegou na ilha: e agora?"
+   },
+   {
+    "html": "<p>O desembarque (da barca e do Flex Boat) é na Vila do Abraão, o coração da Ilha Grande. De lá saem os <a href=\"../passeios-ilha-grande.html\">passeios de barco em Ilha Grande</a> — Lagoa Azul, Gruta do Acaiá, ilhas paradisíacas de Angra e muito mais.</p>"
+   }
+  ]
  }
 ]

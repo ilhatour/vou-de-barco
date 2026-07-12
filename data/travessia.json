@@ -1,60 +1,131 @@
 {
-  "rota": "Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
-  "embarcacao": "Flex Boat",
-  "tempo": "~40 minutos",
-  "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
-  "img": "assets/img/travessia-flex-boat.jpg",
-  "bilhetes": ["Ida", "Volta", "Ida e volta"],
-  "embarque": { "local": "Centro de Mangaratiba", "detalhe": "No cais da barca — Av. Célio Lopes, 89" },
-  "desembarque": { "local": "Vila do Abraão · Ilha Grande", "detalhe": "No Cais de Turismo, o cais principal da vila" },
-  "horarios": {
-    "ida": { "titulo": "Mangaratiba → Abraão", "saidas": ["09h00", "13h30", "16h30"] },
-    "volta": { "titulo": "Abraão → Mangaratiba", "saidas": ["10h00", "14h00", "17h15"] }
+ "rota": "Mangaratiba ⇄ Vila do Abraão (Ilha Grande)",
+ "embarcacao": "Flex Boat",
+ "tempo": "~40 minutos",
+ "slogan": "O ponto mais próximo do Rio, com estacionamento em conta.",
+ "img": "assets/img/travessia-flex-boat.jpg",
+ "bilhetes": [
+  "Ida",
+  "Volta",
+  "Ida e volta"
+ ],
+ "embarque": {
+  "local": "Centro de Mangaratiba",
+  "detalhe": "No cais da barca — Av. Célio Lopes, 89"
+ },
+ "desembarque": {
+  "local": "Vila do Abraão · Ilha Grande",
+  "detalhe": "No Cais de Turismo, o cais principal da vila"
+ },
+ "horarios": {
+  "ida": {
+   "titulo": "Mangaratiba → Abraão",
+   "saidas": [
+    "09h00",
+    "13h30",
+    "16h30"
+   ]
   },
-  "como_funciona": [
-    { "n": "01", "titulo": "Chegue ao cais", "texto": "Vá ao cais de Mangaratiba com um documento com foto. Recomendamos chegar com antecedência, com calma." },
-    { "n": "02", "titulo": "Embarque", "texto": "Apresente-se cerca de 20 minutos antes do horário e suba a bordo com a nossa equipe." },
-    { "n": "03", "titulo": "Travessia", "texto": "Cerca de 40 minutos de mar em Flex Boat, com coletes e suporte a bordo do início ao fim." },
-    { "n": "04", "titulo": "Desembarque", "texto": "Chegada no cais da Vila do Abraão, bem no centro da vila — Ilha Grande começa aqui." }
+  "volta": {
+   "titulo": "Abraão → Mangaratiba",
+   "saidas": [
+    "10h00",
+    "14h00",
+    "17h15"
+   ]
+  }
+ },
+ "como_funciona": [
+  {
+   "n": "01",
+   "titulo": "Chegue ao cais",
+   "texto": "Vá ao cais de Mangaratiba com um documento com foto. Recomendamos chegar com antecedência, com calma."
+  },
+  {
+   "n": "02",
+   "titulo": "Embarque",
+   "texto": "Apresente-se cerca de 20 minutos antes do horário e suba a bordo com a nossa equipe."
+  },
+  {
+   "n": "03",
+   "titulo": "Travessia",
+   "texto": "Cerca de 40 minutos de mar em Flex Boat, com coletes e suporte a bordo do início ao fim."
+  },
+  {
+   "n": "04",
+   "titulo": "Desembarque",
+   "texto": "Chegada no cais da Vila do Abraão, bem no centro da vila — Ilha Grande começa aqui."
+  }
+ ],
+ "incluso": [
+  "Passagem marítima Mangaratiba ⇄ Abraão (no trecho escolhido)",
+  "Transporte de bagagem padrão (1 mala + 1 de mão)",
+  "Colete salva-vidas a bordo",
+  "Suporte da equipe Vou de Barco"
+ ],
+ "nao_incluso": [
+  "Transfer terrestre até Mangaratiba",
+  "Refeições",
+  "Bagagem excedente (pode ser levada conforme espaço, com taxa)"
+ ],
+ "o_que_levar": [
+  "Documento com foto",
+  "Dinheiro em espécie (nem tudo aceita cartão)",
+  "Protetor solar, repelente e água",
+  "Capa de chuva leve",
+  "Calçado que pode molhar"
+ ],
+ "bagagem": "Cada passageiro leva incluso 1 mala de mão de até 10 kg + 1 mala de até 23 kg (padrão aviação). Volumes extras podem ser transportados conforme o espaço disponível, com taxa por volume — combine com a gente pelo WhatsApp com antecedência. Crianças de 0 a 3 anos não pagam e viajam no colo.",
+ "seguranca": [
+  "Embarcações legalizadas e operação regularizada",
+  "Revisão em dia, conforme o fabricante do motor",
+  "Marinheiros experientes que conhecem a região",
+  "Coletes salva-vidas para todos a bordo"
+ ],
+ "dicas": [
+  {
+   "titulo": "E se chover?",
+   "texto": "A travessia acontece normalmente. Mesmo com a embarcação coberta, você pode se molhar um pouco — vale levar uma capa de chuva leve. Faz parte da experiência."
+  },
+  {
+   "titulo": "E se o mar estiver agitado?",
+   "texto": "Em alguns dias o mar fica mais movimentado (às vezes até com sol). É normal e seguro. Se você enjoa fácil, evite comer muito antes de embarcar."
+  }
+ ],
+ "faq": [
+  [
+   "Quanto custa a travessia de Mangaratiba para a Ilha Grande?",
+   "O valor é sob consulta e varia conforme o trecho (ida, volta ou ida e volta) e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço atualizado na hora, sem compromisso."
   ],
-  "incluso": [
-    "Passagem marítima Mangaratiba ⇄ Abraão (no trecho escolhido)",
-    "Transporte de bagagem padrão (1 mala + 1 de mão)",
-    "Colete salva-vidas a bordo",
-    "Suporte da equipe Vou de Barco"
+  [
+   "De onde sai a travessia? Onde fica o cais de Mangaratiba?",
+   "O embarque é no Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 89. É o cais central da cidade, fácil de chegar pela Rio-Santos (BR-101)."
   ],
-  "nao_incluso": [
-    "Transfer terrestre até Mangaratiba",
-    "Refeições",
-    "Bagagem excedente (pode ser levada conforme espaço, com taxa)"
+  [
+   "Tem estacionamento em Mangaratiba?",
+   "Sim. Há estacionamento próximo ao cais, em conta — um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro."
   ],
-  "o_que_levar": [
-    "Documento com foto",
-    "Dinheiro em espécie (nem tudo aceita cartão)",
-    "Protetor solar, repelente e água",
-    "Capa de chuva leve",
-    "Calçado que pode molhar"
+  [
+   "Quanto tempo dura a travessia até a Ilha Grande?",
+   "Cerca de 40 minutos de Flex Boat entre Mangaratiba e a Vila do Abraão, com desembarque no Cais de Turismo, no centro da vila."
   ],
-  "bagagem": "Cada passageiro leva incluso 1 mala de mão de até 10 kg + 1 mala de até 23 kg (padrão aviação). Volumes extras podem ser transportados conforme o espaço disponível, com taxa por volume — combine com a gente pelo WhatsApp com antecedência. Crianças de 0 a 3 anos não pagam e viajam no colo.",
-  "seguranca": [
-    "Embarcações legalizadas e operação regularizada",
-    "Revisão em dia, conforme o fabricante do motor",
-    "Marinheiros experientes que conhecem a região",
-    "Coletes salva-vidas para todos a bordo"
+  [
+   "Preciso reservar com antecedência?",
+   "Sim, recomendamos reservar pelo WhatsApp para garantir a sua vaga na data e no horário desejados — principalmente em fins de semana e na alta temporada."
   ],
-  "dicas": [
-    { "titulo": "E se chover?", "texto": "A travessia acontece normalmente. Mesmo com a embarcação coberta, você pode se molhar um pouco — vale levar uma capa de chuva leve. Faz parte da experiência." },
-    { "titulo": "E se o mar estiver agitado?", "texto": "Em alguns dias o mar fica mais movimentado (às vezes até com sol). É normal e seguro. Se você enjoa fácil, evite comer muito antes de embarcar." }
+  [
+   "Quais são os horários de saída?",
+   "Mangaratiba → Abraão: 09h00, 13h30 e 16h30. Abraão → Mangaratiba: 10h00, 14h00 e 17h15. Chegue ao cais cerca de 20 minutos antes."
   ],
-  "faq": [
-    ["Quanto custa a travessia de Mangaratiba para a Ilha Grande?", "O valor é sob consulta e varia conforme o trecho (ida, volta ou ida e volta) e o número de pessoas. Fale com a gente pelo WhatsApp que passamos o preço atualizado na hora, sem compromisso."],
-    ["De onde sai a travessia? Onde fica o cais de Mangaratiba?", "O embarque é no Centro de Mangaratiba, no cais da barca — Av. Célio Lopes, 89. É o cais central da cidade, fácil de chegar pela Rio-Santos (BR-101)."],
-    ["Tem estacionamento em Mangaratiba?", "Sim. Há estacionamento próximo ao cais, em conta — um dos motivos de Mangaratiba ser o ponto mais prático para quem vem do Rio de carro."],
-    ["Quanto tempo dura a travessia até a Ilha Grande?", "Cerca de 40 minutos de Flex Boat entre Mangaratiba e a Vila do Abraão, com desembarque no Cais de Turismo, no centro da vila."],
-    ["Preciso reservar com antecedência?", "Sim, recomendamos reservar pelo WhatsApp para garantir a sua vaga na data e no horário desejados — principalmente em fins de semana e na alta temporada."],
-    ["Quais são os horários de saída?", "Mangaratiba → Abraão: 09h00, 13h30 e 16h30. Abraão → Mangaratiba: 10h00, 14h00 e 17h15. Chegue ao cais cerca de 20 minutos antes."],
-    ["Posso levar bagagem? E animais de estimação?", "Cada passageiro leva 1 mala de mão de até 10 kg + 1 mala de até 23 kg. Volumes extras podem ir conforme o espaço, com taxa. Para animais, combine antes com a gente pelo WhatsApp."]
+  [
+   "Posso levar bagagem? E animais de estimação?",
+   "Cada passageiro leva 1 mala de mão de até 10 kg + 1 mala de até 23 kg. Volumes extras podem ir conforme o espaço, com taxa. Para animais, combine antes com a gente pelo WhatsApp."
   ],
-  "seo_title": "Travessia Mangaratiba ⇄ Ilha Grande em Flex Boat | Vou de Barco",
-  "seo_desc": "Travessia de Flex Boat de Mangaratiba para a Ilha Grande (Vila do Abraão) em ~40 min. Horários, cais de embarque, estacionamento, preço sob consulta e reserva pelo WhatsApp."
+  [
+   "Qual é o horário da barca de Mangaratiba para a Ilha Grande?",
+   "A barca tradicional (Barcas Rio) tem um horário por dia: saída de Mangaratiba às 08h00 e retorno do Abraão às 17h30, com viagem de até 110 minutos. Os horários podem mudar — confirme no site oficial da Barcas Rio. Nosso Flex Boat é a alternativa rápida: três saídas diárias em cada sentido e cerca de 40 minutos de trajeto."
+  ]
+ ],
+ "seo_title": "Travessia Mangaratiba ⇄ Ilha Grande em Flex Boat | Vou de Barco",
+ "seo_desc": "Travessia de Flex Boat de Mangaratiba para a Ilha Grande (Vila do Abraão) em ~40 min. Horários, cais de embarque, estacionamento, preço sob consulta e reserva pelo WhatsApp."
 }
