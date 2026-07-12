@@ -77,6 +77,17 @@
     wake(); // inicia o contador de 2s
   })();
 
+  /* ---- GA4: clique em link de WhatsApp = evento whatsapp_click ---- */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com"]');
+    if (!a || typeof window.gtag !== "function") return;
+    window.gtag("event", "whatsapp_click", {
+      link_url: a.href,
+      cta_text: (a.textContent || "").trim().slice(0, 60) || "icone",
+      page_path: location.pathname
+    });
+  }, { passive: true });
+
   /* ---- Formulário de contato → WhatsApp ---- */
   var form = document.querySelector("[data-wa-form]");
   if (form) {
@@ -100,6 +111,9 @@
       ].filter(Boolean);
 
       var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(linhas.join("\n"));
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "whatsapp_click", { link_url: url, cta_text: "formulario", page_path: location.pathname });
+      }
       window.open(url, "_blank", "noopener");
     });
   }
