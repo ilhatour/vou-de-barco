@@ -230,6 +230,7 @@ function footer({ prefix = "" } = {}) {
         <h5>Navegue</h5>
         <a href="${prefix}travessia.html">Travessia</a>
         <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
+        <a href="${prefix}privativo.html">Embarcação privativa</a>
         <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
         <a href="${prefix}blog.html">Blog</a>
@@ -450,6 +451,7 @@ ${header({ active: "inicio" })}
       <div class="tours">
         ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
       </div>
+      <p style="text-align:center;margin-top:2.8rem"><a class="btn btn--outline" href="privativo.html">Quer o barco só pro seu grupo? Conheça a embarcação privativa ${I.arrow}</a></p>
     </div>
   </section>
 
@@ -1303,6 +1305,120 @@ ${scripts()}
 }
 
 /* ============================================================
+   PÁGINA: EMBARCAÇÃO PRIVATIVA
+   ============================================================ */
+const PRIV_FAQ = [
+  ["De onde sai a embarcação privativa?", "Você escolhe o ponto de embarque: Angra dos Reis, Mangaratiba ou a Vila do Abraão, na Ilha Grande. A gente combina o melhor ponto e horário para o seu grupo."],
+  ["Posso personalizar o roteiro?", "Sim — essa é a maior vantagem do privativo. Partimos de um dos nossos três roteiros clássicos (Ilhas Paradisíacas, Meia Volta ou Volta na Ilha) e adaptamos as paradas, o ritmo e o tempo em cada praia do jeito que o seu grupo preferir."],
+  ["Quanto custa o aluguel da embarcação privativa?", "O valor é sob consulta e depende do roteiro, do ponto de saída, da data e do tamanho do grupo. Fale com a nossa equipe pelo WhatsApp que passamos as opções e valores na hora, sem compromisso."],
+  ["O que está incluso?", "Embarcação com marinheiro experiente, água mineral, cooler com gelo, flutuadores e coletes salva-vidas para todos a bordo."],
+  ["Como reservar?", "Entre em contato com a nossa equipe pelo WhatsApp (24) 97403-1431. É só contar a data, o ponto de saída e o tamanho do grupo que montamos a proposta do seu roteiro privativo."],
+];
+const PRIV_IDS = ["ilhas-paradisiacas", "meia-volta", "volta-na-ilha"];
+function buildPrivativo() {
+  const msg = "Olá, Vou de Barco! Tenho interesse no aluguel de embarcação privativa. Pode me passar opções de roteiro e valores?";
+  const title = "Embarcação privativa em Ilha Grande e Angra — passeio de lancha exclusivo | Vou de Barco";
+  const desc = "Alugue uma embarcação privativa com a Vou de Barco: saídas de Angra, Mangaratiba ou Ilha Grande, roteiros Ilhas Paradisíacas, Meia Volta e Volta na Ilha — com paradas adaptadas ao seu grupo.";
+  const roteiros = PRIV_IDS.map((id) => PASSEIOS.find((p) => p.id === id)).filter(Boolean);
+  return `${head({ title, desc, canonical: `${SITE}/privativo.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "Service", serviceType: "Aluguel de embarcação privativa",
+    name: "Passeio de barco privativo em Ilha Grande e Angra dos Reis",
+    description: desc,
+    provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
+    areaServed: [{ "@type": "Place", name: "Angra dos Reis" }, { "@type": "Place", name: "Mangaratiba" }, { "@type": "Place", name: "Ilha Grande" }],
+    url: SITE + "/privativo.html",
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: PRIV_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Embarcação privativa", url: SITE + "/privativo.html" }])}
+</head>
+<body>
+${header({ active: "passeios", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="assets/img/passeio-ilhas-paradisiacas.jpg" alt="Passeio de lancha privativa pelas ilhas de Angra e Ilha Grande" width="1080" height="1350"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Embarcação privativa</nav>
+      <span class="eyebrow eyebrow--light">Exclusivo · só o seu grupo a bordo</span>
+      <h1>Embarcação privativa</h1>
+      <p class="subhero__slogan">O barco é seu, o roteiro também: saída de Angra, Mangaratiba ou Ilha Grande, com paradas do jeito que o seu grupo quiser.</p>
+      <div class="subhero__meta">
+        <span class="chip">${I.pin}Angra · Mangaratiba · Ilha Grande</span>
+        <span class="chip">${I.boat}Roteiro adaptável</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail__main">
+          <h2>Um passeio só para o seu grupo</h2>
+          <p>No aluguel de <strong>embarcação privativa</strong> da Vou de Barco, a lancha é exclusiva do seu grupo — sem horários engessados e sem dividir o barco com estranhos. Ideal para famílias, aniversários, pedidos de casamento, grupos de amigos ou quem simplesmente quer curtir o mar da Costa Verde no próprio ritmo.</p>
+
+          <h2>Saída de onde for melhor para você</h2>
+          <p>Você embarca em <strong>Angra dos Reis</strong>, <strong>Mangaratiba</strong> ou na <strong>Vila do Abraão (Ilha Grande)</strong> — a gente combina o ponto e o horário que fizerem mais sentido para o seu plano.</p>
+
+          <h2>Três roteiros clássicos como ponto de partida</h2>
+          <p>Nossos três roteiros mais pedidos servem de base para o seu dia — e, no privativo, o roteiro pode ser <strong>adaptado</strong>: mais tempo na praia favorita, uma parada extra para snorkel, almoço onde o grupo preferir.</p>
+        </div>
+
+        <aside class="booking-card">
+          <h3>Monte o seu privativo</h3>
+          <p class="price-note">Preço sob consulta</p>
+          <ul class="spec-list">
+            <li><span class="k">Saídas</span><span class="v">Angra · Mangaratiba · Abraão</span></li>
+            <li><span class="k">Roteiros-base</span><span class="v">3 clássicos, adaptáveis</span></li>
+            <li><span class="k">Exclusividade</span><span class="v">Só o seu grupo a bordo</span></li>
+            <li><span class="k">Reserva</span><span class="v">Fale com a nossa equipe</span></li>
+          </ul>
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Falar com a equipe</a>
+          <a class="back" href="passeios-ilha-grande.html">${I.arrow} Ver passeios regulares</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow">Roteiros-base</span>
+        <h2 class="section-title">Escolha o ponto de partida do seu dia</h2>
+        <p class="lead">Conheça os três roteiros que servem de base para o seu passeio privativo — e lembre: no privativo, as paradas se adaptam ao seu grupo.</p>
+      </div>
+      <div class="tours">
+        ${roteiros.map((p) => tourCard(p)).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.nevoa, C.branco, true)}
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="section__head center"><span class="eyebrow">Perguntas frequentes</span><h2 class="section-title">Sobre a embarcação privativa</h2></div>
+      <div class="faq">
+        ${PRIV_FAQ.map(([q, a]) => `<details class="faq__item reveal"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n        ")}
+      </div>
+      <p style="text-align:center;margin-top:2.5rem"><a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Falar com a nossa equipe</a></p>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+/* ============================================================
    BLOG
    ============================================================ */
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -1460,7 +1576,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/privativo.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -1473,6 +1589,7 @@ write("como-chegar.html", buildComoChegar());
 write("mangaratiba.html", buildMangaratiba());
 write("sobre.html", buildSobre());
 write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
+write("privativo.html", buildPrivativo());
 write("blog.html", buildBlogIndex());
 write("en/mangaratiba-to-ilha-grande.html", buildEnglish());
 BLOG.forEach((p) => write(`blog/${p.slug}.html`, buildPost(p)));
