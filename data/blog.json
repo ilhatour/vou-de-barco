@@ -1,71 +1,165 @@
 [
-  {
-    "slug": "o-que-fazer-em-ilha-grande",
-    "titulo": "O que fazer em Ilha Grande: os melhores passeios de barco",
-    "resumo": "Um guia direto dos passeios de barco que valem a pena em Ilha Grande e Angra — de Lagoa Azul à Gruta do Acaiá — para você montar o dia perfeito no mar.",
-    "data": "2026-07-10",
-    "autor": "Equipe Vou de Barco",
-    "categoria": "Guia",
-    "img": "assets/img/passeio-ilhas-paradisiacas.jpg",
-    "seo_title": "O que fazer em Ilha Grande: melhores passeios de barco | Vou de Barco",
-    "seo_desc": "Guia dos melhores passeios de barco em Ilha Grande e Angra: Lagoa Azul, Lagoa Verde, Praia do Dentista, Aventureiro e a Gruta do Acaiá. Saída da Vila do Abraão.",
-    "conteudo": [
-      "Ilha Grande é um daqueles lugares onde o melhor está no mar. Praias de difícil acesso, lagoas de água transparente e ilhas paradisíacas só se revelam de barco — e é por isso que um passeio náutico costuma ser a lembrança que fica da viagem. Reunimos aqui os roteiros que mais valem a pena, com uma dica de para quem cada um combina.",
-      { "h2": "Lagoa Azul e a Costa Norte" },
-      "A Lagoa Azul é o cartão-postal da ilha: água calma, transparente e cheia de peixinhos para snorkel. É parada certa nos roteiros mais leves, como o Ilha Tour 90° e o Meia Volta, que navegam pela Costa Norte em mar abrigado — ótimos para famílias e para quem prefere águas tranquilas.",
-      { "h2": "As ilhas paradisíacas de Angra" },
-      "Quem quer o visual de cartão-postal — areia branquíssima e água esverdeada — vai amar o roteiro das Ilhas Paradisíacas, que passa pela Praia do Dentista, Ilhas Botinas e Cataguases. É um dos passeios mais fotogênicos da região.",
-      { "h2": "Aventura: Aventureiro e Gruta do Acaiá" },
-      "Se você já conhece os clássicos e quer algo diferente, dois roteiros se destacam: o Volta na Ilha, que contorna a ilha até a famosa Praia do Aventureiro e seu coqueiro torto, e a Gruta do Acaiá, um salão de pedra à beira-mar onde a água fica azul-turquesa e parece brilhar.",
-      { "h2": "Como escolher (e como chegar)" },
-      { "lista": ["Pouco tempo na ilha? Ilha Tour 90°", "Família com crianças? Meia Volta (mar calmo)", "Praias de cartão-postal? Ilhas Paradisíacas", "Aventura e dia inteiro? Volta na Ilha ou Gruta do Acaiá"] },
-      { "html": "<p>Todos os passeios saem da Vila do Abraão e incluem água, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe. E se você vem do Rio, a gente leva você até a ilha na <a href=\"../travessia.html\">travessia de Flex Boat por Mangaratiba</a>, em cerca de 40 minutos. Veja todos os <a href=\"../passeios-ilha-grande.html\">passeios de barco em Ilha Grande</a> e fale com a gente pelo WhatsApp para montar o seu dia.</p>" }
+ {
+  "slug": "o-que-fazer-em-ilha-grande",
+  "titulo": "O que fazer em Ilha Grande: os melhores passeios de barco",
+  "resumo": "Um guia direto dos passeios de barco que valem a pena em Ilha Grande e Angra — de Lagoa Azul à Gruta do Acaiá — para você montar o dia perfeito no mar.",
+  "data": "2026-07-10",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Guia",
+  "img": "assets/img/passeio-ilhas-paradisiacas.jpg",
+  "seo_title": "O que fazer em Ilha Grande: melhores passeios de barco | Vou de Barco",
+  "seo_desc": "Guia dos melhores passeios de barco em Ilha Grande e Angra: Lagoa Azul, Lagoa Verde, Praia do Dentista, Aventureiro e a Gruta do Acaiá. Saída da Vila do Abraão.",
+  "conteudo": [
+   "Ilha Grande é um daqueles lugares onde o melhor está no mar. Praias de difícil acesso, lagoas de água transparente e ilhas paradisíacas só se revelam de barco — e é por isso que um passeio náutico costuma ser a lembrança que fica da viagem. Reunimos aqui os roteiros que mais valem a pena, com uma dica de para quem cada um combina.",
+   {
+    "h2": "Lagoa Azul e a Costa Norte"
+   },
+   "A Lagoa Azul é o cartão-postal da ilha: água calma, transparente e cheia de peixinhos para snorkel. É parada certa nos roteiros mais leves, como o Ilha Tour 90° e o Meia Volta, que navegam pela Costa Norte em mar abrigado — ótimos para famílias e para quem prefere águas tranquilas.",
+   {
+    "h2": "As ilhas paradisíacas de Angra"
+   },
+   "Quem quer o visual de cartão-postal — areia branquíssima e água esverdeada — vai amar o roteiro das Ilhas Paradisíacas, que passa pela Praia do Dentista, Ilhas Botinas e Cataguases. É um dos passeios mais fotogênicos da região.",
+   {
+    "h2": "Aventura: Aventureiro e Gruta do Acaiá"
+   },
+   "Se você já conhece os clássicos e quer algo diferente, dois roteiros se destacam: o Volta na Ilha, que contorna a ilha até a famosa Praia do Aventureiro e seu coqueiro torto, e a Gruta do Acaiá, um salão de pedra à beira-mar onde a água fica azul-turquesa e parece brilhar.",
+   {
+    "h2": "Como escolher (e como chegar)"
+   },
+   {
+    "lista": [
+     "Pouco tempo na ilha? Ilha Tour 90°",
+     "Família com crianças? Meia Volta (mar calmo)",
+     "Praias de cartão-postal? Ilhas Paradisíacas",
+     "Aventura e dia inteiro? Volta na Ilha ou Gruta do Acaiá"
     ]
-  },
-  {
-    "slug": "melhor-epoca-para-visitar-ilha-grande",
-    "titulo": "Melhor época para visitar a Ilha Grande",
-    "resumo": "Verão, meia-estação ou inverno? Veja as vantagens de cada período para escolher a melhor época da sua viagem à Ilha Grande — e evitar surpresas com o clima e a lotação.",
-    "data": "2026-07-09",
-    "autor": "Equipe Vou de Barco",
-    "categoria": "Dicas",
-    "img": "assets/img/hero-praia.jpg",
-    "seo_title": "Melhor época para visitar a Ilha Grande | Vou de Barco",
-    "seo_desc": "Quando ir à Ilha Grande? Compare verão, meia-estação e inverno em clima, mar, preços e lotação para escolher a melhor época da sua viagem.",
-    "conteudo": [
-      "A Ilha Grande é linda o ano inteiro, mas cada estação tem o seu clima — literalmente. A boa notícia é que não existe época ruim: existe a época certa para o seu estilo de viagem. Veja abaixo.",
-      { "h2": "Verão (dezembro a março): mar quente e agito" },
-      "É a alta temporada. Dias longos, água quente e o melhor astral — mas também mais gente e preços mais altos. Se você quer praia cheia de vida e calor para mergulhar, é a sua época. Reserve os passeios e a travessia com antecedência, porque lota.",
-      { "h2": "Meia-estação (abril, maio, setembro, outubro): o equilíbrio" },
-      "Para muita gente, é a melhor época. Clima ainda quente, mar bom, menos gente e preços mais amigáveis. Ótimo custo-benefício para curtir os passeios com tranquilidade.",
-      { "h2": "Inverno (junho a agosto): sossego e paisagem" },
-      "Dias mais frescos e menos movimento. A água esfria, mas em dias de sol os passeios acontecem normalmente e a ilha fica com um charme tranquilo. Boa pedida para quem foge de multidão.",
-      { "h2": "E a chuva?" },
-      "O verão concentra as chuvas rápidas de fim de tarde. Elas raramente atrapalham a viagem, mas vale levar uma capa de chuva leve. A travessia e os passeios acontecem mesmo em dias nublados — o que muda é a decisão do mar, sempre pensada na sua segurança.",
-      { "html": "<p>Seja qual for a época, o caminho mais rápido para a ilha é a <a href=\"../travessia.html\">travessia de Flex Boat por Mangaratiba</a>. Veja <a href=\"../como-chegar.html\">como chegar à Ilha Grande</a> passo a passo e fale com a gente para reservar a sua data.</p>" }
+   },
+   {
+    "html": "<p>Todos os passeios saem da Vila do Abraão e incluem água, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe. E se você vem do Rio, a gente leva você até a ilha na <a href=\"../travessia.html\">travessia de Flex Boat por Mangaratiba</a>, em cerca de 40 minutos. Veja todos os <a href=\"../passeios-ilha-grande.html\">passeios de barco em Ilha Grande</a> e fale com a gente pelo WhatsApp para montar o seu dia.</p>"
+   }
+  ]
+ },
+ {
+  "slug": "melhor-epoca-para-visitar-ilha-grande",
+  "titulo": "Melhor época para visitar a Ilha Grande",
+  "resumo": "Verão, meia-estação ou inverno? Veja as vantagens de cada período para escolher a melhor época da sua viagem à Ilha Grande — e evitar surpresas com o clima e a lotação.",
+  "data": "2026-07-09",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Dicas",
+  "img": "assets/img/hero-praia.jpg",
+  "seo_title": "Melhor época para visitar a Ilha Grande | Vou de Barco",
+  "seo_desc": "Quando ir à Ilha Grande? Compare verão, meia-estação e inverno em clima, mar, preços e lotação para escolher a melhor época da sua viagem.",
+  "conteudo": [
+   "A Ilha Grande é linda o ano inteiro, mas cada estação tem o seu clima — literalmente. A boa notícia é que não existe época ruim: existe a época certa para o seu estilo de viagem. Veja abaixo.",
+   {
+    "h2": "Verão (dezembro a março): mar quente e agito"
+   },
+   "É a alta temporada. Dias longos, água quente e o melhor astral — mas também mais gente e preços mais altos. Se você quer praia cheia de vida e calor para mergulhar, é a sua época. Reserve os passeios e a travessia com antecedência, porque lota.",
+   {
+    "h2": "Meia-estação (abril, maio, setembro, outubro): o equilíbrio"
+   },
+   "Para muita gente, é a melhor época. Clima ainda quente, mar bom, menos gente e preços mais amigáveis. Ótimo custo-benefício para curtir os passeios com tranquilidade.",
+   {
+    "h2": "Inverno (junho a agosto): sossego e paisagem"
+   },
+   "Dias mais frescos e menos movimento. A água esfria, mas em dias de sol os passeios acontecem normalmente e a ilha fica com um charme tranquilo. Boa pedida para quem foge de multidão.",
+   {
+    "h2": "E a chuva?"
+   },
+   "O verão concentra as chuvas rápidas de fim de tarde. Elas raramente atrapalham a viagem, mas vale levar uma capa de chuva leve. A travessia e os passeios acontecem mesmo em dias nublados — o que muda é a decisão do mar, sempre pensada na sua segurança.",
+   {
+    "html": "<p>Seja qual for a época, o caminho mais rápido para a ilha é a <a href=\"../travessia.html\">travessia de Flex Boat por Mangaratiba</a>. Veja <a href=\"../como-chegar.html\">como chegar à Ilha Grande</a> passo a passo e fale com a gente para reservar a sua data.</p>"
+   }
+  ]
+ },
+ {
+  "slug": "roteiro-3-dias-ilha-grande",
+  "titulo": "Roteiro de 3 dias na Ilha Grande: o essencial",
+  "resumo": "Três dias são suficientes para conhecer o melhor da Ilha Grande. Veja um roteiro prático — da chegada à Vila do Abraão aos passeios de barco imperdíveis.",
+  "data": "2026-07-08",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Roteiro",
+  "img": "assets/img/passeio-meia-volta.jpg",
+  "seo_title": "Roteiro de 3 dias na Ilha Grande: o essencial | Vou de Barco",
+  "seo_desc": "Roteiro prático de 3 dias na Ilha Grande: chegada pela travessia de Mangaratiba, passeios de barco pelas melhores praias e dicas para aproveitar cada dia.",
+  "conteudo": [
+   "Tem só um fim de semana prolongado? Dá tempo de conhecer o essencial da Ilha Grande em três dias bem aproveitados. Montamos um roteiro simples, que equilibra mar, descanso e as paisagens que você não pode perder.",
+   {
+    "h2": "Dia 1 — Chegada e Vila do Abraão"
+   },
+   "Saia cedo do Rio rumo a Mangaratiba e faça a travessia de Flex Boat até a Vila do Abraão (cerca de 40 minutos). Chegando, deixe as malas, almoce na vila e curta a tarde na Praia do Abraão ou numa caminhada leve até a Praia Preta. À noite, a vila ganha vida com restaurantes e o vaivém de quem também acabou de chegar.",
+   {
+    "h2": "Dia 2 — Passeio de barco pelas praias"
+   },
+   "O dia cheio no mar. Escolha um passeio conforme o seu perfil: o Meia Volta (mar calmo, ótimo para famílias) ou o Ilhas Paradisíacas (as praias mais fotogênicas de Angra). Leve protetor, água e disposição para nadar e fazer snorkel nas paradas.",
+   {
+    "h2": "Dia 3 — Um cantinho especial e volta"
+   },
+   "Se sobrar energia, encaixe um passeio mais curto pela manhã, como o Ilha Tour 90°, ideal para o dia da saída. Depois, é só pegar a travessia de volta a Mangaratiba com a bagagem cheia de fotos.",
+   {
+    "h2": "Dicas para aproveitar melhor"
+   },
+   {
+    "lista": [
+     "Reserve a travessia e os passeios com antecedência, principalmente na alta temporada",
+     "Leve dinheiro em espécie — nem tudo aceita cartão na ilha",
+     "Calçado que pode molhar facilita a vida nos embarques",
+     "Ilha Grande não tem acesso por carro: tudo é a pé ou de barco"
     ]
-  },
-  {
-    "slug": "roteiro-3-dias-ilha-grande",
-    "titulo": "Roteiro de 3 dias na Ilha Grande: o essencial",
-    "resumo": "Três dias são suficientes para conhecer o melhor da Ilha Grande. Veja um roteiro prático — da chegada à Vila do Abraão aos passeios de barco imperdíveis.",
-    "data": "2026-07-08",
-    "autor": "Equipe Vou de Barco",
-    "categoria": "Roteiro",
-    "img": "assets/img/passeio-meia-volta.jpg",
-    "seo_title": "Roteiro de 3 dias na Ilha Grande: o essencial | Vou de Barco",
-    "seo_desc": "Roteiro prático de 3 dias na Ilha Grande: chegada pela travessia de Mangaratiba, passeios de barco pelas melhores praias e dicas para aproveitar cada dia.",
-    "conteudo": [
-      "Tem só um fim de semana prolongado? Dá tempo de conhecer o essencial da Ilha Grande em três dias bem aproveitados. Montamos um roteiro simples, que equilibra mar, descanso e as paisagens que você não pode perder.",
-      { "h2": "Dia 1 — Chegada e Vila do Abraão" },
-      "Saia cedo do Rio rumo a Mangaratiba e faça a travessia de Flex Boat até a Vila do Abraão (cerca de 40 minutos). Chegando, deixe as malas, almoce na vila e curta a tarde na Praia do Abraão ou numa caminhada leve até a Praia Preta. À noite, a vila ganha vida com restaurantes e o vaivém de quem também acabou de chegar.",
-      { "h2": "Dia 2 — Passeio de barco pelas praias" },
-      "O dia cheio no mar. Escolha um passeio conforme o seu perfil: o Meia Volta (mar calmo, ótimo para famílias) ou o Ilhas Paradisíacas (as praias mais fotogênicas de Angra). Leve protetor, água e disposição para nadar e fazer snorkel nas paradas.",
-      { "h2": "Dia 3 — Um cantinho especial e volta" },
-      "Se sobrar energia, encaixe um passeio mais curto pela manhã, como o Ilha Tour 90°, ideal para o dia da saída. Depois, é só pegar a travessia de volta a Mangaratiba com a bagagem cheia de fotos.",
-      { "h2": "Dicas para aproveitar melhor" },
-      { "lista": ["Reserve a travessia e os passeios com antecedência, principalmente na alta temporada", "Leve dinheiro em espécie — nem tudo aceita cartão na ilha", "Calçado que pode molhar facilita a vida nos embarques", "Ilha Grande não tem acesso por carro: tudo é a pé ou de barco"] },
-      { "html": "<p>Pronto para montar o seu? Comece pela <a href=\"../travessia.html\">travessia de Mangaratiba</a> e escolha os <a href=\"../passeios-ilha-grande.html\">passeios de barco</a> — a gente ajuda a encaixar tudo pelo WhatsApp.</p>" }
+   },
+   {
+    "html": "<p>Pronto para montar o seu? Comece pela <a href=\"../travessia.html\">travessia de Mangaratiba</a> e escolha os <a href=\"../passeios-ilha-grande.html\">passeios de barco</a> — a gente ajuda a encaixar tudo pelo WhatsApp.</p>"
+   }
+  ]
+ },
+ {
+  "slug": "cais-de-mangaratiba",
+  "titulo": "Cais de Mangaratiba: onde fica, estacionamento e de onde sai a travessia para Ilha Grande",
+  "resumo": "Guia rápido do cais de Mangaratiba: como chegar pela Rio-Santos, onde estacionar, de onde saem a barca tradicional e o Flex Boat, e os horários da travessia para a Vila do Abraão.",
+  "data": "2026-07-10",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Como chegar",
+  "img": "assets/img/travessia-flex-boat.jpg",
+  "seo_title": "Cais de Mangaratiba: onde fica e de onde sai a travessia para Ilha Grande",
+  "seo_desc": "Onde fica o cais de Mangaratiba, como chegar pela Rio-Santos (BR-101), onde estacionar e os horários da travessia de Flex Boat para a Vila do Abraão, em Ilha Grande.",
+  "conteudo": [
+   "Se você vai para a Ilha Grande saindo do Rio de Janeiro, o cais de Mangaratiba provavelmente é o seu ponto de partida — é o embarque mais próximo da capital. Aqui está tudo o que você precisa saber antes de chegar.",
+   {
+    "h2": "Onde fica o cais de Mangaratiba"
+   },
+   "O cais fica no Centro de Mangaratiba, na região da Av. Célio Lopes — é o cais central da cidade, de frente para a baía. O acesso é fácil: saindo do Rio, siga pela Rodovia Rio-Santos (BR-101) até o centro de Mangaratiba. A viagem de carro desde a Zona Sul costuma levar em torno de 1h30, fora horários de pico.",
+   {
+    "html": "<p>Nossa agência fica pertinho do cais, no Centro de Mangaratiba (Av. Célio Lopes, 89) — se precisar de qualquer apoio no dia, é só chegar. Veja o passo a passo completo do Rio até a ilha em <a href=\"../como-chegar.html\">Como chegar à Ilha Grande</a>.</p>"
+   },
+   {
+    "h2": "Tem estacionamento perto do cais?"
+   },
+   "Sim. Há estacionamento próximo ao cais, com diária em conta — um dos motivos de Mangaratiba ser o ponto mais prático para quem vem de carro. Ainda assim, em fins de semana de alta temporada vale chegar com folga para garantir vaga e embarcar sem correria.",
+   {
+    "h2": "O que sai do cais de Mangaratiba: barca e Flex Boat"
+   },
+   "Do cais de Mangaratiba saem duas formas de chegar à Vila do Abraão: a barca tradicional, opção mais antiga e de ritmo mais lento, e o Flex Boat — a alternativa rápida, que faz o trajeto em cerca de 40 minutos. Fomos os pioneiros na travessia de Flex Boat por Mangaratiba, com frota própria, marinheiros experientes e coletes para todos a bordo.",
+   {
+    "h2": "Horários da travessia de Flex Boat"
+   },
+   {
+    "lista": [
+     "Mangaratiba → Vila do Abraão: 09h00, 13h30 e 16h30",
+     "Vila do Abraão → Mangaratiba: 10h00, 14h00 e 17h15",
+     "Chegue ao cais cerca de 20 minutos antes da saída",
+     "Bagagem: 1 mala de mão de até 10 kg + 1 mala de até 23 kg por pessoa"
     ]
-  }
+   },
+   {
+    "html": "<p>Os horários podem sofrer ajustes por clima e maré. Preços sob consulta — confira valores e disponibilidade da sua data na página da <a href=\"../travessia.html\">travessia Mangaratiba ⇄ Ilha Grande</a> ou direto pelo WhatsApp.</p>"
+   },
+   {
+    "h2": "Onde você desembarca na Ilha Grande"
+   },
+   "O desembarque é no Cais de Turismo, o cais principal da Vila do Abraão — você chega no coração da vila, pertinho das pousadas, restaurantes e do ponto de saída dos passeios de barco.",
+   {
+    "html": "<p>Quer saber mais sobre a cidade que é a porta de entrada da ilha? Veja nosso guia de <a href=\"../mangaratiba.html\">Mangaratiba ⇄ Ilha Grande</a>. E para o seu roteiro na ilha, confira os <a href=\"../passeios-ilha-grande.html\">passeios de barco em Ilha Grande</a>.</p>"
+   }
+  ]
+ }
 ]
