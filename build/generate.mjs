@@ -391,7 +391,7 @@ ${header({ active: "inicio" })}
   <!-- SELOS / PAINEL DE CONFIANÇA -->
   <section class="trust" aria-label="Por que a Vou de Barco">
     <div class="wrap">
-      <div class="trust__item">${I.compass}<span><b>Pioneiros no Flex Boat por Mangaratiba</b>, o ponto mais próximo do Rio.</span></div>
+      <div class="trust__item">${I.compass}<span><b>Pioneiros no Flex Boat por Mangaratiba (Centro)</b>, o ponto mais próximo do Rio.</span></div>
       <div class="trust__item">${I.shield}<span><b>Frota própria e revisada</b>, com marinheiros experientes.</span></div>
       <div class="trust__item">${I.pin}<span><b>Segurança e conhecimento local</b> de quem vive a Costa Verde.</span></div>
     </div>
