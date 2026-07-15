@@ -1095,7 +1095,7 @@ ${header({ active: "mangaratiba", solid: true })}
         <div class="detail__main">
           <h2>Por que Mangaratiba é o melhor caminho para a Ilha Grande</h2>
           <p>Mangaratiba é um município do litoral sul do Rio de Janeiro, na Costa Verde, e o <strong>ponto de partida mais próximo da capital</strong> para a Ilha Grande. Quem vem do Rio chega mais rápido, encara menos estrada e ainda encontra <strong>estacionamento em conta</strong> perto do cais. É de lá que sai a nossa travessia de Flex Boat até a <strong>Vila do Abraão</strong>, o principal povoado da ilha.</p>
-          <p>Boa parte de quem pesquisa <strong>turismo em Mangaratiba</strong> está, na verdade, a caminho da Ilha Grande — e é justamente essa conexão, rápida e segura, que a Vou de Barco faz todos os dias.</p>
+          <p>Boa parte de quem pesquisa <strong>turismo em Mangaratiba</strong> está, na verdade, a caminho da Ilha Grande — e é justamente essa conexão, rápida e segura, que a Vou de Barco faz todos os dias. Mas Mangaratiba também é destino: da própria baía saem <a href="passeios-mangaratiba.html"><strong>passeios de barco por Mangaratiba</strong></a> — Ilha da Guaíba, Ponta da Pombeba e Jaguanum, entre as ilhas mais preservadas do Rio.</p>
           <p>Procurando a <strong>barca para a Ilha Grande</strong>? A travessia de Flex Boat é a alternativa mais rápida: enquanto a barca tradicional pode levar mais de uma hora, o nosso Flex Boat faz o trajeto Mangaratiba ⇄ Vila do Abraão em cerca de 40 minutos, com horários ao longo do dia.</p>
 
           <h2>Como chegar a Mangaratiba</h2>
@@ -1466,14 +1466,20 @@ function mangaCard(p, prefix = "") {
 </article>`;
 }
 
+function lowestPrice(precos) {
+  const vals = precos.map(([, v]) => parseInt(String(v).replace(/[^\d]/g, ""), 10)).filter((n) => n > 0);
+  return vals.length ? Math.min(...vals) : null;
+}
 function buildMangaPasseio(p) {
   const msg = `Olá, Vou de Barco! Quero fazer uma cotação do passeio ${p.nome} (saindo de Mangaratiba).`;
+  const low = lowestPrice(p.precos);
   return `${head({ title: p.seo_title, desc: p.seo_desc, canonical: `${SITE}/passeios/${p.id}.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.seo_desc,
     provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
     touristType: "Passeio de barco", image: SITE + "/" + p.img,
     itinerary: { "@type": "ItemList", itemListElement: p.praias.map(([n], i) => ({ "@type": "ListItem", position: i + 1, name: n })) },
+    ...(low ? { offers: { "@type": "AggregateOffer", priceCurrency: "BRL", lowPrice: String(low), availability: "https://schema.org/InStock", url: SITE + `/passeios/${p.id}.html`, seller: { "@type": "TravelAgency", name: "Vou de Barco", "@id": SITE + "/#business" } } } : {}),
     url: SITE + `/passeios/${p.id}.html`,
   })}</script>
 <script type="application/ld+json">${JSON.stringify({
@@ -1562,11 +1568,13 @@ const MANGA_PASSEIOS_FAQ = [
   ["Táxi boat ou lancha: qual escolher?", "O táxi boat é mais em conta; a lancha é mais rápida e confortável. Nos dois casos a experiência do roteiro é a mesma — a gente ajuda você a escolher pela sua data e grupo."],
   ["Qual passeio de Mangaratiba é o melhor?", "Depende do que você procura: o Super Guaíba é mais curto e tranquilo (~4h); o Super Pombeba tem o banco de areia único da Pombeba (6-7h); e a Volta em Jaguanum é a mais confortável, com boa estrutura e almoço garantido o ano todo. Fale com a gente que ajudamos a escolher."],
   ["Os preços mudam na alta temporada?", "Feriados, Natal, Réveillon e janeiro podem ter acréscimo. Faça sua cotação pelo WhatsApp que passamos o valor exato para a sua data."],
+  ["Quanto custa um passeio de barco em Mangaratiba?", "Depende do roteiro e do formato. No compartilhado, a partir de R$ 120 por pessoa; no privativo (aluguel do barco só para o seu grupo), a partir de R$ 1.200 em táxi boat. O Super Guaíba, mais curto, sai a partir de R$ 1.200; Pombeba e Jaguanum, mais completos, a partir de R$ 1.600. Faça sua cotação pelo WhatsApp."],
+  ["Fazem aluguel de barco e de lancha em Mangaratiba?", "Sim. No modo privativo, você aluga o barco (táxi boat ou lancha) só para o seu grupo, com marinheiro e roteiro incluídos. É ideal para famílias, aniversários e grupos de amigos que querem o dia no mar sem dividir a embarcação."],
 ];
 function buildMangaCluster() {
   const msg = "Olá, Vou de Barco! Quero uma cotação de passeio de barco saindo de Mangaratiba.";
-  const title = "Passeios de barco em Mangaratiba — Ilha da Guaíba, Pombeba e Jaguanum | Vou de Barco";
-  const desc = "Passeios de barco saindo de Mangaratiba: Ilha da Guaíba, Ponta da Pombeba (Restinga da Marambaia) e Jaguanum. Táxi boat ou lancha, privativo ou compartilhado. Faça sua cotação.";
+  const title = "Passeio de barco em Mangaratiba: Guaíba, Pombeba e Jaguanum | preços";
+  const desc = "Passeio de barco em Mangaratiba: Ilha da Guaíba, Ponta da Pombeba (Restinga da Marambaia) e Jaguanum. Táxi boat ou lancha, privativo ou compartilhado. Veja os preços e faça sua cotação pelo WhatsApp.";
   return `${head({ title, desc, canonical: `${SITE}/passeios-mangaratiba.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "FAQPage",
@@ -1596,8 +1604,8 @@ ${header({ active: "mangaratiba", solid: true })}
     <div class="wrap">
       <div class="section__head">
         <span class="eyebrow">Roteiros saindo de Mangaratiba</span>
-        <h2 class="section-title">Ilhas intactas a poucos minutos do continente</h2>
-        <p class="lead">Passeios em <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (grupo fechado) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. Ilhas mais preservadas da baía de Mangaratiba — e, do mesmo cais, a travessia para a Ilha Grande.</p>
+        <h2 class="section-title">Passeio de barco em Mangaratiba, pelas ilhas mais intactas do RJ</h2>
+        <p class="lead">Faça um <strong>passeio de barco em Mangaratiba</strong> pelas ilhas mais preservadas da baía: Ilha da Guaíba, Ponta da Pombeba (na Restinga da Marambaia) e Jaguanum. Você escolhe <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (aluguel do barco para o seu grupo) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. E, do mesmo cais, também sai a <a href="travessia.html">travessia para a Ilha Grande</a>.</p>
       </div>
       <div class="tours">
         ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
