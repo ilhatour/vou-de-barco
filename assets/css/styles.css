@@ -167,10 +167,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
 .brand__logo { width: 40px; height: 40px; flex: 0 0 auto; display: block; }
 .footer__brand .brand__logo { width: 46px; height: 46px; }
 
-.nav { display: flex; align-items: center; gap: .4rem; }
+.nav { display: flex; align-items: center; gap: .1rem; }
 .nav a {
-  font-size: .95rem; font-weight: 600; color: var(--branco-70);
-  padding: .5rem .85rem; border-radius: 8px; transition: color .25s, background .25s;
+  font-size: .9rem; font-weight: 600; color: var(--branco-70); white-space: nowrap;
+  padding: .5rem .6rem; border-radius: 8px; transition: color .25s, background .25s;
 }
 .nav a:hover { color: var(--branco); }
 .is-scrolled .nav a, .header--solid .nav a { color: var(--abismo-60); }

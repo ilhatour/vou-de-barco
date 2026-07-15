@@ -195,11 +195,12 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">${I.menu}</button>
     <nav class="nav" id="nav" aria-label="Principal">
       ${A(`${prefix}index.html#inicio`, "inicio", "Início")}
+      ${A(`${prefix}index.html#travessia`, "travessia", "Travessia")}
+      ${A(`${prefix}index.html#passeios`, "passeios", "Passeios")}
       ${A(`${prefix}passeios-ilha-grande.html`, "ilhagrande", "Ilha Grande")}
       ${A(`${prefix}passeios-mangaratiba.html`, "mangaratiba", "Mangaratiba")}
       ${A(`${prefix}blog.html`, "blog", "Blog")}
       ${A(`${prefix}sobre.html`, "sobre", "Sobre")}
-      ${A(`${prefix}index.html#contato`, "contato", "Contato")}
       <a class="btn nav-cta" href="${waLink("Olá, Vou de Barco! Quero reservar.")}" target="_blank" rel="noopener">${I.whatsapp} Reservar</a>
     </nav>
   </div>
