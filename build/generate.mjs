@@ -195,9 +195,8 @@ function header({ active = "", solid = false, prefix = "" } = {}) {
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">${I.menu}</button>
     <nav class="nav" id="nav" aria-label="Principal">
       ${A(`${prefix}index.html#inicio`, "inicio", "Início")}
-      ${A(`${prefix}index.html#travessia`, "travessia", "Travessia")}
-      ${A(`${prefix}como-chegar.html`, "comochegar", "Como chegar")}
-      ${A(`${prefix}passeios-ilha-grande.html`, "passeios", "Passeios")}
+      ${A(`${prefix}passeios-ilha-grande.html`, "ilhagrande", "Ilha Grande")}
+      ${A(`${prefix}passeios-mangaratiba.html`, "mangaratiba", "Mangaratiba")}
       ${A(`${prefix}blog.html`, "blog", "Blog")}
       ${A(`${prefix}sobre.html`, "sobre", "Sobre")}
       ${A(`${prefix}index.html#contato`, "contato", "Contato")}
@@ -279,6 +278,18 @@ function tourCard(p, prefix = "") {
   </div>
   <a class="tour__stretch" href="${prefix}passeios/${p.id}.html" aria-label="Ver roteiro do ${esc(p.nome)}"></a>
 </article>`;
+}
+
+function travessiaHubCard(prefix = "") {
+  return `<a class="cross-highlight reveal" href="${prefix}travessia.html">
+  <div class="cross-highlight__media"><img src="${prefix}${TRAV.img}" alt="Flex Boat da Vou de Barco na travessia Mangaratiba ⇄ Ilha Grande" loading="lazy" width="1080" height="1115"></div>
+  <div class="cross-highlight__body">
+    <span class="eyebrow">Como chegar à Ilha Grande</span>
+    <h3>Travessia Mangaratiba ⇄ Ilha Grande</h3>
+    <p>A forma mais rápida de chegar à Vila do Abraão: Flex Boat saindo do Centro de Mangaratiba, em cerca de 40 minutos, com três saídas por dia em cada sentido.</p>
+    <span class="cross-highlight__link">Ver a travessia ${I.arrow}</span>
+  </div>
+</a>`;
 }
 
 const FAQ = [
@@ -588,13 +599,13 @@ ${p.faq ? `<script type="application/ld+json">${JSON.stringify({
 ` : ""}${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios", url: SITE + "/#passeios" }, { name: p.nome, url: `${SITE}/passeios/${p.id}.html` }])}
 </head>
 <body>
-${header({ active: "passeios", solid: true, prefix: "../" })}
+${header({ active: "ilhagrande", solid: true, prefix: "../" })}
 <main id="main">
 
   <section class="subhero subhero--photo">
     <div class="subhero__bg"><img src="../${p.img}" alt="Passeio ${esc(p.nome)} — Ilha Grande" width="1080" height="1350"></div>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../index.html#passeios">Passeios</a> · ${esc(p.nome)}</nav>
+      <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../passeios-ilha-grande.html">Passeios em Ilha Grande</a> · ${esc(p.nome)}</nav>
       <span class="eyebrow eyebrow--light">${esc(p.badge)} · Saída pela ${esc(p.saida)}</span>
       <h1>${esc(p.nome)}</h1>
       <p class="subhero__slogan">${esc(p.slogan)}</p>
@@ -651,7 +662,7 @@ ${p.faq ? `
             <li><span class="k">Saída</span><span class="v">${esc(p.saida)}</span></li>
           </ul>
           <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Reservar no WhatsApp</a>
-          <a class="back" href="../index.html#passeios">${I.arrowL} Ver todos os passeios</a>
+          <a class="back" href="../passeios-ilha-grande.html">${I.arrowL} Ver todos os passeios de Ilha Grande</a>
         </aside>
       </div>
     </div>
@@ -659,11 +670,12 @@ ${p.faq ? `
 
   ${wave(C.branco, C.nevoa)}
 
-  <section class="section section--nevoa">
+  <section class="section section--nevoa" aria-label="Outros passeios em Ilha Grande">
     <div class="wrap">
-      <div class="section__head"><span class="eyebrow">Continue navegando</span><h2 class="section-title">Outros roteiros</h2></div>
-      <div class="tours">
+      <div class="section__head"><span class="eyebrow">Continue navegando</span><h2 class="section-title">Outros passeios em Ilha Grande</h2></div>
+      <div class="tours tours--rail">
         ${outros.map((x) => tourCard(x, "../")).join("\n        ")}
+        <a class="tour tour--seeall reveal" href="../passeios-ilha-grande.html"><span>Ver todos os passeios de Ilha Grande ${I.arrow}</span></a>
       </div>
     </div>
   </section>
@@ -1271,16 +1283,16 @@ function buildPasseiosIlhaGrande() {
 ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Ilha Grande", url: SITE + "/passeios-ilha-grande.html" }])}
 </head>
 <body>
-${header({ active: "passeios", solid: true })}
+${header({ active: "ilhagrande", solid: true })}
 <main id="main">
 
   <section class="subhero subhero--photo">
     <div class="subhero__bg"><img src="assets/img/hero-praia.jpg" alt="Águas cristalinas de Ilha Grande em um passeio de barco" width="1080" height="1116"></div>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Passeios em Ilha Grande</nav>
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Ilha Grande</nav>
       <span class="eyebrow eyebrow--light">Roteiros · Costa Verde</span>
-      <h1>Passeios de barco em Ilha Grande</h1>
-      <p class="subhero__slogan">Lagoa Azul, Praia do Dentista, Aventureiro, Gruta do Acaiá e as ilhas mais bonitas de Angra — pelo mar, com a gente.</p>
+      <h1>Ilha Grande: passeios e travessia</h1>
+      <p class="subhero__slogan">Lagoa Azul, Praia do Dentista, Aventureiro, Gruta do Acaiá e as ilhas mais bonitas de Angra — e a travessia rápida para chegar até a ilha.</p>
     </div>
   </section>
 
@@ -1289,11 +1301,12 @@ ${header({ active: "passeios", solid: true })}
       <div class="section__head">
         <span class="eyebrow">Escolha o seu roteiro</span>
         <h2 class="section-title">Seis jeitos de conhecer a ilha pelo mar</h2>
-        <p class="lead">Cada passeio de barco inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão — e, se você vem do Rio, levamos você até lá na <a href="travessia.html">travessia por Mangaratiba</a>. Preços sob consulta.</p>
+        <p class="lead">Cada passeio de barco inclui água mineral, cooler com gelo, flutuadores, coletes e o suporte da nossa equipe a bordo. Saída pela Vila do Abraão. Preços sob consulta.</p>
       </div>
       <div class="tours">
         ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
       </div>
+      ${travessiaHubCard()}
     </div>
   </section>
 
@@ -1469,13 +1482,13 @@ function buildMangaPasseio(p) {
 ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Mangaratiba", url: SITE + "/passeios-mangaratiba.html" }, { name: p.nome, url: SITE + `/passeios/${p.id}.html` }])}
 </head>
 <body>
-${header({ active: "passeios", solid: true })}
+${header({ active: "mangaratiba", solid: true, prefix: "../" })}
 <main id="main">
 
   <section class="subhero subhero--photo">
-    <div class="subhero__bg"><img src="${p.img}" alt="${esc(p.alt)}" width="1080" height="1116"></div>
+    <div class="subhero__bg"><img src="../${p.img}" alt="${esc(p.alt)}" width="1080" height="1116"></div>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · <a href="passeios-mangaratiba.html">Passeios em Mangaratiba</a> · ${esc(p.nome)}</nav>
+      <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../passeios-mangaratiba.html">Passeios em Mangaratiba</a> · ${esc(p.nome)}</nav>
       <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>
       <h1>${esc(p.nome)}</h1>
       <p class="subhero__slogan">${esc(p.slogan)}</p>
@@ -1516,16 +1529,28 @@ ${header({ active: "passeios", solid: true })}
           </ul>
           ${p.precos_nota ? `<p class="price-note" style="font-size:.85rem;line-height:1.5;text-align:left">${esc(p.precos_nota)}</p>` : ""}
           <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Fazer minha cotação</a>
-          <a class="back" href="passeios-mangaratiba.html">${I.arrow} Ver todos os passeios de Mangaratiba</a>
+          <a class="back" href="../passeios-mangaratiba.html">${I.arrow} Ver todos os passeios de Mangaratiba</a>
         </aside>
       </div>
     </div>
   </section>
 
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa" aria-label="Outros passeios em Mangaratiba">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Continue navegando</span><h2 class="section-title">Outros passeios em Mangaratiba</h2></div>
+      <div class="tours tours--rail">
+        ${MANGA.filter((x) => x.id !== p.id).map((x) => mangaCard(x, "../")).join("\n        ")}
+        <a class="tour tour--seeall reveal" href="../passeios-mangaratiba.html"><span>Ver todos os passeios de Mangaratiba ${I.arrow}</span></a>
+      </div>
+    </div>
+  </section>
+
 </main>
-${footer()}
+${footer({ prefix: "../" })}
 ${waFloat()}
-${scripts()}
+${scripts("../")}
 </body>
 </html>`;
 }
@@ -1553,16 +1578,16 @@ function buildMangaCluster() {
 ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Mangaratiba", url: SITE + "/passeios-mangaratiba.html" }])}
 </head>
 <body>
-${header({ active: "passeios", solid: true })}
+${header({ active: "mangaratiba", solid: true })}
 <main id="main">
 
   <section class="subhero subhero--photo">
-    <div class="subhero__bg"><img src="assets/img/hero-home.jpg" alt="Águas cristalinas da região de Mangaratiba, na Costa Verde do Rio" width="1080" height="1116"></div>
+    <div class="subhero__bg"><img src="assets/img/passeio-mangaratiba-agua.jpg" alt="Água cristalina com cardume de peixes na Costa Verde, região de Mangaratiba" width="1080" height="1116"></div>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Passeios em Mangaratiba</nav>
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Mangaratiba</nav>
       <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>
-      <h1>Passeios de barco em Mangaratiba</h1>
-      <p class="subhero__slogan">Ilhas intactas, água cristalina e bancos de areia únicos no RJ — navegando por Mangaratiba.</p>
+      <h1>Mangaratiba: passeios e travessia</h1>
+      <p class="subhero__slogan">Ilhas intactas, água cristalina e bancos de areia únicos no RJ — e a travessia rápida para a Ilha Grande, tudo saindo de Mangaratiba.</p>
     </div>
   </section>
 
@@ -1571,11 +1596,12 @@ ${header({ active: "passeios", solid: true })}
       <div class="section__head">
         <span class="eyebrow">Roteiros saindo de Mangaratiba</span>
         <h2 class="section-title">Ilhas intactas a poucos minutos do continente</h2>
-        <p class="lead">Passeios em <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (grupo fechado) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. Além da nossa <a href="travessia.html">travessia para a Ilha Grande</a>, levamos você às ilhas mais preservadas da baía de Mangaratiba.</p>
+        <p class="lead">Passeios em <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (grupo fechado) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. Ilhas mais preservadas da baía de Mangaratiba — e, do mesmo cais, a travessia para a Ilha Grande.</p>
       </div>
       <div class="tours">
         ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
       </div>
+      ${travessiaHubCard()}
     </div>
   </section>
 

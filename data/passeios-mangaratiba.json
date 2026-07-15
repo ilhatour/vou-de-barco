@@ -6,14 +6,23 @@
   "slogan": "A ilha mais próxima do continente — 3 praias em pouca navegação.",
   "duracao": "~4 horas",
   "embarque": "Centro de Mangaratiba ou Ibicuí",
-  "img": "assets/img/hero-home.jpg",
-  "alt": "Águas cristalinas da região de Mangaratiba, na Costa Verde do Rio",
+  "img": "assets/img/passeio-mangaratiba-agua.jpg",
+  "alt": "Água cristalina com cardume de peixes na Costa Verde, região de Mangaratiba",
   "resumo": "A Ilha da Guaíba fica a apenas 10 minutos de Mangaratiba, mas é uma das mais intocadas: sem construções, muito arborizada, com sombra e água cristalina o ano inteiro.",
   "descricao": "A Ilha da Guaíba fica a apenas 10 minutos de Mangaratiba, mas é uma das mais intocadas do litoral: sem construções, muito arborizada, com sombra e água cristalina o ano inteiro — até em dia nublado. É o passeio perfeito para quem quer praia bonita e tranquila com pouca navegação, ótimo para famílias e para quem tem meio dia livre.",
   "praias": [
-   ["Tapera", "Praia principal, areia ótima, águas calmas e muita sombra."],
-   ["Raposa", "Menor, ao lado da Tapera, voltada para o mar aberto."],
-   ["Tapuá", "Preservada, também voltada para o mar aberto."]
+   [
+    "Tapera",
+    "Praia principal, areia ótima, águas calmas e muita sombra."
+   ],
+   [
+    "Raposa",
+    "Menor, ao lado da Tapera, voltada para o mar aberto."
+   ],
+   [
+    "Tapuá",
+    "Preservada, também voltada para o mar aberto."
+   ]
   ],
   "diferenciais": [
    "3 praias naturais com pouquíssima navegação",
@@ -22,17 +31,35 @@
   ],
   "estrutura": "Na ilha, apenas um pescador local serve bebidas, petiscos e almoços (mais garantido no verão). Recomendamos levar um cooler com gelo, bebidas e petiscos.",
   "precos": [
-   ["Privativo · táxi boat (até 12 pessoas)", "R$ 1.200"],
-   ["Privativo · lancha (até 12 pessoas)", "R$ 1.600"]
+   [
+    "Privativo · táxi boat (até 12 pessoas)",
+    "R$ 1.200"
+   ],
+   [
+    "Privativo · lancha (até 12 pessoas)",
+    "R$ 1.600"
+   ]
   ],
   "precos_nota": "Valores com saída do Centro de Mangaratiba. Há também a Travessia da Ilha da Guaíba (ida e volta direto para a Praia da Tapera) por R$ 60 por pessoa.",
   "seo_title": "Super Guaíba — passeio à Ilha da Guaíba saindo de Mangaratiba | Vou de Barco",
   "seo_desc": "Passeio Super Guaíba: 3 praias da Ilha da Guaíba (Tapera, Raposa e Tapuá) a 10 min de Mangaratiba, água cristalina o ano todo. Privativo em táxi boat ou lancha. Faça sua cotação.",
   "faq": [
-   ["Quanto tempo dura o passeio Super Guaíba?", "Cerca de 4 horas, com saída do Centro de Mangaratiba ou de Ibicuí. A Ilha da Guaíba fica a apenas 10 minutos de navegação."],
-   ["Quais praias o passeio visita?", "As três praias da Ilha da Guaíba: Tapera (a principal, com muita sombra e água calma), Raposa e Tapuá (menores, voltadas para o mar aberto)."],
-   ["Tem estrutura de alimentação na ilha?", "Apenas um pescador local serve bebidas, petiscos e almoços — mais garantido no verão. Recomendamos levar um cooler com gelo, bebidas e petiscos."],
-   ["Quanto custa o Super Guaíba?", "Privativo em táxi boat (até 12 pessoas): R$ 1.200. Privativo em lancha (até 12 pessoas): R$ 1.600. Saída do Centro de Mangaratiba. Faça sua cotação pelo WhatsApp."]
+   [
+    "Quanto tempo dura o passeio Super Guaíba?",
+    "Cerca de 4 horas, com saída do Centro de Mangaratiba ou de Ibicuí. A Ilha da Guaíba fica a apenas 10 minutos de navegação."
+   ],
+   [
+    "Quais praias o passeio visita?",
+    "As três praias da Ilha da Guaíba: Tapera (a principal, com muita sombra e água calma), Raposa e Tapuá (menores, voltadas para o mar aberto)."
+   ],
+   [
+    "Tem estrutura de alimentação na ilha?",
+    "Apenas um pescador local serve bebidas, petiscos e almoços — mais garantido no verão. Recomendamos levar um cooler com gelo, bebidas e petiscos."
+   ],
+   [
+    "Quanto custa o Super Guaíba?",
+    "Privativo em táxi boat (até 12 pessoas): R$ 1.200. Privativo em lancha (até 12 pessoas): R$ 1.600. Saída do Centro de Mangaratiba. Faça sua cotação pelo WhatsApp."
+   ]
   ]
  },
  {
@@ -42,15 +69,27 @@
   "slogan": "Um banco de areia banhado pelo mar dos dois lados — único no Rio de Janeiro.",
   "duracao": "6 a 7 horas",
   "embarque": "Centro de Mangaratiba ou Ibicuí",
-  "img": "assets/img/hero-praia.jpg",
-  "alt": "Banco de areia e mar cristalino na Costa Verde, região de Mangaratiba",
+  "img": "assets/img/passeio-mangaratiba-agua.jpg",
+  "alt": "Água cristalina com cardume de peixes na Costa Verde, região de Mangaratiba",
   "resumo": "A Ponta da Pombeba é uma língua de areia branca cercada por água limpa dos dois lados — única no RJ, dentro da Restinga da Marambaia. No mesmo dia, mais 3 ilhas totalmente diferentes.",
   "descricao": "O destino principal é a Ponta da Pombeba, uma língua de areia branca cercada por água limpa dos dois lados — única no Rio de Janeiro, dentro da área preservada da Restinga da Marambaia. No mesmo dia, o roteiro reúne mais três ilhas completamente diferentes entre si, num passeio mais reservado e com menos aglomeração.",
   "praias": [
-   ["Ilha da Vigia", "Enseada de cinema, com coqueiros e ilhotas ao lado."],
-   ["Ponta da Pombeba", "Parada longa no banco de areia branca, banhado pelos dois lados."],
-   ["Ilha Bonita", "Praia de conchas com piscininhas naturais na maré."],
-   ["Jaguanum (almoço)", "Na Praia do Araçá (Restaurante da Baiana); fora de temporada, na Praia da Pitangueira."]
+   [
+    "Ilha da Vigia",
+    "Enseada de cinema, com coqueiros e ilhotas ao lado."
+   ],
+   [
+    "Ponta da Pombeba",
+    "Parada longa no banco de areia branca, banhado pelos dois lados."
+   ],
+   [
+    "Ilha Bonita",
+    "Praia de conchas com piscininhas naturais na maré."
+   ],
+   [
+    "Jaguanum (almoço)",
+    "Na Praia do Araçá (Restaurante da Baiana); fora de temporada, na Praia da Pitangueira."
+   ]
   ],
   "diferenciais": [
    "3 ilhas de formações completamente distintas no mesmo dia",
@@ -58,19 +97,43 @@
    "Roteiro mais reservado, com menos aglomeração"
   ],
   "precos": [
-   ["Privativo · táxi boat (até 12 pessoas)", "R$ 1.600"],
-   ["Privativo · lancha (até 12/14 pessoas)", "R$ 2.000"],
-   ["Compartilhado · táxi boat", "R$ 120/pessoa"],
-   ["Compartilhado · lancha", "R$ 160/pessoa"]
+   [
+    "Privativo · táxi boat (até 12 pessoas)",
+    "R$ 1.600"
+   ],
+   [
+    "Privativo · lancha (até 12/14 pessoas)",
+    "R$ 2.000"
+   ],
+   [
+    "Compartilhado · táxi boat",
+    "R$ 120/pessoa"
+   ],
+   [
+    "Compartilhado · lancha",
+    "R$ 160/pessoa"
+   ]
   ],
   "precos_nota": "Valores com saída do Centro de Mangaratiba.",
   "seo_title": "Super Pombeba — Ponta da Pombeba e Restinga da Marambaia saindo de Mangaratiba | Vou de Barco",
   "seo_desc": "Passeio Super Pombeba: banco de areia da Ponta da Pombeba (único no RJ), Ilha da Vigia, Ilha Bonita e Jaguanum, na Restinga da Marambaia. Privativo ou compartilhado, saída de Mangaratiba.",
   "faq": [
-   ["O que é a Ponta da Pombeba?", "Uma língua de areia branca cercada por água limpa dos dois lados, dentro da Restinga da Marambaia — uma formação única no Rio de Janeiro. É a parada principal do passeio Super Pombeba."],
-   ["Quanto tempo dura o Super Pombeba?", "De 6 a 7 horas, com saída do Centro de Mangaratiba ou de Ibicuí. O roteiro passa por Ilha da Vigia, Ponta da Pombeba, Ilha Bonita e Jaguanum (almoço)."],
-   ["Dá para fazer compartilhado?", "Sim. No compartilhado, o valor é por pessoa: R$ 120 em táxi boat ou R$ 160 em lancha. No privativo, o barco é exclusivo do seu grupo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha)."],
-   ["Onde é o almoço?", "Em Jaguanum, na Praia do Araçá (Restaurante da Baiana). Fora de temporada, na Praia da Pitangueira."]
+   [
+    "O que é a Ponta da Pombeba?",
+    "Uma língua de areia branca cercada por água limpa dos dois lados, dentro da Restinga da Marambaia — uma formação única no Rio de Janeiro. É a parada principal do passeio Super Pombeba."
+   ],
+   [
+    "Quanto tempo dura o Super Pombeba?",
+    "De 6 a 7 horas, com saída do Centro de Mangaratiba ou de Ibicuí. O roteiro passa por Ilha da Vigia, Ponta da Pombeba, Ilha Bonita e Jaguanum (almoço)."
+   ],
+   [
+    "Dá para fazer compartilhado?",
+    "Sim. No compartilhado, o valor é por pessoa: R$ 120 em táxi boat ou R$ 160 em lancha. No privativo, o barco é exclusivo do seu grupo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha)."
+   ],
+   [
+    "Onde é o almoço?",
+    "Em Jaguanum, na Praia do Araçá (Restaurante da Baiana). Fora de temporada, na Praia da Pitangueira."
+   ]
   ]
  },
  {
@@ -80,16 +143,31 @@
   "slogan": "Praias abrigadas, boa estrutura e almoço garantido o ano todo.",
   "duracao": "6 a 7 horas",
   "embarque": "Centro de Mangaratiba ou Ibicuí",
-  "img": "assets/img/passeio-ilhas-paradisiacas.jpg",
-  "alt": "Ilhas e mar calmo da Costa Verde, região de Mangaratiba",
+  "img": "assets/img/passeio-mangaratiba-agua.jpg",
+  "alt": "Água cristalina com cardume de peixes na Costa Verde, região de Mangaratiba",
   "resumo": "A maior ilha da região, com boa infraestrutura de restaurantes e banheiros. Ideal para quem prefere praias abrigadas e não quer navegar até áreas mais abertas.",
   "descricao": "A Volta em Jaguanum é o roteiro mais confortável da região: a maior ilha, com boa infraestrutura de restaurantes e banheiros, praias abrigadas e almoço garantido o ano inteiro. Sem incluir a Ponta da Pombeba, é ideal para quem prefere mar calmo e não quer navegar até áreas mais abertas.",
   "praias": [
-   ["Ilha da Vigia", "Parada inicial na prainha de cinema."],
-   ["Praia do Araçá (Jaguanum)", "Tempo livre em águas calmas."],
-   ["Praia da Estopa (Jaguanum)", "Praia reservada ao norte da ilha."],
-   ["Ilha Bonita", "Conchas e piscinas naturais."],
-   ["Almoço", "Na Pitangueira ou no Araçá, ambas com restaurante."]
+   [
+    "Ilha da Vigia",
+    "Parada inicial na prainha de cinema."
+   ],
+   [
+    "Praia do Araçá (Jaguanum)",
+    "Tempo livre em águas calmas."
+   ],
+   [
+    "Praia da Estopa (Jaguanum)",
+    "Praia reservada ao norte da ilha."
+   ],
+   [
+    "Ilha Bonita",
+    "Conchas e piscinas naturais."
+   ],
+   [
+    "Almoço",
+    "Na Pitangueira ou no Araçá, ambas com restaurante."
+   ]
   ],
   "diferenciais": [
    "Roteiro confortável e seguro, com boa estrutura o ano todo",
@@ -97,20 +175,47 @@
    "Praias abrigadas, de mar calmo"
   ],
   "precos": [
-   ["Travessia ida e volta", "R$ 80/pessoa"],
-   ["Privativo · táxi boat (até 12 pessoas)", "R$ 1.600"],
-   ["Privativo · lancha (até 12/14 pessoas)", "R$ 2.000"],
-   ["Compartilhado · táxi boat", "R$ 120/pessoa"],
-   ["Compartilhado · lancha", "R$ 160/pessoa"]
+   [
+    "Travessia ida e volta",
+    "R$ 80/pessoa"
+   ],
+   [
+    "Privativo · táxi boat (até 12 pessoas)",
+    "R$ 1.600"
+   ],
+   [
+    "Privativo · lancha (até 12/14 pessoas)",
+    "R$ 2.000"
+   ],
+   [
+    "Compartilhado · táxi boat",
+    "R$ 120/pessoa"
+   ],
+   [
+    "Compartilhado · lancha",
+    "R$ 160/pessoa"
+   ]
   ],
   "precos_nota": "Valores com saída do Centro de Mangaratiba.",
   "seo_title": "Volta em Jaguanum — passeio à Ilha de Jaguanum saindo de Mangaratiba | Vou de Barco",
   "seo_desc": "Passeio Volta em Jaguanum: a maior ilha da região de Mangaratiba, com praias abrigadas (Araçá, Estopa), Ilha da Vigia e Ilha Bonita, boa estrutura e almoço o ano todo. Privativo ou compartilhado.",
   "faq": [
-   ["Qual a diferença entre a Volta em Jaguanum e o Super Pombeba?", "A Volta em Jaguanum não inclui a Ponta da Pombeba: é um roteiro mais abrigado e confortável, com boa estrutura de restaurantes e banheiros e almoço garantido o ano todo. O Super Pombeba vai até o banco de areia da Pombeba, em mar mais aberto."],
-   ["Quanto tempo dura?", "De 6 a 7 horas, com saída do Centro de Mangaratiba ou de Ibicuí."],
-   ["Quais são os valores?", "Travessia ida e volta: R$ 80/pessoa. Privativo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha). Compartilhado: R$ 120/pessoa (táxi boat) ou R$ 160/pessoa (lancha)."],
-   ["Tem estrutura na ilha?", "Sim, Jaguanum é a maior ilha da região e tem boa infraestrutura de restaurantes e banheiros, com almoço garantido o ano inteiro."]
+   [
+    "Qual a diferença entre a Volta em Jaguanum e o Super Pombeba?",
+    "A Volta em Jaguanum não inclui a Ponta da Pombeba: é um roteiro mais abrigado e confortável, com boa estrutura de restaurantes e banheiros e almoço garantido o ano todo. O Super Pombeba vai até o banco de areia da Pombeba, em mar mais aberto."
+   ],
+   [
+    "Quanto tempo dura?",
+    "De 6 a 7 horas, com saída do Centro de Mangaratiba ou de Ibicuí."
+   ],
+   [
+    "Quais são os valores?",
+    "Travessia ida e volta: R$ 80/pessoa. Privativo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha). Compartilhado: R$ 120/pessoa (táxi boat) ou R$ 160/pessoa (lancha)."
+   ],
+   [
+    "Tem estrutura na ilha?",
+    "Sim, Jaguanum é a maior ilha da região e tem boa infraestrutura de restaurantes e banheiros, com almoço garantido o ano inteiro."
+   ]
   ]
  }
 ]

@@ -326,6 +326,49 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
    PASSEIOS — grade de cards "carta de rumo"
    ============================================================ */
 .tours { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.1rem, 2vw, 1.6rem); }
+/* variante carrossel: trilho horizontal com scroll-snap */
+.tours--rail {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 1fr);
+  grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: clamp(1rem, 2vw, 1.5rem); padding-bottom: 1rem; scroll-padding-left: var(--gutter);
+  scrollbar-width: thin;
+}
+.tours--rail > * { scroll-snap-align: start; }
+@media (min-width: 981px) {
+  /* no desktop, se couberem até 3, vira grade normal; 4+ mantém trilho */
+  .tours--rail { grid-auto-columns: minmax(300px, 1fr); }
+}
+/* card "ver todos" no fim do trilho */
+.tour--seeall {
+  display: grid; place-items: center; text-align: center; min-height: 200px;
+  background: var(--cobalto-12); border: 1px dashed var(--cobalto);
+  color: var(--cobalto); font-family: var(--display); font-weight: 700; padding: 1.5rem;
+}
+.tour--seeall span { display: inline-flex; align-items: center; gap: .5rem; }
+.tour--seeall svg { width: 1.1em; height: 1.1em; }
+.tour--seeall:hover { background: var(--cobalto); color: var(--branco); border-color: transparent; }
+/* card de destaque da travessia nos hubs */
+.cross-highlight {
+  display: grid; grid-template-columns: minmax(0, 42%) 1fr; align-items: stretch;
+  margin-top: clamp(1.4rem, 3vw, 2.2rem);
+  background: var(--abismo); color: var(--branco);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.cross-highlight:hover { transform: translateY(-4px); }
+.cross-highlight__media { position: relative; min-height: 220px; }
+.cross-highlight__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cross-highlight__body { padding: clamp(1.5rem, 3vw, 2.6rem); align-self: center; }
+.cross-highlight__body .eyebrow { color: var(--amarelo); }
+.cross-highlight__body .eyebrow::before { background: var(--amarelo); }
+.cross-highlight__body h3 { font-family: var(--display); font-size: clamp(1.35rem, 2.4vw, 1.9rem); margin: .3rem 0 .7rem; }
+.cross-highlight__body p { color: var(--branco-70); margin-bottom: 1.1rem; max-width: 48ch; }
+.cross-highlight__link { display: inline-flex; align-items: center; gap: .5rem; color: var(--amarelo); font-weight: 700; }
+.cross-highlight__link svg { width: 1.1em; height: 1.1em; }
+@media (max-width: 720px) {
+  .cross-highlight { grid-template-columns: 1fr; }
+  .cross-highlight__media { min-height: 180px; }
+}
 .tour {
   position: relative; display: flex; flex-direction: column;
   background: var(--branco); border: 1px solid var(--bruma);
