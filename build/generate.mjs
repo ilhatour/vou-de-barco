@@ -15,6 +15,7 @@ const write = (p, c) => { mkdirSync(dirname(join(ROOT, p)), { recursive: true })
 const PASSEIOS = JSON.parse(read("data/passeios.json"));
 const TRAV = JSON.parse(read("data/travessia.json"));
 const BLOG = JSON.parse(read("data/blog.json"));
+const MANGA = JSON.parse(read("data/passeios-mangaratiba.json"));
 
 /* ---- Constantes da marca ---- */
 const WA = "5524974031431";
@@ -231,6 +232,7 @@ function footer({ prefix = "" } = {}) {
         <h5>Navegue</h5>
         <a href="${prefix}travessia.html">Travessia</a>
         <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
+        <a href="${prefix}passeios-mangaratiba.html">Passeios em Mangaratiba</a>
         <a href="${prefix}privativo.html">Embarcação privativa</a>
         <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
@@ -457,7 +459,10 @@ ${header({ active: "inicio" })}
       <div class="tours">
         ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
       </div>
-      <p style="text-align:center;margin-top:2.8rem"><a class="btn btn--outline" href="privativo.html">Quer o barco só pro seu grupo? Conheça a embarcação privativa ${I.arrow}</a></p>
+      <p style="text-align:center;margin-top:2.8rem;display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center">
+        <a class="btn btn--outline" href="passeios-mangaratiba.html">Navegue por Mangaratiba: Guaíba, Pombeba e Jaguanum ${I.arrow}</a>
+        <a class="btn btn--outline" href="privativo.html">Embarcação privativa ${I.arrow}</a>
+      </p>
     </div>
   </section>
 
@@ -1426,6 +1431,203 @@ ${scripts()}
 }
 
 /* ============================================================
+   PASSEIOS DE MANGARATIBA (Guaíba / Pombeba / Jaguanum)
+   ============================================================ */
+function mangaCard(p, prefix = "") {
+  return `<article class="tour reveal">
+  <div class="tour__media">
+    <span class="tour__badge">${esc(p.badge)}</span>
+    <img src="${prefix}${p.img}" alt="${esc(p.alt)}" loading="lazy" width="640" height="480">
+  </div>
+  <div class="tour__body">
+    <h3 class="tour__name">${esc(p.nome)}</h3>
+    <p class="tour__slogan">${esc(p.slogan)}</p>
+    <div class="tour__meta">
+      <span class="chip">${I.clock}${esc(p.duracao)}</span>
+      <span class="chip">${I.pin}${esc(p.embarque)}</span>
+    </div>
+    <a class="tour__link" href="${prefix}passeios/${p.id}.html">Ver roteiro e valores ${I.arrow}</a>
+  </div>
+  <a class="tour__stretch" href="${prefix}passeios/${p.id}.html" aria-label="Ver roteiro do ${esc(p.nome)}"></a>
+</article>`;
+}
+
+function buildMangaPasseio(p) {
+  const msg = `Olá, Vou de Barco! Quero fazer uma cotação do passeio ${p.nome} (saindo de Mangaratiba).`;
+  return `${head({ title: p.seo_title, desc: p.seo_desc, canonical: `${SITE}/passeios/${p.id}.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.seo_desc,
+    provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
+    touristType: "Passeio de barco", image: SITE + "/" + p.img,
+    itinerary: { "@type": "ItemList", itemListElement: p.praias.map(([n], i) => ({ "@type": "ListItem", position: i + 1, name: n })) },
+    url: SITE + `/passeios/${p.id}.html`,
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: p.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Mangaratiba", url: SITE + "/passeios-mangaratiba.html" }, { name: p.nome, url: SITE + `/passeios/${p.id}.html` }])}
+</head>
+<body>
+${header({ active: "passeios", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="${p.img}" alt="${esc(p.alt)}" width="1080" height="1116"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · <a href="passeios-mangaratiba.html">Passeios em Mangaratiba</a> · ${esc(p.nome)}</nav>
+      <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>
+      <h1>${esc(p.nome)}</h1>
+      <p class="subhero__slogan">${esc(p.slogan)}</p>
+      <div class="subhero__meta">
+        <span class="chip">${I.clock}${esc(p.duracao)}</span>
+        <span class="chip">${I.pin}${esc(p.embarque)}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail__main">
+          <p class="lead">${esc(p.descricao)}</p>
+
+          <h2>Praias e paradas do roteiro</h2>
+          <ul class="spec-list">
+            ${p.praias.map(([n, d]) => `<li><span class="k">${esc(n)}</span><span class="v" style="max-width:60%;text-align:right">${esc(d)}</span></li>`).join("\n            ")}
+          </ul>
+
+          <h2>Diferenciais</h2>
+          <ul class="included">
+            ${p.diferenciais.map((d) => `<li>${I.check}${esc(d)}</li>`).join("\n            ")}
+          </ul>
+          ${p.estrutura ? `<h2>Estrutura</h2>\n          <p>${esc(p.estrutura)}</p>` : ""}
+
+          <h2>Perguntas frequentes</h2>
+          <div class="faq">
+            ${p.faq.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+        </div>
+
+        <aside class="booking-card">
+          <h3>Valores</h3>
+          <ul class="spec-list">
+            ${p.precos.map(([k, v]) => `<li><span class="k">${esc(k)}</span><span class="v">${esc(v)}</span></li>`).join("\n            ")}
+          </ul>
+          ${p.precos_nota ? `<p class="price-note" style="font-size:.85rem;line-height:1.5;text-align:left">${esc(p.precos_nota)}</p>` : ""}
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Fazer minha cotação</a>
+          <a class="back" href="passeios-mangaratiba.html">${I.arrow} Ver todos os passeios de Mangaratiba</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+const MANGA_PASSEIOS_FAQ = [
+  ["De onde saem os passeios de Mangaratiba?", "Do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta."],
+  ["Qual a diferença entre privativo e compartilhado?", "No privativo, o barco é exclusivo do seu grupo (até 12 pessoas, ou até 14 na lancha sob avaliação) e o preço é por barco. No compartilhado, você reserva por pessoa e divide o barco com outros passageiros."],
+  ["Táxi boat ou lancha: qual escolher?", "O táxi boat é mais em conta; a lancha é mais rápida e confortável. Nos dois casos a experiência do roteiro é a mesma — a gente ajuda você a escolher pela sua data e grupo."],
+  ["Qual passeio de Mangaratiba é o melhor?", "Depende do que você procura: o Super Guaíba é mais curto e tranquilo (~4h); o Super Pombeba tem o banco de areia único da Pombeba (6-7h); e a Volta em Jaguanum é a mais confortável, com boa estrutura e almoço garantido o ano todo. Fale com a gente que ajudamos a escolher."],
+  ["Os preços mudam na alta temporada?", "Feriados, Natal, Réveillon e janeiro podem ter acréscimo. Faça sua cotação pelo WhatsApp que passamos o valor exato para a sua data."],
+];
+function buildMangaCluster() {
+  const msg = "Olá, Vou de Barco! Quero uma cotação de passeio de barco saindo de Mangaratiba.";
+  const title = "Passeios de barco em Mangaratiba — Ilha da Guaíba, Pombeba e Jaguanum | Vou de Barco";
+  const desc = "Passeios de barco saindo de Mangaratiba: Ilha da Guaíba, Ponta da Pombeba (Restinga da Marambaia) e Jaguanum. Táxi boat ou lancha, privativo ou compartilhado. Faça sua cotação.";
+  return `${head({ title, desc, canonical: `${SITE}/passeios-mangaratiba.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: MANGA_PASSEIOS_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "ItemList",
+    itemListElement: MANGA.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.nome, url: `${SITE}/passeios/${p.id}.html` })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Mangaratiba", url: SITE + "/passeios-mangaratiba.html" }])}
+</head>
+<body>
+${header({ active: "passeios", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="assets/img/hero-home.jpg" alt="Águas cristalinas da região de Mangaratiba, na Costa Verde do Rio" width="1080" height="1116"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · Passeios em Mangaratiba</nav>
+      <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>
+      <h1>Passeios de barco em Mangaratiba</h1>
+      <p class="subhero__slogan">Ilhas intactas, água cristalina e bancos de areia únicos no RJ — navegando por Mangaratiba.</p>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow">Roteiros saindo de Mangaratiba</span>
+        <h2 class="section-title">Ilhas intactas a poucos minutos do continente</h2>
+        <p class="lead">Passeios em <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (grupo fechado) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. Além da nossa <a href="travessia.html">travessia para a Ilha Grande</a>, levamos você às ilhas mais preservadas da baía de Mangaratiba.</p>
+      </div>
+      <div class="tours">
+        ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Também de Mangaratiba</span><h2 class="section-title">Só travessia, sem roteiro</h2></div>
+      <div class="crossing">
+        <div class="cross-card cross-card--horarios reveal">
+          <span class="eyebrow">${I.boat} Travessia Ilha da Guaíba</span>
+          <p style="margin:.6rem 0 1rem">Ida e volta direto para a <strong>Praia da Tapera</strong>, na Ilha da Guaíba — sem roteiro: só ida, praia e volta no horário combinado.</p>
+          <ul class="spec-list">
+            <li><span class="k">Ida e volta (saída de Mangaratiba)</span><span class="v">R$ 60/pessoa</span></li>
+          </ul>
+          <div class="horarios__cta">
+            <a class="btn" href="${waLink("Olá, Vou de Barco! Quero a Travessia da Ilha da Guaíba (ida e volta para a Praia da Tapera).")}" target="_blank" rel="noopener">${I.whatsapp} Cotar travessia</a>
+          </div>
+        </div>
+        <div class="cross-card cross-card--horarios reveal" data-d="1">
+          <span class="eyebrow">${I.pin} Informações úteis</span>
+          <ul class="included" style="margin-top:.8rem">
+            <li>${I.check}<strong>Embarque:</strong> saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá…) com valor sob consulta.</li>
+            <li>${I.check}<strong>Capacidade:</strong> 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</li>
+            <li>${I.check}<strong>Alta temporada:</strong> feriados, Natal, Réveillon e janeiro podem ter acréscimo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.nevoa, C.branco, true)}
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="section__head center"><span class="eyebrow">Perguntas frequentes</span><h2 class="section-title">Sobre os passeios de Mangaratiba</h2></div>
+      <div class="faq">
+        ${MANGA_PASSEIOS_FAQ.map(([q, a]) => `<details class="faq__item reveal"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n        ")}
+      </div>
+      <p style="text-align:center;margin-top:2.5rem"><a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Faça sua cotação</a></p>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+/* ============================================================
    BLOG
    ============================================================ */
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
@@ -1583,7 +1785,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/privativo.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/passeios-mangaratiba.html`, `${SITE}/privativo.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...MANGA.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
@@ -1596,6 +1798,8 @@ write("como-chegar.html", buildComoChegar());
 write("mangaratiba.html", buildMangaratiba());
 write("sobre.html", buildSobre());
 write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
+write("passeios-mangaratiba.html", buildMangaCluster());
+MANGA.forEach((p) => write(`passeios/${p.id}.html`, buildMangaPasseio(p)));
 write("privativo.html", buildPrivativo());
 write("blog.html", buildBlogIndex());
 write("en/mangaratiba-to-ilha-grande.html", buildEnglish());
