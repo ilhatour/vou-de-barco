@@ -856,6 +856,16 @@ ${header({ active: "travessia", solid: true })}
           </div>
           <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)">Chegue ao cais cerca de 20 minutos antes do horário. Horários sujeitos às condições de clima e maré.</p>
 
+          <h2>Barca ou Flex Boat: como ir de Mangaratiba para a Ilha Grande</h2>
+          <p>Do cais de Mangaratiba saem duas formas de chegar à Vila do Abraão. A <strong>barca tradicional</strong> (operada pela ${esc(BARCA.operadora)}) é a opção mais econômica, mas tem <strong>um horário por dia</strong> em cada sentido e viagem de até 110 minutos:</p>
+          <ul class="included">
+            <li>${I.check}<strong>Barca — Mangaratiba → Vila do Abraão:</strong> 08h00</li>
+            <li>${I.check}<strong>Barca — Vila do Abraão → Mangaratiba:</strong> 17h30</li>
+            <li>${I.check}Duração até 110 minutos · tarifa ${esc(BARCA.tarifa)}</li>
+          </ul>
+          <p style="font-size:.95rem;color:var(--abismo-60)">⚠️ Os horários e a tarifa da barca podem mudar sem aviso — confirme no <a href="${BARCA.site}" target="_blank" rel="noopener">site oficial da Barcas Rio</a>.</p>
+          <p>O nosso <strong>Flex Boat</strong> é a alternativa rápida: faz o mesmo trajeto Mangaratiba ⇄ Ilha Grande em cerca de <strong>40 minutos</strong>, com <strong>três saídas por dia</strong> em cada sentido — ideal para quem quer aproveitar mais o dia na ilha ou não pegou o horário único da barca. Veja também o guia <a href="blog/barca-mangaratiba-ilha-grande.html">Barca Mangaratiba ⇄ Ilha Grande: horários e alternativa rápida</a>.</p>
+
           <h2>O que levar</h2>
           <ul class="included">
             ${TRAV.o_que_levar.map((x) => `<li>${I.check}${esc(x)}</li>`).join("\n            ")}
@@ -1512,6 +1522,7 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
         <div class="detail__main">
           <p class="lead">${esc(p.descricao)}</p>
 
+          ${p.como_e ? `<h2>Como é o passeio ${esc(p.nome === "Volta em Jaguanum" ? "à Ilha de Jaguanum" : p.nome === "Super Guaíba" ? "à Ilha da Guaíba" : "à Ponta da Pombeba")}</h2>\n          <p>${esc(p.como_e)}</p>\n` : ""}
           <h2>Praias e paradas do roteiro</h2>
           <ul class="spec-list">
             ${p.praias.map(([n, d]) => `<li><span class="k">${esc(n)}</span><span class="v" style="max-width:60%;text-align:right">${esc(d)}</span></li>`).join("\n            ")}
@@ -1521,7 +1532,16 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
           <ul class="included">
             ${p.diferenciais.map((d) => `<li>${I.check}${esc(d)}</li>`).join("\n            ")}
           </ul>
-          ${p.estrutura ? `<h2>Estrutura</h2>\n          <p>${esc(p.estrutura)}</p>` : ""}
+          ${p.estrutura ? `<h2>Estrutura na ilha</h2>\n          <p>${esc(p.estrutura)}</p>` : ""}
+
+          <h2>Bom saber antes de embarcar</h2>
+          <ul class="included">
+            <li>${I.check}<strong>Embarque:</strong> saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta.</li>
+            <li>${I.check}<strong>Capacidade:</strong> 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</li>
+            <li>${I.check}<strong>Leve com você:</strong> cooler com gelo, bebidas e petiscos, além de protetor solar — e, se quiser, snorkel para aproveitar a água cristalina.</li>
+            <li>${I.check}<strong>Alta temporada:</strong> feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor.</li>
+            <li>${I.check}<strong>A bordo:</strong> marinheiro experiente e coletes salva-vidas para todos.</li>
+          </ul>
 
           <h2>Perguntas frequentes</h2>
           <div class="faq">
