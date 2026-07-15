@@ -223,6 +223,7 @@ function footer({ prefix = "" } = {}) {
         <p>Travessia e passeios de barco em Ilha Grande e Mangaratiba. Frota e tripulação próprias, segurança em primeiro lugar.</p>
         <address class="footer__nap">
           ${I.pin}<span>Av. Célio Lopes, 89 — Centro, Mangaratiba/RJ</span><br>
+          ${I.clock}<span>Todos os dias, 8h às 17h</span><br>
           ${I.whatsapp}<a href="${waLink("Olá, Vou de Barco!")}" target="_blank" rel="noopener">(24) 97403-1431</a>
         </address>
       </div>
@@ -309,12 +310,17 @@ function ldOrg() {
     sameAs: [IG],
     address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 89 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" },
     geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "08:00", closes: "17:00",
+    },
     location: [
       { "@type": "Place", name: "Agência Mangaratiba", address: { "@type": "PostalAddress", streetAddress: "Av. Célio Lopes, 89 — Centro", addressLocality: "Mangaratiba", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -22.9601, longitude: -44.0407 } },
       { "@type": "Place", name: "Agência Vila do Abraão", address: { "@type": "PostalAddress", streetAddress: "Rua da Praia, s/n — em frente ao cais da barca", addressLocality: "Vila do Abraão, Ilha Grande", addressRegion: "RJ", addressCountry: "BR" }, geo: { "@type": "GeoCoordinates", latitude: -23.1385, longitude: -44.1717 } },
     ],
     slogan: "Ilha Grande começa aqui.",
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.5", reviewCount: "39", bestRating: "5", worstRating: "1" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.6", reviewCount: "39", bestRating: "5", worstRating: "1" },
     hasOfferCatalog: {
       "@type": "OfferCatalog", name: "Travessia e passeios de barco em Ilha Grande",
       itemListElement: [
@@ -365,8 +371,8 @@ ${header({ active: "inicio" })}
     <div class="wrap">
       <div class="hero__inner">
         <div class="hero__top">
-          <a class="hero__reviews hero__reviews--top" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,5 estrelas no Google">
-            <span class="stars" aria-hidden="true">★★★★★</span><b>4,5</b><span>no Google</span>
+          <a class="hero__reviews hero__reviews--top" href="https://www.google.com/maps/search/?api=1&query=Vou%20de%20Barco%20Mangaratiba" target="_blank" rel="noopener" aria-label="4,6 estrelas no Google">
+            <span class="stars" aria-hidden="true">★★★★★</span><b>4,6</b><span>no Google</span>
           </a>
           <h1>Ilha Grande <span class="accent">começa aqui.</span></h1>
         </div>
@@ -512,6 +518,7 @@ ${header({ active: "inicio" })}
             <div class="channel">${I.instagram}<span><b>Instagram</b><a href="${IG}" target="_blank" rel="noopener">@voudebarco</a></span></div>
             <div class="channel">${I.pin}<span><b>Mangaratiba</b><span>Av. Célio Lopes, 89 — Centro</span></span></div>
             <div class="channel">${I.pin}<span><b>Vila do Abraão (Ilha Grande)</b><span>Rua da Praia, s/n — em frente ao cais da barca</span></span></div>
+            <div class="channel">${I.clock}<span><b>Atendimento na agência</b><span>Todos os dias, 8h às 17h</span></span></div>
           </div>
         </div>
         <form class="form reveal" data-d="1" data-wa-form>
