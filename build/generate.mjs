@@ -295,7 +295,7 @@ function travessiaHubCard(prefix = "") {
 
 const FAQ = [
   ["Travessia", "Qual é a rota e quanto tempo dura?", "Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat. O trajeto leva cerca de 40 minutos. Mangaratiba é o ponto mais próximo do Rio de Janeiro."],
-  ["Travessia", "Quais são os horários?", "Saídas de Mangaratiba para Abraão: 09h00, 13h30 e 16h30. Saídas de Abraão para Mangaratiba: 10h00, 14h00 e 17h15. Recomendamos chegar ao cais com antecedência."],
+  ["Travessia", "Quais são os horários?", "Saídas de Mangaratiba para Abraão: 09h00, 13h00 e 16h30. Saídas de Abraão para Mangaratiba: 10h00, 14h00 e 17h15. Recomendamos chegar ao cais com antecedência."],
   ["Travessia", "Posso comprar só ida, só volta ou ida e volta? E a bagagem?", "Você escolhe ida, volta ou ida e volta. A passagem inclui o transporte de bagagem padrão. Para grupos ou bagagem extra, fale com a gente pelo WhatsApp."],
   ["Passeio", "O que está incluso?", "Todos os passeios incluem água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim."],
   ["Passeio", "Acontece com chuva? Depende da maré?", "A operação depende das condições de clima e maré, sempre pensando na sua segurança. Em dias ruins, podemos ajustar paradas ou remarcar. A confirmação é feita com você pelo WhatsApp."],
@@ -706,7 +706,7 @@ const EN_FAQ = [
   ["How do I get from Rio de Janeiro to Ilha Grande?", "Drive or take a bus along the Rio-Santos highway (BR-101) to Mangaratiba — the closest departure point to Rio, about 1h30–2h30 from the city. From the Mangaratiba pier, our Flex Boat speedboat takes you to Vila do Abraão, Ilha Grande's main village, in about 40 minutes."],
   ["How long is the boat trip from Mangaratiba to Ilha Grande?", "About 40 minutes by Flex Boat (speedboat). The traditional ferry does the same route in up to 110 minutes, with only one departure per day."],
   ["What are the ferry times from Mangaratiba to Ilha Grande?", "The traditional ferry (Barcas Rio) runs once a day: it departs Mangaratiba at 8:00 am and returns from Abraão at 5:30 pm. Times may change — always check the official Barcas Rio website. Our Flex Boat runs three times a day in each direction."],
-  ["What are the Flex Boat departure times?", "Mangaratiba → Abraão: 9:00 am, 1:30 pm and 4:30 pm. Abraão → Mangaratiba: 10:00 am, 2:00 pm and 5:15 pm. Please arrive at the pier about 20 minutes before departure."],
+  ["What are the Flex Boat departure times?", "Mangaratiba → Abraão: 9:00 am, 1:00 pm and 4:30 pm. Abraão → Mangaratiba: 10:00 am, 2:00 pm and 5:15 pm. Please arrive at the pier about 20 minutes before departure."],
   ["How much does the transfer cost?", "Prices are quoted on request and depend on the leg (one way or round trip) and the number of passengers. Message us on WhatsApp and we will send you current prices right away — no commitment."],
   ["Is there parking in Mangaratiba?", "Yes, there is affordable parking near the pier — one of the reasons Mangaratiba is the most practical departure point if you are coming from Rio by car."],
   ["Can I bring luggage?", "Each passenger can bring 1 carry-on bag up to 10 kg plus 1 bag up to 23 kg. Extra volumes depend on available space and may have a fee. For pets, please contact us on WhatsApp in advance."],
@@ -755,7 +755,7 @@ ${header({ active: "travessia", solid: true, prefix: "../" })}
 
           <h2>Flex Boat speedboat: ~40 minutes, 3 departures a day</h2>
           <ul>
-            <li><strong>Mangaratiba → Vila do Abraão:</strong> 9:00 am · 1:30 pm · 4:30 pm</li>
+            <li><strong>Mangaratiba → Vila do Abraão:</strong> 9:00 am · 1:00 pm · 4:30 pm</li>
             <li><strong>Vila do Abraão → Mangaratiba:</strong> 10:00 am · 2:00 pm · 5:15 pm</li>
             <li><strong>Crossing time:</strong> about 40 minutes · life jackets for everyone on board</li>
             <li><strong>Tickets:</strong> one way or round trip · prices on request</li>
