@@ -591,7 +591,8 @@ function buildPasseio(p) {
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.descricao || p.resumo,
     touristType: p.para_quem, provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
-    image: SITE + "/" + p.img, itinerary: { "@type": "ItemList", itemListElement: p.paradas.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s })) },
+    image: [SITE + "/" + p.img, ...(p.galeria || []).map((g) => SITE + "/" + g.src)],
+    itinerary: { "@type": "ItemList", itemListElement: p.paradas.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s })) },
   })}</script>
 ${p.faq ? `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "FAQPage",
@@ -617,6 +618,15 @@ ${header({ active: "ilhagrande", solid: true, prefix: "../" })}
       </div>
     </div>
   </section>
+
+  ${p.galeria && p.galeria.length ? `<section class="section section--branco gallery-section" aria-label="Fotos do passeio ${esc(p.nome)}">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Galeria</span><h2 class="section-title">Fotos do passeio</h2></div>
+      <div class="gallery" data-count="${p.galeria.length}">
+        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1080" height="1350"></figure>`).join("\n        ")}
+      </div>
+    </div>
+  </section>` : ""}
 
   <section class="section section--branco">
     <div class="wrap">
