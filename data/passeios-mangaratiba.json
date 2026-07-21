@@ -65,19 +65,23 @@
   "galeria": [
    {
     "src": "assets/img/galeria/guaiba-ilha.jpg",
-    "alt": "Ilha da Guaíba vista de cima, em Mangaratiba"
+    "alt": "Ilha da Guaíba vista de cima, em Mangaratiba",
+    "titulo": "Ilha da Guaíba"
    },
    {
     "src": "assets/img/galeria/guaiba-tapera.jpg",
-    "alt": "Praia da Tapera — Ilha da Guaíba, Mangaratiba"
+    "alt": "Praia da Tapera — Ilha da Guaíba, Mangaratiba",
+    "titulo": "Praia da Tapera"
    },
    {
     "src": "assets/img/galeria/guaiba-raposa.jpg",
-    "alt": "Praia da Raposa — Ilha da Guaíba, Mangaratiba"
+    "alt": "Praia da Raposa — Ilha da Guaíba, Mangaratiba",
+    "titulo": "Praia da Raposa"
    },
    {
     "src": "assets/img/galeria/guaiba-tapua.jpg",
-    "alt": "Praia da Tapuá — Ilha da Guaíba, Mangaratiba"
+    "alt": "Praia da Tapuá — Ilha da Guaíba, Mangaratiba",
+    "titulo": "Praia da Tapuá"
    }
   ]
  },

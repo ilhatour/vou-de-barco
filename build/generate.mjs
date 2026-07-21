@@ -623,7 +623,7 @@ ${header({ active: "ilhagrande", solid: true, prefix: "../" })}
     <div class="wrap">
       <div class="section__head"><span class="eyebrow">Galeria</span><h2 class="section-title">Fotos do passeio</h2></div>
       <div class="gallery" data-count="${p.galeria.length}">
-        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1080" height="1350"></figure>`).join("\n        ")}
+        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1080" height="1350"><figcaption class="gallery__cap">${I.pin}${esc((g.titulo || g.alt.split(" — ")[0]))}</figcaption></figure>`).join("\n        ")}
       </div>
     </div>
   </section>` : ""}
@@ -1531,7 +1531,7 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
     <div class="wrap">
       <div class="section__head"><span class="eyebrow">Galeria</span><h2 class="section-title">Fotos do passeio</h2></div>
       <div class="gallery" data-count="${p.galeria.length}">
-        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1200" height="1500"></figure>`).join("\n        ")}
+        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1200" height="1500"><figcaption class="gallery__cap">${I.pin}${esc((g.titulo || g.alt.split(" — ")[0]))}</figcaption></figure>`).join("\n        ")}
       </div>
     </div>
   </section>` : ""}
@@ -1544,24 +1544,26 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
 
           ${p.como_e ? `<h2>Como é o passeio ${esc(p.nome === "Volta em Jaguanum" ? "à Ilha de Jaguanum" : p.nome === "Super Guaíba" ? "à Ilha da Guaíba" : "à Ponta da Pombeba")}</h2>\n          <p>${esc(p.como_e)}</p>\n` : ""}
           <h2>Praias e paradas do roteiro</h2>
-          <ul class="spec-list">
-            ${p.praias.map(([n, d]) => `<li><span class="k">${esc(n)}</span><span class="v" style="max-width:60%;text-align:right">${esc(d)}</span></li>`).join("\n            ")}
-          </ul>
+          <ol class="roteiro">
+            ${p.praias.map(([n, d], i) => `<li class="roteiro__stop"><span class="roteiro__num">${i + 1}</span><div class="roteiro__body"><h3 class="roteiro__name">${esc(n)}</h3><p class="roteiro__desc">${esc(d)}</p></div></li>`).join("\n            ")}
+          </ol>
 
           <h2>Diferenciais</h2>
-          <ul class="included">
-            ${p.diferenciais.map((d) => `<li>${I.check}${esc(d)}</li>`).join("\n            ")}
+          <ul class="checklist">
+            ${p.diferenciais.map((d) => `<li><span class="checklist__ico">${I.check}</span>${esc(d)}</li>`).join("\n            ")}
           </ul>
           ${p.estrutura ? `<h2>Estrutura na ilha</h2>\n          <p>${esc(p.estrutura)}</p>` : ""}
 
-          <h2>Bom saber antes de embarcar</h2>
-          <ul class="included">
-            <li>${I.check}<strong>Embarque:</strong> saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta.</li>
-            <li>${I.check}<strong>Capacidade:</strong> 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</li>
-            <li>${I.check}<strong>Leve com você:</strong> cooler com gelo, bebidas e petiscos, além de protetor solar — e, se quiser, snorkel para aproveitar a água cristalina.</li>
-            <li>${I.check}<strong>Alta temporada:</strong> feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor.</li>
-            <li>${I.check}<strong>A bordo:</strong> marinheiro experiente e coletes salva-vidas para todos.</li>
-          </ul>
+          <div class="info-panel">
+            <h2 class="info-panel__title">${I.compass} Bom saber antes de embarcar</h2>
+            <ul class="info-panel__list">
+              <li><span class="info-panel__ico">${I.pin}</span><div><b>Embarque</b> — saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta.</div></li>
+              <li><span class="info-panel__ico">${I.boat}</span><div><b>Capacidade</b> — 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</div></li>
+              <li><span class="info-panel__ico">${I.check}</span><div><b>Leve com você</b> — cooler com gelo, bebidas e petiscos, além de protetor solar; e, se quiser, snorkel para a água cristalina.</div></li>
+              <li><span class="info-panel__ico">${I.clock}</span><div><b>Alta temporada</b> — feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor.</div></li>
+              <li><span class="info-panel__ico">${I.shield}</span><div><b>A bordo</b> — marinheiro experiente e coletes salva-vidas para todos.</div></li>
+            </ul>
+          </div>
 
           <h2>Perguntas frequentes</h2>
           <div class="faq">
