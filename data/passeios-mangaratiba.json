@@ -6,8 +6,8 @@
   "slogan": "A ilha mais próxima do continente — 3 praias em pouca navegação.",
   "duracao": "~4 horas",
   "embarque": "Centro de Mangaratiba ou Ibicuí",
-  "img": "assets/img/passeio-mangaratiba-agua.jpg",
-  "alt": "Água cristalina com cardume de peixes na Costa Verde, região de Mangaratiba",
+  "img": "assets/img/passeio-guaiba.jpg",
+  "alt": "Praia da Tapera, na Ilha da Guaíba, em Mangaratiba — vista aérea de água cristalina",
   "resumo": "A Ilha da Guaíba fica a apenas 10 minutos de Mangaratiba, mas é uma das mais intocadas: sem construções, muito arborizada, com sombra e água cristalina o ano inteiro.",
   "descricao": "A Ilha da Guaíba fica a apenas 10 minutos de Mangaratiba, mas é uma das mais intocadas do litoral: sem construções, muito arborizada, com sombra e água cristalina o ano inteiro — até em dia nublado. É o passeio perfeito para quem quer praia bonita e tranquila com pouca navegação, ótimo para famílias e para quem tem meio dia livre.",
   "praias": [
@@ -61,7 +61,25 @@
     "Privativo em táxi boat (até 12 pessoas): R$ 1.200. Privativo em lancha (até 12 pessoas): R$ 1.600. Saída do Centro de Mangaratiba. Faça sua cotação pelo WhatsApp."
    ]
   ],
-  "como_e": "A Ilha da Guaíba fica a apenas 10 minutos do continente, então sobra tempo de praia. O passeio de barco combina as três praias da ilha: a Tapera, a principal, com areia boa, água calma e muita sombra; a Raposa, menor, logo ao lado; e a Tapuá, preservada — as duas voltadas para o mar aberto. Como a navegação é curta, é um ótimo passeio de meio dia, tranquilo e ideal para famílias."
+  "como_e": "A Ilha da Guaíba fica a apenas 10 minutos do continente, então sobra tempo de praia. O passeio de barco combina as três praias da ilha: a Tapera, a principal, com areia boa, água calma e muita sombra; a Raposa, menor, logo ao lado; e a Tapuá, preservada — as duas voltadas para o mar aberto. Como a navegação é curta, é um ótimo passeio de meio dia, tranquilo e ideal para famílias.",
+  "galeria": [
+   {
+    "src": "assets/img/galeria/guaiba-ilha.jpg",
+    "alt": "Ilha da Guaíba vista de cima, em Mangaratiba"
+   },
+   {
+    "src": "assets/img/galeria/guaiba-tapera.jpg",
+    "alt": "Praia da Tapera — Ilha da Guaíba, Mangaratiba"
+   },
+   {
+    "src": "assets/img/galeria/guaiba-raposa.jpg",
+    "alt": "Praia da Raposa — Ilha da Guaíba, Mangaratiba"
+   },
+   {
+    "src": "assets/img/galeria/guaiba-tapua.jpg",
+    "alt": "Praia da Tapuá — Ilha da Guaíba, Mangaratiba"
+   }
+  ]
  },
  {
   "id": "super-pombeba",

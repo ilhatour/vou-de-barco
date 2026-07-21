@@ -1497,7 +1497,7 @@ function buildMangaPasseio(p) {
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "TouristTrip", name: p.nome, description: p.seo_desc,
     provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
-    touristType: "Passeio de barco", image: SITE + "/" + p.img,
+    touristType: "Passeio de barco", image: [SITE + "/" + p.img, ...(p.galeria || []).map((g) => SITE + "/" + g.src)],
     itinerary: { "@type": "ItemList", itemListElement: p.praias.map(([n], i) => ({ "@type": "ListItem", position: i + 1, name: n })) },
     ...(low ? { offers: { "@type": "AggregateOffer", priceCurrency: "BRL", lowPrice: String(low), availability: "https://schema.org/InStock", url: SITE + `/passeios/${p.id}.html`, seller: { "@type": "TravelAgency", name: "Vou de Barco", "@id": SITE + "/#business" } } } : {}),
     url: SITE + `/passeios/${p.id}.html`,
@@ -1517,7 +1517,7 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
     ${p.credito ? `<span class="photo-credit">${esc(p.credito)}</span>` : ""}
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../passeios-mangaratiba.html">Passeios em Mangaratiba</a> · ${esc(p.nome)}</nav>
-      <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>
+      <span class="eyebrow eyebrow--light">Mangaratiba · ${esc(p.badge)}</span>
       <h1>${esc(p.nome)}</h1>
       <p class="subhero__slogan">${esc(p.slogan)}</p>
       <div class="subhero__meta">
@@ -1526,6 +1526,15 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
       </div>
     </div>
   </section>
+
+  ${p.galeria && p.galeria.length ? `<section class="section section--branco gallery-section" aria-label="Fotos do passeio ${esc(p.nome)}">
+    <div class="wrap">
+      <div class="section__head"><span class="eyebrow">Galeria</span><h2 class="section-title">Fotos do passeio</h2></div>
+      <div class="gallery" data-count="${p.galeria.length}">
+        ${p.galeria.map((g) => `<figure class="gallery__item"><img src="../${g.src}" alt="${esc(g.alt)}" loading="lazy" width="1200" height="1500"></figure>`).join("\n        ")}
+      </div>
+    </div>
+  </section>` : ""}
 
   <section class="section section--branco">
     <div class="wrap">
