@@ -11,6 +11,10 @@
   RewriteRule ^ /%1 [R=301,L]
   RewriteRule ^index/?$ / [R=301,L]
 
+  # /blog é arquivo (blog.html) E pasta (blog/ com posts) — servir o arquivo
+  DirectorySlash Off
+  RewriteRule ^blog/?$ /blog.html [L]
+
   # Servir /pagina a partir de /pagina.html (sem mudar a URL)
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
