@@ -1514,6 +1514,7 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
 
   <section class="subhero subhero--photo">
     <div class="subhero__bg"><img src="../${p.img}" alt="${esc(p.alt)}" width="1080" height="1116"></div>
+    ${p.credito ? `<span class="photo-credit">${esc(p.credito)}</span>` : ""}
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../passeios-mangaratiba.html">Passeios em Mangaratiba</a> · ${esc(p.nome)}</nav>
       <span class="eyebrow eyebrow--light">Mangaratiba · Restinga da Marambaia</span>

@@ -369,6 +369,13 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.04; font-weight: 800; l
   .cross-highlight { grid-template-columns: 1fr; }
   .cross-highlight__media { min-height: 180px; }
 }
+/* crédito de foto (licença Creative Commons) — canto discreto sobre o hero */
+.photo-credit {
+  position: absolute; right: .7rem; bottom: .6rem; z-index: 3;
+  font-size: .68rem; letter-spacing: .02em; color: rgba(255,255,255,.72);
+  background: rgba(6,26,64,.42); padding: .2rem .55rem; border-radius: 6px;
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
 /* galeria de fotos do passeio: desktop = fotos em linha, mobile = carrossel */
 .gallery-section { padding-top: clamp(1.8rem, 4vw, 3rem); }
 .gallery { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: clamp(.5rem, 1.2vw, .9rem); }
