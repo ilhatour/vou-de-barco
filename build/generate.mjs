@@ -240,7 +240,7 @@ function footer({ prefix = "" } = {}) {
       </div>
       <div class="footer__col">
         <h5>Navegue</h5>
-        <a href="${prefix}travessia.html">Travessia</a>
+        <a href="${prefix}travessia.html">Travessia para a Ilha Grande</a>
         <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
         <a href="${prefix}passeios-mangaratiba.html">Passeios em Mangaratiba</a>
         <a href="${prefix}privativo.html">Embarcação privativa</a>
@@ -379,7 +379,7 @@ function ldFaq() {
    ============================================================ */
 function buildIndex() {
   const heroMsg = "Olá, Vou de Barco! Quero reservar.";
-  return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat entre Mangaratiba e a Ilha Grande (~40 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
+  return `${head({ title: "Vou de Barco — Travessia Mangaratiba ⇄ Ilha Grande e passeios de barco", desc: "Travessia rápida de Flex Boat (Flexboat) entre Mangaratiba e a Ilha Grande (~40 min) e passeios de barco pela Costa Verde. Frota própria, saída da Vila do Abraão. Reserve pelo WhatsApp.", canonical: `${SITE}/` })}
 ${ldOrg()}
 ${ldWebsite()}
 ${ldFaq()}
@@ -876,7 +876,7 @@ ${header({ active: "travessia", solid: true })}
           </div>
           <p style="margin-top:1rem;font-size:.95rem;color:var(--abismo-60)">Chegue ao cais cerca de 20 minutos antes do horário. Horários sujeitos às condições de clima e maré.</p>
 
-          <h2>Barca ou Flex Boat: como ir de Mangaratiba para a Ilha Grande</h2>
+          <h2>Barca ou Flex Boat (Flexboat): como ir de Mangaratiba para a Ilha Grande</h2>
           <p>Do cais de Mangaratiba saem duas formas de chegar à Vila do Abraão. A <strong>barca tradicional</strong> (operada pela ${esc(BARCA.operadora)}) é a opção mais econômica, mas tem <strong>um horário por dia</strong> em cada sentido e viagem de até 110 minutos:</p>
           <ul class="included">
             <li>${I.check}<strong>Barca — Mangaratiba → Vila do Abraão:</strong> 08h00</li>
@@ -1092,7 +1092,7 @@ const BARCA = {
 function buildMangaratiba() {
   const msg = "Olá, Vou de Barco! Quero informações da travessia de Mangaratiba para a Ilha Grande.";
   const title = "Mangaratiba ⇄ Ilha Grande: barca, horários e travessia rápida | Vou de Barco";
-  const desc = "Horários da barca Mangaratiba ⇄ Ilha Grande (08h00 / 17h30) e a travessia rápida de Flex Boat (~40 min, 3 saídas por dia). Cais de Mangaratiba, estacionamento e como chegar.";
+  const desc = "Horários da barca Mangaratiba ⇄ Ilha Grande (08h00 / 17h30) e a travessia rápida de Flex Boat (Flexboat) (~40 min, 3 saídas por dia). Cais de Mangaratiba, estacionamento e como chegar.";
   return `${head({ title, desc, canonical: `${SITE}/mangaratiba.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "FAQPage",
