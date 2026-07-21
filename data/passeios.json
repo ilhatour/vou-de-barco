@@ -62,7 +62,8 @@
     "src": "assets/img/galeria/lagoa-azul-3.jpg",
     "alt": "Lagoa Azul — snorkel no passeio Ilha Tour 90° em Ilha Grande"
    }
-  ]
+  ],
+  "regiao": "Ilha Grande"
  },
  {
   "id": "meia-volta",
@@ -132,7 +133,8 @@
     "src": "assets/img/galeria/praia-feiticeira.jpg",
     "alt": "Praia da Feiticeira — passeio Meia Volta em Ilha Grande"
    }
-  ]
+  ],
+  "regiao": "Ilha Grande"
  },
  {
   "id": "ilhas-paradisiacas",
@@ -211,7 +213,8 @@
     "src": "assets/img/galeria/praia-de-piedade.jpg",
     "alt": "Praia da Piedade — passeio Ilhas Paradisíacas em Angra"
    }
-  ]
+  ],
+  "regiao": "Angra dos Reis"
  },
  {
   "id": "volta-na-ilha",
@@ -282,7 +285,8 @@
     "src": "assets/img/galeria/praia-do-aventureiro.jpg",
     "alt": "Praia do Aventureiro — passeio Volta na Ilha Grande"
    }
-  ]
+  ],
+  "regiao": "Ilha Grande"
  },
  {
   "id": "ilha-tour-210",
@@ -335,7 +339,8 @@
     "Para quem é indicado?",
     "Para quem já conhece os clássicos de Ilha Grande e quer explorar praias diferentes, lagoas e águas cristalinas fora do óbvio."
    ]
-  ]
+  ],
+  "regiao": "Ilha Grande"
  },
  {
   "id": "gruta-do-acaia",
@@ -406,6 +411,7 @@
     "src": "assets/img/galeria/praia-de-grumixama.jpg",
     "alt": "Praia de Grumixama — passeio Gruta do Acaiá em Ilha Grande"
    }
-  ]
+  ],
+  "regiao": "Ilha Grande"
  }
 ]

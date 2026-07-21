@@ -1,3 +1,23 @@
+# Vou de Barco — URLs limpas (sem .html)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # NÃO reescrever arquivos de verificação do Google (precisam responder 200 no .html)
+  RewriteRule ^google[0-9a-f]+\.html$ - [L]
+
+  # 301: /pagina.html -> /pagina  (e /index.html -> /)
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteRule ^index/?$ / [R=301,L]
+
+  # Servir /pagina a partir de /pagina.html (sem mudar a URL)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+</IfModule>
+
 # Vou de Barco — controle de cache (evita servir versão antiga após deploy)
 <IfModule mod_headers.c>
   # HTML/CSS/JS/imagens: sempre revalidar (nunca servir versão velha após troca)

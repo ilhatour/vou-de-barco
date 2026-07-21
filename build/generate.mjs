@@ -10,7 +10,17 @@ import { dirname, join } from "node:path";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
-const write = (p, c) => { mkdirSync(dirname(join(ROOT, p)), { recursive: true }); writeFileSync(join(ROOT, p), c); };
+// URLs limpas: remove ".html" de links/canonical/og/sitemap/schema e manda index -> "/"
+function cleanUrls(s) {
+  return s
+    .replace(/\.html(?=["#?<])/g, "")
+    .replace(/href="(?:\.\.\/)?index(?=["#])/g, 'href="/');
+}
+const write = (p, c) => {
+  const out = /\.(html|xml)$/.test(p) ? cleanUrls(c) : c;
+  mkdirSync(dirname(join(ROOT, p)), { recursive: true });
+  writeFileSync(join(ROOT, p), out);
+};
 
 const PASSEIOS = JSON.parse(read("data/passeios.json"));
 const TRAV = JSON.parse(read("data/travessia.json"));
@@ -265,7 +275,7 @@ const scripts = (prefix = "") => `<script src="${prefix}assets/js/main.js" defer
 function tourCard(p, prefix = "") {
   return `<article class="tour reveal">
   <div class="tour__media">
-    <span class="tour__badge">${esc(p.badge)}</span>
+    <span class="tour__badge">${esc(p.regiao || "Ilha Grande")}</span>
     <img src="${prefix}${p.img}" alt="Passeio ${esc(p.nome)} — Ilha Grande" loading="lazy" width="640" height="480">
   </div>
   <div class="tour__body">
@@ -608,7 +618,7 @@ ${header({ active: "ilhagrande", solid: true, prefix: "../" })}
     <div class="subhero__bg"><img src="../${p.img}" alt="Passeio ${esc(p.nome)} — Ilha Grande" width="1080" height="1350"></div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../passeios-ilha-grande.html">Passeios em Ilha Grande</a> · ${esc(p.nome)}</nav>
-      <span class="eyebrow eyebrow--light">${esc(p.badge)} · Saída pela ${esc(p.saida)}</span>
+      <span class="eyebrow eyebrow--light">${esc(p.regiao || "Ilha Grande")} · Saída pela ${esc(p.saida)}</span>
       <h1>${esc(p.nome)}</h1>
       <p class="subhero__slogan">${esc(p.slogan)}</p>
       <div class="subhero__meta">
@@ -1328,6 +1338,15 @@ ${header({ active: "ilhagrande", solid: true })}
         ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
       </div>
       ${travessiaHubCard()}
+
+      <div class="section__head" style="margin-top:clamp(3rem,6vw,5rem)">
+        <span class="eyebrow">Saindo do continente</span>
+        <h2 class="section-title">Passeios em Mangaratiba</h2>
+        <p class="lead">Da baía de Mangaratiba também saem passeios pelas ilhas mais preservadas do Rio — Ilha da Guaíba, Ponta da Pombeba e Jaguanum.</p>
+      </div>
+      <div class="tours">
+        ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
+      </div>
     </div>
   </section>
 
@@ -1470,7 +1489,7 @@ ${scripts()}
 function mangaCard(p, prefix = "") {
   return `<article class="tour reveal">
   <div class="tour__media">
-    <span class="tour__badge">${esc(p.badge)}</span>
+    <span class="tour__badge">Mangaratiba</span>
     <img src="${prefix}${p.img}" alt="${esc(p.alt)}" loading="lazy" width="640" height="480">
   </div>
   <div class="tour__body">
@@ -1653,6 +1672,15 @@ ${header({ active: "mangaratiba", solid: true })}
         ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
       </div>
       ${travessiaHubCard()}
+
+      <div class="section__head" style="margin-top:clamp(3rem,6vw,5rem)">
+        <span class="eyebrow">Do outro lado da baía</span>
+        <h2 class="section-title">Passeios em Ilha Grande</h2>
+        <p class="lead">Chegou na Vila do Abraão? Da ilha saem os nossos roteiros pelas praias mais bonitas de Ilha Grande e Angra — Lagoa Azul, Praia do Dentista, Aventureiro, Gruta do Acaiá e mais.</p>
+      </div>
+      <div class="tours">
+        ${PASSEIOS.map((p) => tourCard(p)).join("\n        ")}
+      </div>
     </div>
   </section>
 

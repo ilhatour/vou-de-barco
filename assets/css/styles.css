@@ -579,8 +579,14 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .subhero--flex .subhero__bg img { object-position: center 62%; }
 .subhero__bg::after { content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(6,26,64,.15) 0%, rgba(6,26,64,0) 30%, rgba(6,26,64,.35) 100%),
-    linear-gradient(95deg, rgba(6,26,64,.85) 0%, rgba(6,26,64,.5) 38%, rgba(6,26,64,.14) 68%, rgba(6,26,64,0) 92%); }
+    linear-gradient(180deg, rgba(6,26,64,.04) 0%, rgba(6,26,64,0) 36%, rgba(6,26,64,.34) 100%),
+    linear-gradient(96deg, rgba(6,26,64,.6) 0%, rgba(6,26,64,.3) 36%, rgba(6,26,64,.06) 64%, rgba(6,26,64,0) 88%); }
+.subhero h1 { text-shadow: 0 2px 22px rgba(6,26,64,.45); }
+@media (max-width: 720px) {
+  /* no mobile o texto ocupa a parte de baixo — escurece só embaixo, topo da foto limpo */
+  .subhero__bg::after { background:
+    linear-gradient(180deg, rgba(6,26,64,.12) 0%, rgba(6,26,64,.16) 42%, rgba(6,26,64,.74) 100%); }
+}
 .crumbs { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .1em; color: var(--branco-45); margin-bottom: 1.4rem; }
 .crumbs a { color: var(--branco-70); }
 .crumbs a:hover { color: var(--amarelo); }
