@@ -1811,6 +1811,10 @@ function buildPost(post) {
     author: { "@type": "Organization", name: post.autor, url: SITE }, publisher: { "@id": SITE + "/#business" },
     mainEntityOfPage: `${SITE}/blog/${post.slug}.html`,
   })}</script>
+${post.faq && post.faq.length ? `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: post.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>` : ""}
 ${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Blog", url: SITE + "/blog.html" }, { name: post.titulo, url: `${SITE}/blog/${post.slug}.html` }])}
 </head>
 <body>
@@ -1833,12 +1837,45 @@ ${header({ active: "blog", solid: true, prefix: "../" })}
         <div class="post__body">
           ${renderBlocks(post.conteudo)}
         </div>
+        ${post.faq && post.faq.length ? `<div class="post-faq">
+          <h2 style="font-family:var(--display);font-size:var(--t-h2);margin:2.4rem 0 .6rem">Perguntas frequentes</h2>
+          ${post.faq.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n          ")}
+        </div>` : ""}
         <p class="post__meta">Publicado por <strong>${esc(post.autor)}</strong> · ${fmtData(post.data)}</p>
         <div class="post__cta">
           <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Falar no WhatsApp</a>
           <a class="btn btn--outline" href="../travessia.html">Ver a travessia ${I.arrow}</a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="section section--branco prod-links" aria-label="Passeios e travessia da Vou de Barco">
+    <div class="wrap" style="max-width:860px">
+      <div class="section__head"><span class="eyebrow">Vou de Barco</span><h2 class="section-title">Explore Mangaratiba e a Ilha Grande no mar</h2></div>
+      <p style="color:var(--abismo-85);max-width:60ch">Somos operadores locais em Mangaratiba: fazemos a travessia rápida de Flex Boat e passeios de barco pelas ilhas da Costa Verde. Já que você vem até aqui, aproveite:</p>
+      <div class="prod-grid">
+        <a class="prod-card" href="../travessia">
+          <span class="prod-card__k">Travessia</span>
+          <span class="prod-card__t">Mangaratiba ⇄ Ilha Grande</span>
+          <span class="prod-card__d">Flex Boat rápido até a Vila do Abraão. Horários, cais e reserva.</span>
+        </a>
+        <a class="prod-card" href="../passeios-mangaratiba">
+          <span class="prod-card__k">Passeios em Mangaratiba</span>
+          <span class="prod-card__t">Guaíba, Pombeba e Jaguanum</span>
+          <span class="prod-card__d">Passeios de barco pelas ilhas e praias mais preservadas da região.</span>
+        </a>
+        <a class="prod-card" href="../passeios-ilha-grande">
+          <span class="prod-card__k">Passeios em Ilha Grande</span>
+          <span class="prod-card__t">Lagoa Azul, Lopes Mendes e mais</span>
+          <span class="prod-card__d">Volta na ilha, ilhas paradisíacas e os cantos mais bonitos de barco.</span>
+        </a>
+        <a class="prod-card" href="${waLink(msg)}" target="_blank" rel="noopener">
+          <span class="prod-card__k">Fale com a gente</span>
+          <span class="prod-card__t">Monte seu roteiro no WhatsApp</span>
+          <span class="prod-card__d">Tira dúvidas e reserva direto com quem opera na Costa Verde.</span>
+        </a>
+      </div>
     </div>
   </section>
 
