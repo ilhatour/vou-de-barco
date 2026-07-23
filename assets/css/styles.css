@@ -631,6 +631,12 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .prod-card__t { font-family: var(--display); font-weight: 700; color: var(--abismo); font-size: 1.08rem; }
 .prod-card__d { color: var(--abismo-85); font-size: .92rem; line-height: 1.5; }
 @media (max-width: 640px) { .prod-grid { grid-template-columns: 1fr; } }
+.post-quote { margin: 1.9rem 0; padding: 1.1rem 1.4rem; border-left: 4px solid var(--cobalto); background: var(--nevoa); border-radius: 0 var(--radius) var(--radius) 0; }
+.post-quote p { font-family: var(--display); font-style: italic; color: var(--abismo); font-size: 1.12rem; line-height: 1.6; }
+.post-quote cite { display: block; margin-top: .55rem; font-style: normal; font-size: .82rem; color: var(--abismo-60); font-family: var(--mono); letter-spacing: .03em; }
+.post-source { margin: 2rem 0 .4rem; padding: 1.15rem 1.35rem; border: 1px solid var(--bruma); border-radius: var(--radius); background: var(--nevoa); }
+.post-source__k { display: block; font-family: var(--mono); font-size: var(--t-data); letter-spacing: .1em; text-transform: uppercase; color: var(--cobalto); margin-bottom: .45rem; }
+.post-source p { font-size: .95rem; color: var(--abismo-85); }
 .tips { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.1rem; }
 .tip { background: var(--nevoa); border: 1px solid var(--bruma); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
 .tip h4 { font-family: var(--display); font-size: 1.05rem; font-weight: 700; color: var(--abismo); margin-bottom: .4rem; }
