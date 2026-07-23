@@ -631,6 +631,17 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .prod-card__t { font-family: var(--display); font-weight: 700; color: var(--abismo); font-size: 1.08rem; }
 .prod-card__d { color: var(--abismo-85); font-size: .92rem; line-height: 1.5; }
 @media (max-width: 640px) { .prod-grid { grid-template-columns: 1fr; } }
+.pg-cards { display: grid; gap: 1.1rem; grid-template-columns: repeat(3, 1fr); margin: 1.5rem 0 .5rem; }
+.pg-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--bruma); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease); }
+.pg-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px -16px rgba(31,102,196,.55); border-color: var(--cobalto); }
+.pg-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.pg-card__body { padding: .85rem 1rem 1rem; display: flex; flex-direction: column; gap: .25rem; }
+.pg-card__k { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .08em; text-transform: uppercase; color: var(--cobalto); }
+.pg-card__t { font-family: var(--display); font-weight: 700; color: var(--abismo); font-size: 1.05rem; }
+.pg-card__d { color: var(--abismo-85); font-size: .88rem; line-height: 1.45; }
+.pg-card__cta { margin-top: .35rem; color: var(--cobalto); font-weight: 600; font-size: .9rem; }
+.pg-credits { font-size: .78rem; color: var(--abismo-60); margin: .1rem 0 0; }
+@media (max-width: 720px) { .pg-cards { grid-template-columns: 1fr; } }
 .post-quote { margin: 1.9rem 0; padding: 1.1rem 1.4rem; border-left: 4px solid var(--cobalto); background: var(--nevoa); border-radius: 0 var(--radius) var(--radius) 0; }
 .post-quote p { font-family: var(--display); font-style: italic; color: var(--abismo); font-size: 1.12rem; line-height: 1.6; }
 .post-quote cite { display: block; margin-top: .55rem; font-style: normal; font-size: .82rem; color: var(--abismo-60); font-family: var(--mono); letter-spacing: .03em; }
