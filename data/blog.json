@@ -6,7 +6,7 @@
   "data": "2026-07-23",
   "autor": "Equipe Vou de Barco",
   "categoria": "Guia",
-  "img": "assets/img/passeio-mangaratiba-agua.jpg",
+  "img": "assets/img/pedra-do-urubu.jpg",
   "seo_title": "Pedra do Urubu Mangaratiba: novo parque, mirante e como visitar",
   "seo_desc": "A Pedra do Urubu é o novo ponto turístico de Mangaratiba: Parque Natural Municipal com mirante a 290 m, trilhas, tirolesa e entrada gratuita. Veja o que tem e como combinar com um passeio de barco.",
   "conteudo": [
@@ -35,7 +35,8 @@
     "html": "<p>Veja como chegar e os horários da <a href=\"../travessia\">travessia de Mangaratiba para a Ilha Grande</a>, conheça os <a href=\"../passeios-mangaratiba\">passeios de barco saindo de Mangaratiba</a> (Ilha da Guaíba, Pombeba e Jaguanum) ou fale com a gente no WhatsApp para montar o seu roteiro.</p>"
    },
    "Terra e mar no mesmo dia: essa é a Mangaratiba que a gente ama mostrar."
-  ]
+  ],
+  "credito": "Foto: Assessoria de Imprensa Prefeitura de Mangaratiba (CC BY-SA 4.0)"
  },
  {
   "slug": "travessia-para-ilha-grande",

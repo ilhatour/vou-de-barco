@@ -1818,7 +1818,7 @@ ${header({ active: "blog", solid: true, prefix: "../" })}
 <main id="main">
 
   <section class="subhero subhero--photo">
-    <div class="subhero__bg"><img src="../${post.img}" alt="${esc(post.titulo)}" width="1080" height="720"></div>
+    <div class="subhero__bg"><img src="../${post.img}" alt="${esc(post.titulo)}" width="1080" height="720">${post.credito ? `<span class="photo-credit">${esc(post.credito)}</span>` : ""}</div>
     <div class="wrap">
       <nav class="crumbs" aria-label="Trilha"><a href="../index.html">Início</a> · <a href="../blog.html">Blog</a> · ${esc(post.categoria)}</nav>
       <span class="eyebrow eyebrow--light">${esc(post.categoria)} · ${fmtData(post.data)}</span>
