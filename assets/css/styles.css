@@ -619,7 +619,7 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .strong-list li { display: flex; gap: .7rem; align-items: flex-start; color: var(--abismo-85); }
 .strong-list svg { width: 1.15em; height: 1.15em; color: var(--cobalto); flex: 0 0 auto; margin-top: .28rem; }
 .post-fig { margin: 1.9rem 0; }
-.post-fig img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.post-fig img { width: auto; max-width: 100%; height: auto; max-height: 620px; border-radius: var(--radius); display: block; margin-inline: auto; }
 .post-fig figcaption { margin-top: .55rem; font-size: .85rem; color: var(--abismo-60); line-height: 1.5; }
 .post-fig figcaption b { color: var(--abismo-85); font-weight: 600; }
 .post-fig figcaption .cc { opacity: .8; }
