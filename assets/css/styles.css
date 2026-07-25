@@ -634,7 +634,8 @@ details.faq__item summary::-webkit-details-marker { display: none; }
 .pg-cards { display: grid; gap: 1.1rem; grid-template-columns: repeat(3, 1fr); margin: 1.5rem 0 .5rem; }
 .pg-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--bruma); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease); }
 .pg-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px -16px rgba(31,102,196,.55); border-color: var(--cobalto); }
-.pg-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.pg-card img { width: 100%; height: 200px; object-fit: cover; display: block; flex: 0 0 auto; }
+@media (max-width: 720px) { .pg-card img { height: 230px; } }
 .pg-card__body { padding: .85rem 1rem 1rem; display: flex; flex-direction: column; gap: .25rem; }
 .pg-card__k { font-family: var(--mono); font-size: var(--t-data); letter-spacing: .08em; text-transform: uppercase; color: var(--cobalto); }
 .pg-card__t { font-family: var(--display); font-weight: 700; color: var(--abismo); font-size: 1.05rem; }
