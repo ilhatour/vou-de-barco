@@ -1297,6 +1297,8 @@ const PASSEIOS_FAQ = [
   ["O que está incluso nos passeios?", "Todos os passeios incluem água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim. O almoço não está incluso."],
   ["De onde saem os passeios?", "Da Vila do Abraão, na Ilha Grande. Se você vem do continente, fazemos a travessia de Flex Boat de Mangaratiba até a vila."],
   ["Precisa reservar com antecedência?", "Sim, recomendamos reservar pelo WhatsApp para garantir a sua vaga na data desejada, principalmente em fins de semana e alta temporada."],
+  ["Ilha Grande tem passeio de barco?", "Sim — é a principal forma de conhecer a ilha, já que a maioria das praias (Lagoa Azul, Praia do Dentista, Aventureiro) só é acessível pelo mar. Fazemos passeio de barco saindo da Vila do Abraão todos os dias."],
+  ["Quanto tempo dura um passeio de barco em Ilha Grande?", "A maioria dos nossos passeios de barco em Ilha Grande dura o dia inteiro, saindo pela manhã e retornando no fim da tarde — dá tempo de parar em várias praias e ilhas no mesmo roteiro."],
 ];
 function buildPasseiosIlhaGrande() {
   const msg = "Olá, Vou de Barco! Quero informações sobre os passeios de barco em Ilha Grande.";
@@ -1930,7 +1932,14 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
 const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/passeios-mangaratiba.html`, `${SITE}/privativo.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...MANGA.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${u === SITE + "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}
+${urls.map((u) => {
+    const clean = u.replace(/\.html$/, "");
+    let pri = "0.7";
+    if (u === SITE + "/") pri = "1.0";
+    else if (/\/(travessia|passeios-mangaratiba|passeios-ilha-grande)$/.test(clean)) pri = "0.95";
+    else if (/\/(mangaratiba|passeios\/)/.test(clean)) pri = "0.85";
+    return `  <url><loc>${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>${pri}</priority></url>`;
+  }).join("\n")}
 </urlset>`;
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 
