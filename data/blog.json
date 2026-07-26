@@ -1,5 +1,67 @@
 [
  {
+  "slug": "ilha-da-guaiba-super-guaiba-e-travessia",
+  "titulo": "Ilha da Guaíba em Mangaratiba: Super Guaíba e Travessia — horários e preços",
+  "resumo": "Dois jeitos de conhecer a Ilha da Guaíba saindo de Mangaratiba: o passeio Super Guaíba (dia inteiro, 3 praias) e a Travessia direto para a Praia da Tapera. Veja horários, preços e qual escolher.",
+  "data": "2026-07-26",
+  "autor": "Equipe Vou de Barco",
+  "categoria": "Guia",
+  "img": "assets/img/passeio-guaiba.jpg",
+  "seo_title": "Ilha da Guaíba Mangaratiba: horários do Super Guaíba e da Travessia",
+  "seo_desc": "Ilha da Guaíba saindo de Mangaratiba: horários e preços do passeio Super Guaíba (3 praias, dia inteiro) e da Travessia direto para a Praia da Tapera. Veja qual combina com o seu roteiro.",
+  "conteudo": [
+   "A Ilha da Guaíba é a ilha mais próxima do continente saindo de Mangaratiba — cerca de 10 minutos de barco — e uma das mais preservadas da região: sem construções, bastante sombra e água cristalina o ano inteiro. Tem dois jeitos de conhecê-la com a Vou de Barco: o passeio **Super Guaíba** ou a **Travessia da Ilha da Guaíba**. Veja a diferença entre os dois.",
+   {
+    "h2": "Super Guaíba: o passeio completo pelas 3 praias"
+   },
+   "O Super Guaíba é o passeio de barco que leva você às três praias da ilha — Tapera, Raposa e Tapuá — com tempo de sobra para aproveitar cada uma. Como a navegação é curta, sobra dia de praia: o passeio sai às **11h00** e retorna às **22h00**.",
+   {
+    "html": "<ul><li><strong>Saída:</strong> 11h00, do Centro de Mangaratiba ou de Ibicuí.</li><li><strong>Retorno:</strong> 22h00.</li><li><strong>Praias visitadas:</strong> Tapera (a principal, com muita sombra e água calma), Raposa e Tapuá.</li><li><strong>Estrutura:</strong> um pescador local serve bebidas, petiscos e almoços (mais garantido no verão) — vale levar um cooler com gelo.</li></ul>"
+   },
+   {
+    "html": "<p>Veja todos os detalhes, fotos e preços do <a href=\"../passeios/super-guaiba\">passeio Super Guaíba</a>.</p>"
+   },
+   {
+    "h2": "Travessia da Ilha da Guaíba: ida e volta direto para a Tapera"
+   },
+   "Se o seu plano é só curtir a Praia da Tapera — seja porque já vai ficar hospedado na ilha, seja porque quer o caminho mais direto — a Travessia da Ilha da Guaíba é a opção. É o trajeto de barco direto para a Praia da Tapera, sem parar nas outras praias.",
+   {
+    "html": "<ul><li><strong>Saída:</strong> 10h00.</li><li><strong>Retorno:</strong> 15h00.</li><li><strong>Destino:</strong> direto para a Praia da Tapera.</li><li><strong>Valor:</strong> R$ 60 por pessoa.</li></ul>"
+   },
+   {
+    "h2": "Qual escolher: Super Guaíba ou Travessia?"
+   },
+   {
+    "html": "<p>Escolha o <strong>Super Guaíba</strong> se quer um dia de passeio completo, conhecendo as três praias da ilha, com mais tempo de mar (11h às 22h). Escolha a <strong>Travessia</strong> se o destino já é certo — a Praia da Tapera — e você quer o trajeto mais direto e econômico (10h às 15h, R$ 60 por pessoa).</p>"
+   },
+   {
+    "html": "<p>Fale com a gente no WhatsApp para confirmar horários e reservar o seu lugar — tanto no Super Guaíba quanto na Travessia da Ilha da Guaíba.</p>"
+   }
+  ],
+  "faq": [
+   [
+    "Qual o horário do Super Guaíba?",
+    "O passeio Super Guaíba sai às 11h00 do Centro de Mangaratiba (ou de Ibicuí) e retorna às 22h00."
+   ],
+   [
+    "Qual o horário da Travessia da Ilha da Guaíba?",
+    "A Travessia da Ilha da Guaíba, direto para a Praia da Tapera, sai às 10h00 e retorna às 15h00."
+   ],
+   [
+    "Quanto custa a Travessia para a Ilha da Guaíba?",
+    "A Travessia da Ilha da Guaíba custa R$ 60 por pessoa, ida e volta direto para a Praia da Tapera."
+   ],
+   [
+    "Qual a diferença entre o Super Guaíba e a Travessia da Ilha da Guaíba?",
+    "O Super Guaíba é um passeio de dia inteiro (11h às 22h) que visita as três praias da ilha — Tapera, Raposa e Tapuá. A Travessia é um trajeto direto (10h às 15h) só para a Praia da Tapera, ideal para quem já tem plano certo na ilha."
+   ],
+   [
+    "Quanto tempo de barco até a Ilha da Guaíba?",
+    "A Ilha da Guaíba fica a apenas cerca de 10 minutos de navegação do continente, saindo de Mangaratiba — é a ilha mais próxima da região."
+   ]
+  ]
+ },
+ {
   "slug": "o-que-fazer-em-mangaratiba",
   "titulo": "O que fazer em Mangaratiba: praias, passeios de barco e a Pedra do Urubu",
   "resumo": "Guia de Mangaratiba, na Costa Verde do RJ: os melhores passeios de barco pelas ilhas, as praias mais bonitas, o novo mirante da Pedra do Urubu e como usar a cidade de base para a Ilha Grande.",
