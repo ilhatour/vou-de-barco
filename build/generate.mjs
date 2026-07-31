@@ -1091,8 +1091,8 @@ const BARCA = {
 };
 function buildMangaratiba() {
   const msg = "Olá, Vou de Barco! Quero informações da travessia de Mangaratiba para a Ilha Grande.";
-  const title = "Mangaratiba ⇄ Ilha Grande: barca, horários e travessia rápida | Vou de Barco";
-  const desc = "Horários da barca Mangaratiba ⇄ Ilha Grande (08h00 / 17h30) e a travessia rápida de Flex Boat (Flexboat) (~40 min, 3 saídas por dia). Cais de Mangaratiba, estacionamento e como chegar.";
+  const title = "Horário da Barca Mangaratiba ⇄ Ilha Grande + Travessia Flex Boat | Vou de Barco";
+  const desc = "Confira: barca tradicional 08h00 e 17h30, ou Flex Boat com 3 saídas por dia (~40 min) de Mangaratiba para a Ilha Grande. Cais, estacionamento e como chegar — tudo atualizado aqui.";
   return `${head({ title, desc, canonical: `${SITE}/mangaratiba.html`, type: "article" })}
 <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "FAQPage",
