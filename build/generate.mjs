@@ -243,7 +243,8 @@ function footer({ prefix = "" } = {}) {
         <a href="${prefix}travessia.html">Travessia para a Ilha Grande</a>
         <a href="${prefix}passeios-ilha-grande.html">Passeios em Ilha Grande</a>
         <a href="${prefix}passeios-mangaratiba.html">Passeios em Mangaratiba</a>
-        <a href="${prefix}privativo.html">Embarcação privativa</a>
+        <a href="${prefix}privativo.html">Embarcação privativa (Ilha Grande)</a>
+        <a href="${prefix}privativo-mangaratiba.html">Passeio privativo (Mangaratiba)</a>
         <a href="${prefix}mangaratiba.html">Mangaratiba ⇄ Ilha Grande</a>
         <a href="${prefix}como-chegar.html">Como chegar</a>
         <a href="${prefix}blog.html">Blog</a>
@@ -1672,7 +1673,7 @@ ${header({ active: "mangaratiba", solid: true })}
       <div class="section__head">
         <span class="eyebrow">Roteiros saindo de Mangaratiba</span>
         <h2 class="section-title">Passeio de barco em Mangaratiba, pelas ilhas mais intactas do RJ</h2>
-        <p class="lead">Faça um <strong>passeio de barco em Mangaratiba</strong> pelas ilhas mais preservadas da baía: Ilha da Guaíba, Ponta da Pombeba (na Restinga da Marambaia) e Jaguanum. Você escolhe <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <strong>privativo</strong> (aluguel do barco para o seu grupo) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. E, do mesmo cais, também sai a <a href="travessia.html">travessia para a Ilha Grande</a>.</p>
+        <p class="lead">Faça um <strong>passeio de barco em Mangaratiba</strong> pelas ilhas mais preservadas da baía: Ilha da Guaíba, Ponta da Pombeba (na Restinga da Marambaia) e Jaguanum. Você escolhe <strong>táxi boat</strong> ou <strong>lancha</strong>, no modo <a href="privativo-mangaratiba.html"><strong>privativo</strong></a> (aluguel do barco para o seu grupo) ou <strong>compartilhado</strong> (por pessoa), com saída do Centro de Mangaratiba ou de Ibicuí. E, do mesmo cais, também sai a <a href="travessia.html">travessia para a Ilha Grande</a>.</p>
       </div>
       <div class="tours">
         ${MANGA.map((p) => mangaCard(p)).join("\n        ")}
@@ -1699,6 +1700,128 @@ ${header({ active: "mangaratiba", solid: true })}
         ${MANGA_PASSEIOS_FAQ.map(([q, a]) => `<details class="faq__item reveal"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n        ")}
       </div>
       <p style="text-align:center;margin-top:2.5rem"><a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Faça sua cotação</a></p>
+    </div>
+  </section>
+
+</main>
+${footer()}
+${waFloat()}
+${scripts()}
+</body>
+</html>`;
+}
+
+const PRIV_MANGA_FAQ = [
+  ["Qual a diferença entre o passeio privativo e o compartilhado?", "No privativo, a embarcação é só do seu grupo e o valor é por embarcação. Você tem mais flexibilidade de horário e de roteiro. No compartilhado, o valor é por pessoa, com horário e roteiro fixos."],
+  ["Quanto custa o passeio privativo?", "A partir de R$ 1.200 no táxi boat e R$ 1.600 na lancha, para até 12 pessoas. O valor final depende do roteiro, do embarque e da data. Faça sua cotação pelo WhatsApp."],
+  ["Qual a diferença entre táxi boat e lancha?", "A lancha tem mais estrutura e conforto, e é a única embarcação que permite churrasco a bordo."],
+  ["Posso fazer churrasco a bordo?", "Sim, somente na lancha. Fornecemos churrasqueira e utensílios. Carne, carvão e demais itens são por conta do cliente."],
+  ["Tem som a bordo?", "Na lancha sim. No táxi boat é necessário confirmar com antecedência."],
+  ["Posso escolher o horário e o roteiro?", "Sim, dentro das possibilidades do roteiro contratado e das condições do mar. Combinamos tudo na reserva."],
+  ["Posso embarcar em outro ponto?", "Sim. Além do Centro de Mangaratiba e de Ibicuí, buscamos em Saí, Muriqui, Itacuruçá e outros pontos, com valor sob consulta."],
+  ["Crianças pagam?", "O valor é por embarcação, e as crianças entram na contagem da lotação de 12 pessoas."],
+];
+function buildPrivativoMangaratiba() {
+  const msg = "Olá, Vou de Barco! Tenho interesse no passeio privativo saindo de Mangaratiba. Pode me passar roteiro e valores?";
+  const title = "Passeio privativo em Mangaratiba — aluguel de táxi boat ou lancha | Vou de Barco";
+  const desc = "Alugue uma embarcação privativa saindo de Mangaratiba: escolha entre os roteiros Super Guaíba, Super Pombeba e Volta em Jaguanum. Táxi boat a partir de R$ 1.200, lancha a partir de R$ 1.600, com churrasco e som a bordo.";
+  const roteiros = MANGA.filter((p) => p.id !== "travessia-ilha-guaiba");
+  return `${head({ title, desc, canonical: `${SITE}/privativo-mangaratiba.html`, type: "article" })}
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "Service", serviceType: "Aluguel de embarcação privativa",
+    name: "Passeio de barco privativo saindo de Mangaratiba",
+    description: desc,
+    provider: { "@type": "TravelAgency", name: "Vou de Barco", url: SITE, "@id": SITE + "/#business" },
+    areaServed: [{ "@type": "Place", name: "Mangaratiba" }],
+    url: SITE + "/privativo-mangaratiba.html",
+  })}</script>
+<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: PRIV_MANGA_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+  })}</script>
+${ldBreadcrumb([{ name: "Início", url: SITE + "/" }, { name: "Passeios em Mangaratiba", url: SITE + "/passeios-mangaratiba.html" }, { name: "Passeio privativo", url: SITE + "/privativo-mangaratiba.html" }])}
+</head>
+<body>
+${header({ active: "mangaratiba", solid: true })}
+<main id="main">
+
+  <section class="subhero subhero--photo">
+    <div class="subhero__bg"><img src="assets/img/passeio-pombeba.jpg" alt="Passeio de lancha privativa pelas ilhas de Mangaratiba" width="1080" height="1116"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Trilha"><a href="index.html">Início</a> · <a href="passeios-mangaratiba.html">Passeios em Mangaratiba</a> · Passeio privativo</nav>
+      <span class="eyebrow eyebrow--light">Mangaratiba · exclusivo para o seu grupo</span>
+      <h1>Passeios Privativos — Mangaratiba</h1>
+      <p class="subhero__slogan">A embarcação é só do seu grupo: o roteiro, o ritmo e o clima do dia são seus.</p>
+      <div class="subhero__meta">
+        <span class="chip">${I.pin}Centro de Mangaratiba ou Ibicuí</span>
+        <span class="chip">${I.boat}Táxi boat ou lancha</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--branco">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail__main">
+          <p class="lead">No passeio privativo você aluga a embarcação para o seu grupo e monta o dia do seu jeito. É a opção para quem quer exclusividade: escolher o horário, ficar mais tempo onde gostar, colocar a sua música e embarcar no ponto mais conveniente para todos. Na lancha, ainda dá para fazer churrasco a bordo. Ideal para famílias, grupos de amigos, aniversários e confraternizações.</p>
+
+          <h2>Como funciona</h2>
+          <p>Você escolhe o roteiro e o tipo de embarcação (táxi boat ou lancha), e combinamos o dia e o horário. O valor é por embarcação, não por pessoa: quanto maior o grupo, melhor o custo por pessoa. A flexibilidade de horário e de paradas vale dentro das possibilidades do roteiro contratado e das condições do mar.</p>
+
+          <h2>Diferenciais</h2>
+          <ul class="checklist">
+            <li><span class="checklist__ico">${I.check}</span>A embarcação é exclusiva do seu grupo</li>
+            <li><span class="checklist__ico">${I.check}</span>Flexibilidade de horário e de tempo em cada parada, dentro do roteiro contratado</li>
+            <li><span class="checklist__ico">${I.check}</span>Churrasco a bordo na lancha, com churrasqueira e utensílios fornecidos por nós</li>
+            <li><span class="checklist__ico">${I.check}</span>Som a bordo, para você escolher a música</li>
+            <li><span class="checklist__ico">${I.check}</span>Embarque em outros pontos, além do Centro de Mangaratiba e de Ibicuí (pode haver acréscimo)</li>
+            <li><span class="checklist__ico">${I.check}</span>Marinheiro experiente e coletes salva-vidas para todos</li>
+          </ul>
+
+          <div class="info-panel">
+            <h2 class="info-panel__title">${I.compass} Bom saber antes de embarcar</h2>
+            <ul class="info-panel__list">
+              <li><span class="info-panel__ico">${I.pin}</span><div><b>Embarque</b> — Centro de Mangaratiba ou Ibicuí. Também embarcamos em Saí, Muriqui, Itacuruçá e outros pontos, com valor sob consulta.</div></li>
+              <li><span class="info-panel__ico">${I.clock}</span><div><b>Duração</b> — de 4 a 6 horas de passeio, conforme o roteiro escolhido.</div></li>
+              <li><span class="info-panel__ico">${I.boat}</span><div><b>Capacidade</b> — até 12 pessoas por embarcação.</div></li>
+              <li><span class="info-panel__ico">${I.anchor}</span><div><b>Churrasco a bordo</b> — somente na lancha. Fornecemos a churrasqueira e os utensílios. Carne, carvão e demais itens ficam por conta do cliente.</div></li>
+              <li><span class="info-panel__ico">${I.check}</span><div><b>Leve com você</b> — cooler com gelo, bebidas e petiscos, protetor solar e, se quiser, snorkel. Para o churrasco, carne, carvão e o que mais precisar.</div></li>
+              <li><span class="info-panel__ico">${I.shield}</span><div><b>A bordo</b> — marinheiro experiente e coletes salva-vidas para todos.</div></li>
+            </ul>
+          </div>
+
+          <h2>Perguntas frequentes</h2>
+          <div class="faq">
+            ${PRIV_MANGA_FAQ.map(([q, a]) => `<details class="faq__item"><summary class="faq__q"><span>${esc(q)}</span><span class="faq__icon" aria-hidden="true"></span></summary><p class="faq__a">${esc(a)}</p></details>`).join("\n            ")}
+          </div>
+        </div>
+
+        <aside class="booking-card">
+          <h3>Valores</h3>
+          <ul class="spec-list">
+            <li><span class="k">Táxi boat</span><span class="v">a partir de R$ 1.200</span></li>
+            <li><span class="k">Lancha</span><span class="v">a partir de R$ 1.600</span></li>
+          </ul>
+          <p class="price-note" style="font-size:.85rem;line-height:1.5;text-align:left">O valor final depende do roteiro escolhido e do ponto de embarque.</p>
+          <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} Fazer minha cotação</a>
+          <a class="back" href="passeios-mangaratiba.html">${I.arrow} Ver todos os passeios de Mangaratiba</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  ${wave(C.branco, C.nevoa)}
+
+  <section class="section section--nevoa">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow">Roteiros disponíveis</span>
+        <h2 class="section-title">Escolha o roteiro do seu passeio privativo</h2>
+        <p class="lead">Os mesmos roteiros dos passeios compartilhados servem de base para o seu privativo — com mais flexibilidade de horário e de paradas.</p>
+      </div>
+      <div class="tours">
+        ${roteiros.map((p) => mangaCard(p)).join("\n        ")}
+      </div>
     </div>
   </section>
 
@@ -1905,7 +2028,7 @@ const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><re
    ESCREVER TUDO
    ============================================================ */
 /* sitemap + robots */
-const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/passeios-mangaratiba.html`, `${SITE}/privativo.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...MANGA.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
+const urls = [`${SITE}/`, `${SITE}/travessia.html`, `${SITE}/passeios-ilha-grande.html`, `${SITE}/passeios-mangaratiba.html`, `${SITE}/privativo.html`, `${SITE}/privativo-mangaratiba.html`, `${SITE}/mangaratiba.html`, `${SITE}/como-chegar.html`, `${SITE}/sobre.html`, `${SITE}/blog.html`, EN_URL, ...PASSEIOS.map((p) => `${SITE}/passeios/${p.id}.html`), ...MANGA.map((p) => `${SITE}/passeios/${p.id}.html`), ...BLOG.map((p) => `${SITE}/blog/${p.slug}.html`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => {
@@ -1926,6 +2049,7 @@ write("mangaratiba.html", buildMangaratiba());
 write("sobre.html", buildSobre());
 write("passeios-ilha-grande.html", buildPasseiosIlhaGrande());
 write("passeios-mangaratiba.html", buildMangaCluster());
+write("privativo-mangaratiba.html", buildPrivativoMangaratiba());
 MANGA.forEach((p) => write(`passeios/${p.id}.html`, buildMangaPasseio(p)));
 write("privativo.html", buildPrivativo());
 write("blog.html", buildBlogIndex());

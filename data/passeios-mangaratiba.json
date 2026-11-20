@@ -30,6 +30,15 @@
    "Água cristalina o ano todo, mesmo em dia nublado"
   ],
   "estrutura": "Na ilha, apenas um pescador local serve bebidas, petiscos e almoços (mais garantido no verão). Recomendamos levar um cooler com gelo, bebidas e petiscos.",
+  "infoPanel": [
+   ["pin", "Embarque", "saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta."],
+   ["boat", "Capacidade", "10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação)."],
+   ["compass", "Check-in", "chegue 30 minutos antes do embarque."],
+   ["check", "Leve com você", "protetor solar, bebidas e petiscos para aproveitar o dia."],
+   ["anchor", "Alimentação", "almoço não incluso no passeio. Você pode levar suas próprias bebidas e petiscos."],
+   ["clock", "Alta temporada", "feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor."],
+   ["shield", "A bordo", "marinheiro experiente, coletes salva-vidas para todos, flutuadores, água e cooler compartilhado."]
+  ],
   "precos": [
    [
     "Compartilhado · táxi boat",
@@ -130,6 +139,14 @@
    "3 ilhas de formações completamente distintas no mesmo dia",
    "A Ponta da Pombeba não tem igual no RJ",
    "Roteiro mais reservado, com menos aglomeração"
+  ],
+  "infoPanel": [
+   ["pin", "Embarque", "saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta."],
+   ["boat", "Capacidade", "10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação)."],
+   ["anchor", "Alimentação", "parada para almoço em Jaguanum. Consulte as opções disponíveis."],
+   ["check", "Leve com você", "protetor solar, bebidas e petiscos, além de snorkel para aproveitar as águas cristalinas."],
+   ["clock", "Alta temporada", "feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor."],
+   ["shield", "A bordo", "marinheiro experiente e coletes salva-vidas para todos."]
   ],
   "precos": [
    [
@@ -278,6 +295,8 @@
    "Horário flexível: você escolhe quando ir e quando voltar",
    "Apenas 10 minutos de navegação, com mais tempo de praia",
    "Ilha sem construções: árvores, areia e mar",
+   "Maior faixa de areia da ilha, com mergulho e piscinas naturais",
+   "Água cristalina, até em dia nublado",
    "Ótimo para famílias: crianças até 5 anos não pagam e de 6 a 10 anos pagam meia"
   ],
   "estrutura": "Na ilha há apenas um pescador local, que serve bebidas, petiscos e almoços (disponibilidade mais garantida no verão). Recomendamos levar cooler com gelo, bebidas e petiscos.",
@@ -322,6 +341,18 @@
    [
     "Qual a diferença entre a Travessia e o Passeio Super Guaíba?",
     "A Travessia é só o transporte, com horário flexível e uma praia (a Tapera). O Super Guaíba é um passeio de cerca de 4h pelas 3 praias da ilha, com horário fixo (10h às 14h)."
+   ],
+   [
+    "Para onde vai a travessia?",
+    "Para a Praia da Tapera, a principal da Ilha da Guaíba, com a maior faixa de areia, mergulho e piscinas naturais."
+   ],
+   [
+    "De onde sai a travessia?",
+    "Do Centro de Mangaratiba ou de Ibicuí, à sua escolha."
+   ],
+   [
+    "Crianças pagam?",
+    "Até 5 anos não pagam. De 6 a 10 anos pagam meia (R$ 30)."
    ],
    [
     "A saída tem número mínimo de pessoas?",
