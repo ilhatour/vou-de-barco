@@ -32,6 +32,14 @@
   "estrutura": "Na ilha, apenas um pescador local serve bebidas, petiscos e almoços (mais garantido no verão). Recomendamos levar um cooler com gelo, bebidas e petiscos.",
   "precos": [
    [
+    "Compartilhado · táxi boat",
+    "R$ 120/pessoa"
+   ],
+   [
+    "Crianças de 6 a 10 anos (compartilhado)",
+    "R$ 60/pessoa"
+   ],
+   [
     "Privativo · táxi boat (até 12 pessoas)",
     "R$ 1.200"
    ],
@@ -40,7 +48,7 @@
     "R$ 1.600"
    ]
   ],
-  "precos_nota": "Valores com saída do Centro de Mangaratiba. O Super Guaíba sai às 11h00 e retorna às 14h00. Há também a Travessia da Ilha da Guaíba (ida e volta direto para a Praia da Tapera) por R$ 60 por pessoa, com saída às 10h00 e retorno às 15h00.",
+  "precos_nota": "Valores com saída do Centro de Mangaratiba. O Super Guaíba sai às 10h00 e retorna às 14h00. No privativo em lancha, som a bordo incluso. Quer só ir à praia, sem roteiro fixo? Veja a Travessia da Ilha da Guaíba, com horários flexíveis.",
   "seo_title": "Passeio Ilha da Guaíba saindo de Mangaratiba — Super Guaíba | Vou de Barco",
   "seo_desc": "Passeio de barco à Ilha da Guaíba saindo de Mangaratiba (10 min): praias Tapera, Raposa e Tapuá, água cristalina o ano todo. Táxi boat ou lancha a partir de R$ 1.200. Faça sua cotação.",
   "faq": [
@@ -58,11 +66,11 @@
    ],
    [
     "Quanto custa o Super Guaíba?",
-    "Privativo em táxi boat (até 12 pessoas): R$ 1.200. Privativo em lancha (até 12 pessoas): R$ 1.600. Saída do Centro de Mangaratiba. Faça sua cotação pelo WhatsApp."
+    "Compartilhado em táxi boat: R$ 120 por pessoa (crianças de 6 a 10 anos pagam R$ 60). Privativo em táxi boat (até 12 pessoas): R$ 1.200. Privativo em lancha (até 12 pessoas): R$ 1.600. Saída do Centro de Mangaratiba. Faça sua cotação pelo WhatsApp."
    ],
    [
-    "Qual o horário do Super Guaíba e da Travessia da Ilha da Guaíba?",
-    "O passeio Super Guaíba sai às 11h00 e retorna às 14h00. Já a Travessia da Ilha da Guaíba (ida e volta direto para a Praia da Tapera) sai às 10h00 e retorna às 15h00. Confirme os horários pelo WhatsApp antes de ir."
+    "Qual o horário do Super Guaíba?",
+    "O passeio sai às 10h00 e retorna às 14h00, com saída do Centro de Mangaratiba ou de Ibicuí."
    ]
   ],
   "como_e": "A Ilha da Guaíba fica a apenas 10 minutos do continente, então sobra tempo de praia. O passeio de barco combina as três praias da ilha: a Tapera, a principal, com areia boa, água calma e muita sombra; a Raposa, menor, logo ao lado; e a Tapuá, preservada — as duas voltadas para o mar aberto. Como a navegação é curta, é um ótimo passeio de meio dia, tranquilo e ideal para famílias.",
@@ -125,23 +133,23 @@
   ],
   "precos": [
    [
+    "Compartilhado",
+    "R$ 160/pessoa"
+   ],
+   [
+    "Crianças de 6 a 10 anos (compartilhado)",
+    "R$ 80/pessoa"
+   ],
+   [
     "Privativo · táxi boat (até 12 pessoas)",
     "R$ 1.600"
    ],
    [
     "Privativo · lancha (até 12/14 pessoas)",
     "R$ 2.000"
-   ],
-   [
-    "Compartilhado · táxi boat",
-    "R$ 120/pessoa"
-   ],
-   [
-    "Compartilhado · lancha",
-    "R$ 160/pessoa"
    ]
   ],
-  "precos_nota": "Valores com saída do Centro de Mangaratiba.",
+  "precos_nota": "Valores com saída do Centro de Mangaratiba. No privativo em lancha, churrasco e som a bordo inclusos (fornecemos churrasqueira e utensílios; carne e carvão ficam por sua conta).",
   "seo_title": "Passeio Ponta da Pombeba e Restinga da Marambaia — Mangaratiba | Vou de Barco",
   "seo_desc": "Passeio de barco de Mangaratiba à Ponta da Pombeba (Restinga da Marambaia), Ilha da Vigia, Ilha Bonita e Jaguanum. Táxi boat ou lancha, privativo ou compartilhado a partir de R$ 120/pessoa.",
   "faq": [
@@ -155,7 +163,7 @@
    ],
    [
     "Dá para fazer compartilhado?",
-    "Sim. No compartilhado, o valor é por pessoa: R$ 120 em táxi boat ou R$ 160 em lancha. No privativo, o barco é exclusivo do seu grupo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha)."
+    "Sim. No compartilhado, o valor é R$ 160 por pessoa (crianças de 6 a 10 anos pagam R$ 80). No privativo, o barco é exclusivo do seu grupo: R$ 1.600 (táxi boat) ou R$ 2.000 (lancha)."
    ],
    [
     "Onde é o almoço?",
@@ -225,7 +233,7 @@
     "R$ 160/pessoa"
    ]
   ],
-  "precos_nota": "Valores com saída do Centro de Mangaratiba.",
+  "precos_nota": "Valores com saída do Centro de Mangaratiba. No privativo em lancha, churrasco e som a bordo inclusos (fornecemos churrasqueira e utensílios; carne e carvão ficam por sua conta).",
   "seo_title": "Passeio Ilha de Jaguanum saindo de Mangaratiba — Volta em Jaguanum | Vou de Barco",
   "seo_desc": "Passeio de barco à Ilha de Jaguanum (Mangaratiba): praias abrigadas e almoço o ano todo. Travessia R$ 80, privativo ou compartilhado a partir de R$ 120/pessoa.",
   "faq": [
@@ -248,5 +256,85 @@
   ],
   "como_e": "A Volta em Jaguanum começa na prainha da Ilha da Vigia e explora a maior ilha da região. Você tem tempo livre na Praia do Araçá, de águas calmas, e na reservada Praia da Estopa, ao norte da ilha. No caminho, ainda passa pela Ilha Bonita, de conchas e piscinas naturais. O almoço fica na Pitangueira ou no Araçá, ambas com restaurante — por isso é o roteiro mais confortável, com boa estrutura de restaurantes e banheiros o ano todo.",
   "credito": "Foto: NataliaAL.Santos · CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "id": "travessia-ilha-guaiba",
+  "nome": "Travessia Ilha da Guaíba",
+  "badge": "SÓ TRAVESSIA, SEM ROTEIRO",
+  "slogan": "Sua praia na Ilha da Guaíba, no seu horário.",
+  "duracao": "horário flexível",
+  "embarque": "Centro de Mangaratiba ou Ibicuí",
+  "img": "assets/img/galeria/guaiba-tapera.jpg",
+  "alt": "Praia da Tapera, na Ilha da Guaíba, em Mangaratiba",
+  "resumo": "A ilha mais preservada de Mangaratiba a 10 minutos de navegação: você escolhe o horário de ida e o de volta, e passa o dia na Praia da Tapera no seu ritmo, sem roteiro fechado.",
+  "descricao": "A Ilha da Guaíba fica a apenas 10 minutos de Mangaratiba e é uma das mais preservadas do litoral: sem construções, muito arborizada, com sombra e água cristalina. A Travessia é a opção para quem quer liberdade: você escolhe o horário de ida, o horário de volta e passa o dia na Praia da Tapera, no seu ritmo, sem roteiro fechado.",
+  "praias": [
+   [
+    "Praia da Tapera",
+    "Principal praia da Ilha da Guaíba, com a maior faixa de areia, águas calmas, muita sombra, opções de mergulho e piscinas naturais."
+   ]
+  ],
+  "diferenciais": [
+   "Horário flexível: você escolhe quando ir e quando voltar",
+   "Apenas 10 minutos de navegação, com mais tempo de praia",
+   "Ilha sem construções: árvores, areia e mar",
+   "Ótimo para famílias: crianças até 5 anos não pagam e de 6 a 10 anos pagam meia"
+  ],
+  "estrutura": "Na ilha há apenas um pescador local, que serve bebidas, petiscos e almoços (disponibilidade mais garantida no verão). Recomendamos levar cooler com gelo, bebidas e petiscos.",
+  "infoPanel": [
+   ["pin", "Embarque", "Centro de Mangaratiba ou de Ibicuí, à sua escolha."],
+   ["clock", "Horários", "saídas de hora em hora das 09h às 12h; retornos de hora em hora das 13h às 17h. Ida e volta combinadas no momento da compra."],
+   ["boat", "Capacidade e saída mínima", "até 12 pessoas por saída; cada saída acontece com no mínimo 6 passageiros por ponto de embarque."],
+   ["check", "Leve com você", "cooler com gelo, bebidas e petiscos, protetor solar e, se quiser, snorkel."],
+   ["compass", "Alta temporada", "feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor."],
+   ["shield", "A bordo", "marinheiro experiente e coletes salva-vidas para todos."]
+  ],
+  "precos": [
+   [
+    "Adultos (ida e volta)",
+    "R$ 60/pessoa"
+   ],
+   [
+    "Crianças de 6 a 10 anos",
+    "R$ 30/pessoa"
+   ],
+   [
+    "Crianças até 5 anos",
+    "Grátis"
+   ]
+  ],
+  "precos_nota": "Valores com saída do Centro de Mangaratiba ou de Ibicuí. Saída mínima de 6 pessoas por ponto de embarque (R$ 360 no total) — mantemos você informado sobre a formação do grupo até a hora da saída.",
+  "seo_title": "Travessia Ilha da Guaíba saindo de Mangaratiba — horário flexível | Vou de Barco",
+  "seo_desc": "Travessia de barco de Mangaratiba para a Praia da Tapera, na Ilha da Guaíba: você escolhe o horário de ida e volta. R$ 60 por pessoa, ida e volta. Faça sua reserva pelo WhatsApp.",
+  "faq": [
+   [
+    "Quanto custa a Travessia Ilha da Guaíba?",
+    "R$ 60 por adulto, ida e volta. Crianças de 6 a 10 anos pagam R$ 30, e crianças até 5 anos não pagam. Em alta temporada pode haver acréscimo."
+   ],
+   [
+    "Quais são os horários?",
+    "Saídas de hora em hora, das 09h às 12h, e retornos de hora em hora, das 13h às 17h. Os horários de ida e volta são definidos no momento da compra."
+   ],
+   [
+    "Posso escolher a hora de voltar?",
+    "Sim. Não há tempo mínimo ou máximo na ilha. Só é preciso reservar o horário de retorno na compra, por causa das vagas disponíveis em cada viagem."
+   ],
+   [
+    "Qual a diferença entre a Travessia e o Passeio Super Guaíba?",
+    "A Travessia é só o transporte, com horário flexível e uma praia (a Tapera). O Super Guaíba é um passeio de cerca de 4h pelas 3 praias da ilha, com horário fixo (10h às 14h)."
+   ],
+   [
+    "A saída tem número mínimo de pessoas?",
+    "Sim, no mínimo 6 pessoas por ponto de embarque. Informamos o andamento do grupo até a hora da saída."
+   ],
+   [
+    "Tem estrutura de alimentação na ilha?",
+    "Apenas um pescador local serve bebidas, petiscos e almoços, com disponibilidade mais garantida no verão. Recomendamos levar um cooler com gelo, bebidas e petiscos."
+   ],
+   [
+    "E se o mar não permitir a saída?",
+    "Você escolhe entre remarcar sem custo ou receber o reembolso integral."
+   ]
+  ]
  }
 ]

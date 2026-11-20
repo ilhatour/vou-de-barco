@@ -1511,6 +1511,14 @@ function lowestPrice(precos) {
   const vals = precos.map(([, v]) => parseInt(String(v).replace(/[^\d]/g, ""), 10)).filter((n) => n > 0);
   return vals.length ? Math.min(...vals) : null;
 }
+const MANGA_INFO_DEFAULT = [
+  ["pin", "Embarque", "saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta."],
+  ["boat", "Capacidade", "10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação)."],
+  ["compass", "Check-in", "chegue 30 minutos antes do horário do embarque."],
+  ["check", "Leve com você", "cooler com gelo, bebidas e petiscos, além de protetor solar; e, se quiser, snorkel para a água cristalina."],
+  ["clock", "Alta temporada", "feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor."],
+  ["shield", "A bordo", "marinheiro experiente e coletes salva-vidas para todos."],
+];
 function buildMangaPasseio(p) {
   const msg = `Olá, Vou de Barco! Quero fazer uma cotação do passeio ${p.nome} (saindo de Mangaratiba).`;
   const low = lowestPrice(p.precos);
@@ -1578,11 +1586,7 @@ ${header({ active: "mangaratiba", solid: true, prefix: "../" })}
           <div class="info-panel">
             <h2 class="info-panel__title">${I.compass} Bom saber antes de embarcar</h2>
             <ul class="info-panel__list">
-              <li><span class="info-panel__ico">${I.pin}</span><div><b>Embarque</b> — saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá e outros) com valor sob consulta.</div></li>
-              <li><span class="info-panel__ico">${I.boat}</span><div><b>Capacidade</b> — 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</div></li>
-              <li><span class="info-panel__ico">${I.check}</span><div><b>Leve com você</b> — cooler com gelo, bebidas e petiscos, além de protetor solar; e, se quiser, snorkel para a água cristalina.</div></li>
-              <li><span class="info-panel__ico">${I.clock}</span><div><b>Alta temporada</b> — feriados, Natal, Réveillon e janeiro podem ter acréscimo no valor.</div></li>
-              <li><span class="info-panel__ico">${I.shield}</span><div><b>A bordo</b> — marinheiro experiente e coletes salva-vidas para todos.</div></li>
+              ${(p.infoPanel || MANGA_INFO_DEFAULT).map(([ico, label, text]) => `<li><span class="info-panel__ico">${I[ico]}</span><div><b>${esc(label)}</b> — ${esc(text)}</div></li>`).join("\n              ")}
             </ul>
           </div>
 
@@ -1689,34 +1693,6 @@ ${header({ active: "mangaratiba", solid: true })}
   ${wave(C.branco, C.nevoa)}
 
   <section class="section section--nevoa">
-    <div class="wrap">
-      <div class="section__head"><span class="eyebrow">Também de Mangaratiba</span><h2 class="section-title">Só travessia, sem roteiro</h2></div>
-      <div class="crossing">
-        <div class="cross-card cross-card--horarios reveal">
-          <span class="eyebrow">${I.boat} Travessia Ilha da Guaíba</span>
-          <p style="margin:.6rem 0 1rem">Ida e volta direto para a <strong>Praia da Tapera</strong>, na Ilha da Guaíba — sem roteiro: só ida, praia e volta no horário combinado.</p>
-          <ul class="spec-list">
-            <li><span class="k">Ida e volta (saída de Mangaratiba)</span><span class="v">R$ 60/pessoa</span></li>
-          </ul>
-          <div class="horarios__cta">
-            <a class="btn" href="${waLink("Olá, Vou de Barco! Quero a Travessia da Ilha da Guaíba (ida e volta para a Praia da Tapera).")}" target="_blank" rel="noopener">${I.whatsapp} Cotar travessia</a>
-          </div>
-        </div>
-        <div class="cross-card cross-card--horarios reveal" data-d="1">
-          <span class="eyebrow">${I.pin} Informações úteis</span>
-          <ul class="included" style="margin-top:.8rem">
-            <li>${I.check}<strong>Embarque:</strong> saída do Centro de Mangaratiba ou de Ibicuí. Buscamos em outros pontos (Saí, Muriqui, Itacuruçá…) com valor sob consulta.</li>
-            <li>${I.check}<strong>Capacidade:</strong> 10 a 12 pessoas no privativo (até 14 na lancha, sob avaliação).</li>
-            <li>${I.check}<strong>Alta temporada:</strong> feriados, Natal, Réveillon e janeiro podem ter acréscimo.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  ${wave(C.nevoa, C.branco, true)}
-
-  <section class="section section--branco">
     <div class="wrap">
       <div class="section__head center"><span class="eyebrow">Perguntas frequentes</span><h2 class="section-title">Sobre os passeios de Mangaratiba</h2></div>
       <div class="faq">
