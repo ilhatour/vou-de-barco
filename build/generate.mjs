@@ -305,7 +305,7 @@ function travessiaHubCard(prefix = "") {
 
 const FAQ = [
   ["Travessia", "Qual é a rota e quanto tempo dura?", "Fazemos a travessia entre Mangaratiba e a Vila do Abraão, na Ilha Grande, em Flex Boat. O trajeto leva cerca de 40 minutos. Mangaratiba é o ponto mais próximo do Rio de Janeiro."],
-  ["Travessia", "Quais são os horários?", "Saídas de Mangaratiba para Abraão: 09h00, 13h00 e 16h30. Saídas de Abraão para Mangaratiba: 10h00, 14h00 e 17h15. Recomendamos chegar ao cais com antecedência."],
+  ["Travessia", "Quais são os horários?", "Saídas de Mangaratiba para Abraão: 09h00, 13h30 e 16h30. Saídas de Abraão para Mangaratiba: 10h00, 14h00 e 17h15. Recomendamos chegar ao cais com antecedência."],
   ["Travessia", "Posso comprar só ida, só volta ou ida e volta? E a bagagem?", "Você escolhe ida, volta ou ida e volta. A passagem inclui o transporte de bagagem padrão. Para grupos ou bagagem extra, fale com a gente pelo WhatsApp."],
   ["Passeio", "O que está incluso?", "Todos os passeios incluem água mineral, cooler com gelo, flutuadores, coletes salva-vidas e o suporte da nossa equipe a bordo do início ao fim."],
   ["Passeio", "Acontece com chuva? Depende da maré?", "A operação depende das condições de clima e maré, sempre pensando na sua segurança. Em dias ruins, podemos ajustar paradas ou remarcar. A confirmação é feita com você pelo WhatsApp."],
