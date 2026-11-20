@@ -1713,13 +1713,16 @@ ${scripts()}
 
 const PRIV_MANGA_FAQ = [
   ["Qual a diferença entre o passeio privativo e o compartilhado?", "No privativo, a embarcação é só do seu grupo e o valor é por embarcação. Você tem mais flexibilidade de horário e de roteiro. No compartilhado, o valor é por pessoa, com horário e roteiro fixos."],
+  ["Posso escolher o roteiro?", "Sim. Você pode escolher entre os roteiros Super Guaíba, Super Pombeba, Volta em Jaguanum ou combinar as ilhas no roteiro Ilhas de Mangaratiba (Ponta da Pombeba, Ilha Bonita, Jaguanum e Guaíba)."],
   ["Quanto custa o passeio privativo?", "A partir de R$ 1.200 no táxi boat e R$ 1.600 na lancha, para até 12 pessoas. O valor final depende do roteiro, do embarque e da data. Faça sua cotação pelo WhatsApp."],
+  ["Quanto tempo dura o passeio?", "De 4 a 6 horas, conforme o roteiro escolhido."],
   ["Qual a diferença entre táxi boat e lancha?", "A lancha tem mais estrutura e conforto, e é a única embarcação que permite churrasco a bordo."],
   ["Posso fazer churrasco a bordo?", "Sim, somente na lancha. Fornecemos churrasqueira e utensílios. Carne, carvão e demais itens são por conta do cliente."],
   ["Tem som a bordo?", "Na lancha sim. No táxi boat é necessário confirmar com antecedência."],
-  ["Posso escolher o horário e o roteiro?", "Sim, dentro das possibilidades do roteiro contratado e das condições do mar. Combinamos tudo na reserva."],
+  ["Posso escolher o horário e o tempo em cada parada?", "Sim, dentro das possibilidades do roteiro contratado e das condições do mar. Combinamos tudo na reserva."],
   ["Posso embarcar em outro ponto?", "Sim. Além do Centro de Mangaratiba e de Ibicuí, buscamos em Saí, Muriqui, Itacuruçá e outros pontos, com valor sob consulta."],
   ["Crianças pagam?", "O valor é por embarcação, e as crianças entram na contagem da lotação de 12 pessoas."],
+  ["Como faço para reservar?", "Me diga o roteiro, o dia, o número de pessoas, o ponto de embarque e o tipo de embarcação. Enviamos a cotação e confirmamos a reserva pelo WhatsApp."],
 ];
 function buildPrivativoMangaratiba() {
   const msg = "Olá, Vou de Barco! Tenho interesse no passeio privativo saindo de Mangaratiba. Pode me passar roteiro e valores?";
@@ -1817,10 +1820,25 @@ ${header({ active: "mangaratiba", solid: true })}
       <div class="section__head">
         <span class="eyebrow">Roteiros disponíveis</span>
         <h2 class="section-title">Escolha o roteiro do seu passeio privativo</h2>
-        <p class="lead">Os mesmos roteiros dos passeios compartilhados servem de base para o seu privativo — com mais flexibilidade de horário e de paradas.</p>
+        <p class="lead">Os mesmos roteiros dos passeios compartilhados servem de base para o seu privativo — com mais flexibilidade de horário e de paradas. Também é possível combinar as ilhas num roteiro só, sob medida para o seu grupo.</p>
       </div>
       <div class="tours">
         ${roteiros.map((p) => mangaCard(p)).join("\n        ")}
+        <article class="tour reveal">
+  <div class="tour__media">
+    <span class="tour__badge">Mangaratiba</span>
+    <img src="assets/img/passeio-mangaratiba-agua.jpg" alt="Água cristalina na Costa Verde, região de Mangaratiba" loading="lazy" width="640" height="480">
+  </div>
+  <div class="tour__body">
+    <h3 class="tour__name">Ilhas de Mangaratiba</h3>
+    <p class="tour__slogan">As principais ilhas de Mangaratiba num roteiro só: Ponta da Pombeba, Ilha Bonita, Ilha de Jaguanum e Ilha da Guaíba.</p>
+    <div class="tour__meta">
+      <span class="chip">${I.clock}4 a 6 horas</span>
+      <span class="chip">${I.pin}Centro de Mangaratiba ou Ibicuí</span>
+    </div>
+    <a class="tour__link" href="${waLink("Olá, Vou de Barco! Quero uma cotação do roteiro privativo Ilhas de Mangaratiba (Ponta da Pombeba, Ilha Bonita, Jaguanum e Guaíba).")}" target="_blank" rel="noopener">${I.whatsapp} Cotar esse roteiro ${I.arrow}</a>
+  </div>
+</article>
       </div>
     </div>
   </section>
